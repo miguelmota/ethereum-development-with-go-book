@@ -146,6 +146,10 @@ is a measurement roughly equivalent to computational steps (for Ethereum). Every
 
 An Ethereum node implementation in Golang. [https://github.com/ethereum/go-ethereum](https://github.com/ethereum/go-ethereum)
 
+## go-ethereum
+
+The Ethereum implementation in Golang.
+
 ## Halving
 
 Bitcoins have a finite supply, which makes them a scarce digital commodity. The total amount of bitcoins that will ever be issued is 21 million. The number of bitcoins generated per block is decreased 50% every four years. This is called “halving.” The final halving will take place in the year 2140.
@@ -167,6 +171,10 @@ Infura provides secure, reliable, and scalable gateways to the Ethereum network.
 ## Initial Coin Offering
 
 (ICO) is an event in which a new cryptocurrency sells advance tokens from its overall coinbase, in exchange for upfront capital. ICOs are frequently used for developers of a new cryptocurrency to raise capital.
+
+## Keccak-256
+
+The hashing algorithm used in Ethereum.
 
 ## Ledger
 

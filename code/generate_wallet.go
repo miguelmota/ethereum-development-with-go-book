@@ -7,6 +7,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/crypto/sha3"
 )
 
 func main() {
@@ -29,4 +30,8 @@ func main() {
 
 	address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
 	fmt.Println(address) // 0x96216849c49358B10257cb55b28eA603c874b05E
+
+	hash := sha3.NewKeccak256()
+	hash.Write(publicKeyBytes[1:])
+	fmt.Println(hexutil.Encode(hash.Sum(nil)[12:])) // 0x96216849c49358b10257cb55b28ea603c874b05e
 }

@@ -48,9 +48,12 @@ address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
 fmt.Println(address) // 0x96216849c49358B10257cb55b28eA603c874b05E
 ```
 
-The public address is simply the keccak-256 hash of the public key, and then we take the last 40 characters (32 bytes) and prefix it with `0x`. Here's how you can do it using native go packages.
+The public address is simply the Keccak-256 hash of the public key, and then we take the last 40 characters (20 bytes) and prefix it with `0x`. Here's how you can do it manually using the go-ethereum's `crypto/sha3` Keccak256 functions.
 
 ```go
+hash := sha3.NewKeccak256()
+hash.Write(publicKeyBytes[1:])
+fmt.Println(hexutil.Encode(hash.Sum(nil)[12:])) // 0x96216849c49358b10257cb55b28ea603c874b05e
 ```
 
 **Full code**
@@ -65,6 +68,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
+	"github.com/ethereum/go-ethereum/crypto/sha3"
 )
 
 func main() {
@@ -87,5 +91,9 @@ func main() {
 
 	address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
 	fmt.Println(address) // 0x96216849c49358B10257cb55b28eA603c874b05E
+
+	hash := sha3.NewKeccak256()
+	hash.Write(publicKeyBytes[1:])
+	fmt.Println(hexutil.Encode(hash.Sum(nil)[12:])) // 0x96216849c49358b10257cb55b28ea603c874b05e
 }
 ```
