@@ -142,6 +142,10 @@ is the creation of an ongoing alternative version of the blockchain, by creating
 
 is a measurement roughly equivalent to computational steps (for Ethereum). Every transaction is required to include a gas limit and a fee that it is willing to pay per gas; miners have the choice of including the transaction and collecting the fee or not. Every operation has a gas expenditure; for most operations it is ~3–10, although some expensive operations have expenditures up to 700 and a transaction itself has an expenditure of 21000.
 
+## Geth
+
+An Ethereum node implementation in Golang. [https://github.com/ethereum/go-ethereum](https://github.com/ethereum/go-ethereum)
+
 ## Halving
 
 Bitcoins have a finite supply, which makes them a scarce digital commodity. The total amount of bitcoins that will ever be issued is 21 million. The number of bitcoins generated per block is decreased 50% every four years. This is called “halving.” The final halving will take place in the year 2140.
