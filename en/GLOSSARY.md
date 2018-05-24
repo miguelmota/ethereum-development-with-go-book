@@ -160,11 +160,15 @@ is a proof-of-work system used to limit email spam and denial-of-service attacks
 
 is the number of hashes that can be performed by a bitcoin miner in a given period of time (usually a second).
 
+## Infura
+
+Infura provides secure, reliable, and scalable gateways to the Ethereum network. [https://infura.io/](https://infura.io/)
+
 ## Initial Coin Offering
 
 (ICO) is an event in which a new cryptocurrency sells advance tokens from its overall coinbase, in exchange for upfront capital. ICOs are frequently used for developers of a new cryptocurrency to raise capital.
 
-## A ledger
+## Ledger
 
 is an append-only record store, where records are immutable and may hold more general information than financial records.
 
@@ -188,6 +192,10 @@ is any computer that connects to the blockchain network.
 
 is a node that fully enforces all of the rules of the blockchain
 
+## Parity
+
+An Ethereum implementation written in the Rust language. [https://github.com/paritytech/parity](https://github.com/paritytech/parity)
+
 ## Peer-to-peer (P2P)
 
 refers to the decentralized interactions that happen between at least two parties in a highly interconnected network. P2P participants deal directly with each other through a single mediation point.
@@ -200,7 +208,7 @@ is a ledger where actors must have permission to access the ledger. Permissioned
 
 provide highly-verifiable data sets because the consensus process creates a digital signature, which can be seen by all parties.
 
-## private key
+## Private Key
 
 is a string of data that shows you have access to bitcoins in a specific wallet. Private keys can be thought of as a password; private keys must never be revealed to anyone but you, as they allow you to spend the bitcoins from your bitcoin wallet through a cryptographic signature.
 
