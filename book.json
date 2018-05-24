@@ -1,0 +1,13 @@
+{
+  "root": "./",
+  "title": "Ethereum Development with Go",
+  "description": "",
+  "author": "Miguel Mota",
+  "isbn": "",
+  "language": "en",
+  "direction": "ltr",
+  "gitbook": ">= 3.0.0",
+  "styles": {
+    "website": "styles/website.css"
+  }
+}
