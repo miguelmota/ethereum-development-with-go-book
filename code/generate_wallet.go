@@ -1,10 +1,3 @@
-# Generating New Wallets
-
-To generate a new wallet first we need to import the go-ethereum `crypto` package that provides the `GenerateKey` method for generating a random private key.
-
-**Full code**
-
-```go
 package main
 
 import (
@@ -37,4 +30,3 @@ func main() {
 	address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
 	fmt.Println(address) // 0x96216849c49358B10257cb55b28eA603c874b05E
 }
-```

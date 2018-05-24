@@ -1,4 +1,4 @@
-# Setting Up Client
+# Setting up the Client
 
 Setting up the Ethereum client in Go is very simply. Import the `ethclient` go-ethereum package and initialize it by calling `Dial` which accepts a provider URL.
 

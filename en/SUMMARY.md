@@ -1,6 +1,6 @@
 # Summary
 
-* [Setting Up Client](client/README.md)
+* [Setting up the Client](client/README.md)
 * [Accounts](accounts/README.md)
   * [Account Balances](account-balance/README.md)
   * [Generating New Wallets](wallet-generate/README.md)
