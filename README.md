@@ -4,7 +4,7 @@
 
 ## Online
 
-**[https://ethereum-go-book.org](https://ethereum-go-book.org/)**
+**[https://ethereum-go-book.org](https://ethereum-go-book.org/en)**
 
 ## PDF
 
