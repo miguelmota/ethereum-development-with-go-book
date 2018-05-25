@@ -15,6 +15,7 @@
   * [Writing to a Smart Contract](smart-contract-write/README.md)
   * [Deploying a Smart Contract](smart-contract-deploy/README.md)
 * [Events](events/README.md)
+  * [Reading Events](event-read/README.md)
   * [Subscribing to Events](event-subscribe/README.md)
 * [Signatures](signatures/README.md)
   * [Signature Verification](signature-verification/README.md)
