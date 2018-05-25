@@ -196,6 +196,10 @@ is the process by which transactions are verified and added to a blockchain. Thi
 
 is any computer that connects to the blockchain network.
 
+## nonce
+
+A number only used once.
+
 ## full node
 
 is a node that fully enforces all of the rules of the blockchain
