@@ -15,7 +15,6 @@ import (
 
 func main() {
 	client, err := ethclient.Dial("https://rinkeby.infura.io")
-
 	if err != nil {
 		log.Fatal(err)
 	}
