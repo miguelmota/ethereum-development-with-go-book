@@ -8,4 +8,4 @@ build:
 	gitbook build
 
 pdf:
-	gitbook pdf ./ book
+	gitbook pdf ./ ethereum-development-with-go
