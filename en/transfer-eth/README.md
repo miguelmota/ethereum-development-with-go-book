@@ -97,7 +97,7 @@ Afterwards you can check the progress on a block explorer such as Etherscan.
 
 [https://rinkeby.etherscan.io/tx/0x77006fcb3938f648e2cc65bafd27dec30b9bfbe9df41f78498b9c8b7322a249e](https://rinkeby.etherscan.io/tx/0x77006fcb3938f648e2cc65bafd27dec30b9bfbe9df41f78498b9c8b7322a249e)
 
-**Full code** [transfer_eth.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/tranfer_eth.go)
+**Full code** [transfer_eth.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transfer_eth.go)
 
 ```go
 package main
