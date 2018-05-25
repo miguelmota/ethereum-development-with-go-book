@@ -4,11 +4,11 @@
 
 ## Online
 
-**[https://ethereum-go-book.org](https://ethereum-go-book.org/en)**
+[https://ethereum-go-book.org](https://ethereum-go-book.org/en)
 
 ## PDF
 
-**[https://ethereum-go-book.org/ethereum-development-with-go_en.pdf](https://ethereum-go-book.org/ethereum-development-with-go_en.pdf)**
+[https://ethereum-go-book.org/ethereum-development-with-go_en.pdf](https://ethereum-go-book.org/ethereum-development-with-go_en.pdf)
 
 ## License
 
