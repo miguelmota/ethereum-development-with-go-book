@@ -1,6 +1,6 @@
-# Code sample
+# Code samples
 
-> The code sample used in the book.
+> The code samples used in the book.
 
 ## Running
 
