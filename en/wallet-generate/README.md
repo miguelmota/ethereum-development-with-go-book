@@ -56,7 +56,7 @@ hash.Write(publicKeyBytes[1:])
 fmt.Println(hexutil.Encode(hash.Sum(nil)[12:])) // 0x96216849c49358b10257cb55b28ea603c874b05e
 ```
 
-**Full code**
+**Full code** [generate_wallet.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/generate_wallet.go)
 
 ```go
 package main

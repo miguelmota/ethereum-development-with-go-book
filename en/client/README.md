@@ -16,7 +16,7 @@ client, err := ethclient.Dial("/home/user/.ethereum/geth.ipc")
 
 Using the ethclient is a fundamental thing you'll need to start with for every Go Ethereum project.
 
-**Full code**
+**Full code** [client.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/client.go)
 
 ```go
 package main
