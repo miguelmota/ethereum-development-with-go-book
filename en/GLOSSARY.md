@@ -146,6 +146,10 @@ is a measurement roughly equivalent to computational steps (for Ethereum). Every
 
 An Ethereum node implementation in Golang. [https://github.com/ethereum/go-ethereum](https://github.com/ethereum/go-ethereum)
 
+# Go
+
+An awesome programming language
+
 ## go-ethereum
 
 The Ethereum implementation in Golang.

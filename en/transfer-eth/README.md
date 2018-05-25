@@ -25,7 +25,7 @@ if !ok {
 fromAddress := crypto.PubkeyToAddress(*publicKeyECDSA)
 ```
 
-Now we can read the nonce that we should use for the account.
+Now we can read the nonce that we should use for the account's transaction.
 
 ```go
 nonce, err := client.PendingNonceAt(context.Background(), fromAddress)
@@ -34,7 +34,7 @@ if err != nil {
 }
 ```
 
-The next step is to set the amount of ETH that we'll be transferring. However we must convert ether to wei since that's what the Ethereum blockchain uses. Ether supports up to 18 decimal places so 1 ETH is 1 plus 18 zeros. Here's a little tool to help you convert between ETH and wei [https://etherconverter.online](https://etherconverter.online]).
+The next step is to set the amount of ETH that we'll be transferring. However we must convert ether to wei since that's what the Ethereum blockchain uses. Ether supports up to 18 decimal places so 1 ETH is 1 plus 18 zeros. Here's a little tool to help you convert between ETH and wei: [https://etherconverter.online](https://etherconverter.online])
 
 ```go
 value := big.NewInt(1000000000000000000) // in wei (1 eth)
@@ -52,7 +52,7 @@ The gas price must be set in wei. At the time of this writing, a gas price that 
 gasPrice := big.NewInt(30000000000) // in wei (30 gwei)
 ```
 
-However, gas prices are always fluctuating based on market demand and what users are willing to pay, so hardcoding a gas price is sometimes not ideal. The go-ethereum client provides the `SuggestGasPrice` function for getting the average gas price based on x number of previous blocks.
+However, gas prices are always fluctuating based on market demand and what users are willing to pay, so hardcoding a gas price is sometimes not ideal. The go-ethereum client provides the `SuggestGasPrice` function for getting the average gas price based on `x` number of previous blocks.
 
 ```go
 gasPrice, err := client.SuggestGasPrice(context.Background())
@@ -93,9 +93,7 @@ if err != nil {
 fmt.Printf("tx sent: %s", signedTx.Hash().Hex()) // tx sent: 0x77006fcb3938f648e2cc65bafd27dec30b9bfbe9df41f78498b9c8b7322a249e
 ```
 
-Afterwards you can check the progress on a block explorer such as Etherscan.
-
-[https://rinkeby.etherscan.io/tx/0x77006fcb3938f648e2cc65bafd27dec30b9bfbe9df41f78498b9c8b7322a249e](https://rinkeby.etherscan.io/tx/0x77006fcb3938f648e2cc65bafd27dec30b9bfbe9df41f78498b9c8b7322a249e)
+Afterwards you can check the progress on a block explorer such as Etherscan: [https://rinkeby.etherscan.io/tx/0x77006fcb3938f648e2cc65bafd27dec30b9bfbe9df41f78498b9c8b7322a249e](https://rinkeby.etherscan.io/tx/0x77006fcb3938f648e2cc65bafd27dec30b9bfbe9df41f78498b9c8b7322a249e)
 
 **Full code** [transfer_eth.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transfer_eth.go)
 

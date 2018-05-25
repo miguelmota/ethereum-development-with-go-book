@@ -10,6 +10,7 @@
   * [Transferring ETH](transfer-eth/README.md)
   * [Transferring Tokens](transfer-tokens/README.md)
 * [Smart Contracts](smart-contracts/README.md)
+  * [ABI to Go code](smart-contract-abi/README.md)
   * [Loading a Smart Contract](smart-contract-load/README.md)
   * [Querying Smart Contract](smart-contract-query/README.md)
   * [Writing to a Smart Contract](smart-contract-write/README.md)
