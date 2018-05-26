@@ -1,6 +1,9 @@
 all:
 	@echo "no default"
 
+install:
+	npm install gitbook-cli -g
+
 serve:
 	gitbook serve
 
@@ -12,4 +15,10 @@ deploy: build pdf
 	./deploy.sh
 
 pdf:
-	gitbook pdf ./ ethereum-development-with-go
+	gitbook pdf ./ ethereum-development-with-go.pdf
+
+ebook:
+	gitbook epub ./ ethereum-development-with-go.epub
+
+plugins/install:
+	gitbook install
