@@ -43,7 +43,7 @@ value := big.NewInt(1000000000000000000) // in wei (1 eth)
 The gas limit for a standard ETH transfer is `21000` units.
 
 ```go
-gasLimit := uint64(210000)          // in units
+gasLimit := uint64(21000) // in units
 ```
 
 The gas price must be set in wei. At the time of this writing, a gas price that will get your transaction included pretty fast in a block is 30 gwei.
@@ -137,7 +137,7 @@ func main() {
 	}
 
 	value := big.NewInt(1000000000000000000) // in wei (1 eth)
-	gasLimit := uint64(210000)               // in units
+	gasLimit := uint64(21000)                // in units
 	gasPrice := big.NewInt(30000000000)      // in wei (30 gwei)
 
 	toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")

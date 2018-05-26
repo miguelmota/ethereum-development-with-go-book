@@ -244,6 +244,10 @@ is a system that ties mining capability to computational power. Blocks must be h
 
 are sets of formal rules describing how to transmit or exchange data, especially across a network.
 
+## Rinkeby
+
+A testnet on the Ethereum blockchain.
+
 # scrypt
 
 is an alternative proof of work system to SHA-256, designed to be particularly friendly to CPU and GPU miners, while offering little advantage to ASIC miners.

@@ -47,17 +47,20 @@ func main() {
 
 	toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
 	tokenAddress := common.HexToAddress("0x28b149020d2152179873ec60bed6bf7cd705775d")
+
 	transferFnSignature := []byte("transfer(address,uint256)")
-	amount := new(big.Int)
-	amount.SetString("1000000000000000000000", 10) // 1000 tokens
 	hash := sha3.NewKeccak256()
 	hash.Write(transferFnSignature)
 	methodID := hash.Sum(nil)[:4]
+	fmt.Println(hexutil.Encode(methodID)) // 0xa9059cbb
+
 	paddedAddress := common.LeftPadBytes(toAddress.Bytes(), 32)
-	paddedAmount := common.LeftPadBytes(amount.Bytes(), 32)
-	fmt.Println(hexutil.Encode(methodID))      // 0xa9059cbb
 	fmt.Println(hexutil.Encode(paddedAddress)) // 0x0000000000000000000000004592d8f8d7b001e72cb26a73e4fa1806a51ac79d
-	fmt.Println(hexutil.Encode(paddedAmount))  // 0x00000000000000000000000000000000000000000000003635c9adc5dea00000
+
+	amount := new(big.Int)
+	amount.SetString("1000000000000000000000", 10) // 1000 tokens
+	paddedAmount := common.LeftPadBytes(amount.Bytes(), 32)
+	fmt.Println(hexutil.Encode(paddedAmount)) // 0x00000000000000000000000000000000000000000000003635c9adc5dea00000
 
 	var data []byte
 	data = append(data, methodID...)
@@ -69,6 +72,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	err = client.SendTransaction(context.Background(), signedTx)
 	if err != nil {
 		log.Fatal(err)

@@ -37,7 +37,7 @@ func main() {
 	}
 
 	value := big.NewInt(1000000000000000000) // in wei (1 eth)
-	gasLimit := uint64(210000)               // in units
+	gasLimit := uint64(21000)                // in units
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
 		log.Fatal(err)
