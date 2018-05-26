@@ -3,3 +3,4 @@ _book
 todo.txt
 *.pdf
 deploy.sh
+node_modules
