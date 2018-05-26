@@ -1,8 +1,8 @@
 # Transferring Tokens
 
-This section will walk you through on how to transfer ERC-20 tokens. To learn how to transfer other types tokens that are non-ERC-20 compliant check out the [sections on smart contracts](../smart-contracts).
+This section will walk you through on how to transfer ERC-20 tokens. To learn how to transfer other types tokens that are non-ERC-20 compliant check out the [section on smart contracts](../smart-contracts).
 
-Assuming you've already connected a client, loaded your private key, and configured the gas price, the next step is to set the data field of the transaction. Check out the [section on transferring ETH](../transfer-eth) first if you're not sure what I'm talking about.
+Assuming you've already connected a client, loaded your private key, and configured the gas price, the next step is to set the data field of the transaction. If you're not sure about what I just said, check out the [section on transferring ETH](../transfer-eth) first.
 
 Token transfers don't require ETH to be transferred so set the value to `0`.
 
@@ -16,7 +16,7 @@ The gas limit for a standard ERC-20 token transfer is `200000` units.
 gasLimit := uint64(200000) // in units
 ```
 
-Set the address you'll be sending tokens to.
+Store the address you'll be sending tokens to in a variable.
 
 ```go
 toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
@@ -32,12 +32,12 @@ Let's assign the token contract address to a variable.
 tokenAddress := common.HexToAddress("0x28b149020d2152179873ec60bed6bf7cd705775d")
 ```
 
-The function signature will be the name of the transfer function, which is `transfer` in the ERC-20 specification, and the argument types. The first argument type is `address` (receiver of the tokens) and the second type is `uint256` (amount of tokens to send). There should be no spaces or argument names. We'll also need it as a bytes slice.
+The function signature will be the name of the transfer function, which is `transfer` in the ERC-20 specification, and the argument types. The first argument type is `address` (receiver of the tokens) and the second type is `uint256` (amount of tokens to send). There should be no spaces or argument names. We'll also need it as a byte slice.
 
 ```go
 transferFnSignature := []byte("transfer(address,uint256)")
 ```
-We'll then import the `crypto/sha3` package from go-ethereum to generate the Keccak256 hash of the function signature. We then take only the first 4 bytes to have the method ID.
+We'll now import the `crypto/sha3` package from go-ethereum to generate the Keccak256 hash of the function signature. We then take only the first 4 bytes to have the method ID.
 
 ```go
 hash := sha3.NewKeccak256()
@@ -60,14 +60,14 @@ amount := new(big.Int)
 amount.SetString("1000000000000000000000", 10) // 1000 tokens
 ```
 
-Left padding to 32 bytes will also be required.
+Left padding to 32 bytes will also be required for the amount.
 
 ```go
 paddedAmount := common.LeftPadBytes(amount.Bytes(), 32)
 fmt.Println(hexutil.Encode(paddedAmount))  // 0x00000000000000000000000000000000000000000000003635c9adc5dea00000
 ```
 
-Now we simply concanate the method ID, padded address, and padded amount to a bytes slice that will be our data field.
+Now we simply concanate the method ID, padded address, and padded amount to a byte slice that will be our data field.
 
 ```go
 var data []byte

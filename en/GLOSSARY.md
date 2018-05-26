@@ -142,6 +142,18 @@ is the creation of an ongoing alternative version of the blockchain, by creating
 
 is a measurement roughly equivalent to computational steps (for Ethereum). Every transaction is required to include a gas limit and a fee that it is willing to pay per gas; miners have the choice of including the transaction and collecting the fee or not. Every operation has a gas expenditure; for most operations it is ~3–10, although some expensive operations have expenditures up to 700 and a transaction itself has an expenditure of 21000.
 
+## Gas cost
+
+see gas
+
+## Gas Limit
+
+Limits
+
+## Gas Price
+
+Price
+
 ## Geth
 
 An Ethereum node implementation in Golang. [https://github.com/ethereum/go-ethereum](https://github.com/ethereum/go-ethereum)
@@ -256,7 +268,7 @@ is an alternative proof of work system to SHA-256, designed to be particularly f
 
 is the cryptographic function used as the basis for bitcoin’s proof of work system.
 
-## Smart contracts
+## Smart contract
 
 are contracts whose terms are recorded in a computer language instead of legal language. Smart contracts can be automatically executed by a computing system, such as a suitable distributed ledger system.
 

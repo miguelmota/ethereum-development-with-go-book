@@ -1,10 +1,18 @@
 # Introduction
 
-This book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language.
+This little book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language.
 
 This book is composed of many examples that I wish I had encountered before when I first started doing Ethereum development with Go. This book will walk you through most things that you should be aware of in order for you to be a productive Ethereum developer using Go.
 
 Ethereum is quickly evolving and things may go out of date sooner than anticipated. I strongly suggest opening an [issue](https://github.com/miguelmota/ethereum-development-with-go-book/issues) or making a [pull request](https://github.com/miguelmota/ethereum-development-with-go-book/pulls) if you observe things that can be improved. This book is completely open and free and available on [github](https://github.com/miguelmota/ethereum-development-with-go-book).
+
+#### Online
+
+[https://ethereum-go-book.org](https://ethereum-go-book.org/)
+
+#### PDF
+
+[https://ethereum-go-book.org/ethereum-development-with-go_en.pdf](https://ethereum-go-book.org/ethereum-development-with-go_en.pdf)
 
 ## Ethereum
 
