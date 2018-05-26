@@ -268,6 +268,10 @@ is an alternative proof of work system to SHA-256, designed to be particularly f
 
 is the cryptographic function used as the basis for bitcoin’s proof of work system.
 
+## Signature
+
+A digital signature is a mathematical scheme for presenting the authenticity of digital messages or documents.
+
 ## Smart contract
 
 are contracts whose terms are recorded in a computer language instead of legal language. Smart contracts can be automatically executed by a computing system, such as a suitable distributed ledger system.

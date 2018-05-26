@@ -19,12 +19,15 @@
   * [Reading Events](event-read/README.md)
   * [Subscribing to Events](event-subscribe/README.md)
 * [Signatures](signatures/README.md)
-  * [Signature Verification](signature-verification/README.md)
+  * [Generating Signatures](signature-generate/README.md)
+  * [Verifying Signatures](signature-verify/README.md)
+<!--
 * [Whisper](whisper/README.md)
   * [Sending Messages on Whisper](whisper-send/README.md)
 * [Swarm](swarm/README.md)
   * [Storing Data on Swarm](swarm-store/README.md)
   * [Reading Data on Swarm](swarm-read/README.md)
+-->
 * [Resources](resources/README.md)
 
 * [Glossary](GLOSSARY.md)
