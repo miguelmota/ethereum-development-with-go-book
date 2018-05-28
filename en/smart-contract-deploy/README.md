@@ -1,6 +1,6 @@
 # Deploying a Smart Contract
 
-Coming soon...
+If you haven't already, check out the [section on smart contract compiation](../smart-contracts-compile) since this lesson requires knowledge on compiling a solidity smart contract to a Go contract file.
 
 https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0
 

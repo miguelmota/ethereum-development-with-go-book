@@ -37,14 +37,16 @@ func main() {
 		log.Fatal(err)
 	}
 
+	gasPrice, err := client.SuggestGasPrice(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	auth := bind.NewKeyedTransactor(privateKey)
 	auth.Nonce = big.NewInt(int64(nonce))
 	auth.Value = big.NewInt(0)     // in wei
 	auth.GasLimit = uint64(300000) // in units
-	auth.GasPrice, err = client.SuggestGasPrice(context.Background())
-	if err != nil {
-		log.Fatal(err)
-	}
+	auth.GasPrice = gasPrice
 
 	input := "1.0"
 	address, tx, instance, err := store.DeployStore(auth, client, input)
