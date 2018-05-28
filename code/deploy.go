@@ -1,10 +1,3 @@
-# Deploying a Smart Contract
-
-Coming soon...
-
-https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0
-
-```go
 package main
 
 import (
@@ -64,4 +57,3 @@ func main() {
 
 	_ = instance
 }
-```
