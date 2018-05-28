@@ -88,8 +88,32 @@ That's it for this lesson. In the next lessons we'll learn how to deploy the sma
 
 **Full code**
 
+Commands
+
 ```bash
 solc --abi Store.sol > Store.abi
 solc --bin Store.sol > Store.bin
 abigen --bin=Store.bin --abi=Store.abi --pkg=store --out=Store.go
+```
+
+[Store.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contracts/Store.sol)
+
+```solidity
+pragma solidity ^0.4.24;
+
+contract Store {
+  event ItemSet(bytes32 key, bytes32 value);
+
+  string public version;
+  mapping (bytes32 => bytes32) public items;
+
+  constructor(string _version) public {
+    version = _version;
+  }
+
+  function setItem(bytes32 key, bytes32 value) external {
+    items[key] = value;
+    emit ItemSet(key, value);
+  }
+}
 ```
