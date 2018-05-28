@@ -2,7 +2,7 @@
 
 > A little book on [Ethereum](https://www.ethereum.org/) Development with [Go](https://golang.org/) (golang)
 
-## Note: Thi is a Work in Progress
+## Note: This is a Work in Progress
 
 ## Online
 
