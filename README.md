@@ -2,6 +2,8 @@
 
 > A little book on [Ethereum](https://www.ethereum.org/) Development with [Go](https://golang.org/) (golang)
 
+## State: Work in Progress
+
 ## Online
 
 [https://ethereum-go-book.org](https://ethereum-go-book.org/en)
