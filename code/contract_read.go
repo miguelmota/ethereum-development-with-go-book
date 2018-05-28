@@ -1,16 +1,10 @@
-# Loading a Smart Contract
-
-These section requires knowledge of how to compile a smart contract's ABI to a Go contract file. If you haven't already gone through it, please [read the section](../smart-contract-compile) first.
-
-**Full code** [contract_load.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contract_load.go)
-
-```go
 package main
 
 import (
 	"fmt"
 	"log"
 
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 
@@ -29,7 +23,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Println("contract is loaded")
-	_ = instance
+	version, err := instance.Version(&bind.CallOpts{})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(version) // "1.0"
 }
-```

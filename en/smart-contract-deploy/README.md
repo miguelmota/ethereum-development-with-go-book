@@ -63,7 +63,7 @@ contract Store {
 }
 ```
 
-[deploy.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/deploy.go)
+[contract_deploy.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contract_deploy.go)
 
 ```go
 package main
@@ -79,7 +79,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	store "./contracts"
+	store "./contracts" // for demo
 )
 
 func main() {

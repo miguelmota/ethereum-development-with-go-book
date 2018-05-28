@@ -13,7 +13,7 @@
   * [Smart Contract Compilation & ABI](smart-contract-compile/README.md)
   * [Deploying a Smart Contract](smart-contract-deploy/README.md)
   * [Loading a Smart Contract](smart-contract-load/README.md)
-  * [Querying Smart Contract](smart-contract-query/README.md)
+  * [Querying a Smart Contract](smart-contract-read/README.md)
   * [Writing to a Smart Contract](smart-contract-write/README.md)
 * [Events](events/README.md)
   * [Reading Events](event-read/README.md)
