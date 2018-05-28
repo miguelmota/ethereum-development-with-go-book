@@ -1,6 +1,6 @@
 # Introduction
 
-This little book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language.
+This little book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language. You'll learn how to interact with smart contracts using golang.
 
 This book is composed of many examples that I wish I had encountered before when I first started doing Ethereum development with Go. This book will walk you through most things that you should be aware of in order for you to be a productive Ethereum developer using Go.
 
