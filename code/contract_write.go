@@ -66,4 +66,11 @@ func main() {
 	}
 
 	fmt.Printf("tx sent: %s", tx.Hash().Hex()) // tx sent: 0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870
+
+	result, err := instance.Items(&bind.CallOpts{}, key)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(string(result[:])) // "bar"
 }

@@ -14,7 +14,7 @@ Ethereum is quickly evolving and things may go out of date sooner than anticipat
 
 #### PDF
 
-[https://ethereum-go-book.org/ethereum-development-with-go_en.pdf](https://ethereum-go-book.org/ethereum-development-with-go_en.pdf)
+[https://ethereum-go-book.org/ethereum-development-with-go.pdf](https://ethereum-go-book.org/ethereum-development-with-go.pdf)
 
 ## Introduction
 

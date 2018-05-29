@@ -13,6 +13,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	_ = client
 	fmt.Println("we have a connection")
+	_ = client
 }

@@ -36,8 +36,8 @@ Yes it's that simply. You can take the transaction hash and see the deployment s
 Commands
 
 ```bash
-solc --abi Store.sol > Store.abi
-solc --bin Store.sol > Store.bin
+solc --abi Store.sol | awk '/JSON ABI/{x=1;next}x' > Store.abi
+solc --bin Store.sol | awk '/Binary:/{x=1;next}x' > Store.bin
 abigen --bin=Store.bin --abi=Store.abi --pkg=store --out=Store.go
 ```
 
