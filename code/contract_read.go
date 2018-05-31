@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 
@@ -23,7 +22,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	version, err := instance.Version(&bind.CallOpts{})
+	version, err := instance.Version(nil)
 	if err != nil {
 		log.Fatal(err)
 	}

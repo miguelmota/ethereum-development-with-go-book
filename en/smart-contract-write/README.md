@@ -2,12 +2,66 @@
 
 These section requires knowledge of how to compile a smart contract's ABI to a Go contract file. If you haven't already gone through it, please [read the section](../smart-contract-compile) first.
 
+Writing to a smart contract requires us to sign the sign transaction with our private key.
+
 ```go
-instance, err := store.NewStore(address, client)
+privateKey, err := crypto.HexToECDSA("fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19")
 if err != nil {
   log.Fatal(err)
 }
 
+publicKey := privateKey.Public()
+publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
+if !ok {
+  log.Fatal("error casting public key to ECDSA")
+}
+
+fromAddress := crypto.PubkeyToAddress(*publicKeyECDSA)
+```
+
+We'll also need to figure the nonce and gas price.
+
+```go
+nonce, err := client.PendingNonceAt(context.Background(), fromAddress)
+if err != nil {
+  log.Fatal(err)
+}
+
+gasPrice, err := client.SuggestGasPrice(context.Background())
+if err != nil {
+  log.Fatal(err)
+}
+```
+
+Next we create a new keyed transactor which takes in the private key.
+
+```go
+auth := bind.NewKeyedTransactor(privateKey)
+```
+
+Then we need to set the standard transaction options attached to the keyed transactor.
+
+```go
+auth.Nonce = big.NewInt(int64(nonce))
+auth.Value = big.NewInt(0)     // in wei
+auth.GasLimit = uint64(300000) // in units
+auth.GasPrice = gasPrice
+```
+
+Now we load an instance of the smart contract. If you recall in the [previous sections](../smart-contract-compile) we create a contract called *Store* and generated a Go package file using the `abigen` tool. To initialize it we just invoke the *New* method of the contract package and give the smart contract address and the ethclient, which returns a contract instance that we can use.
+
+
+```go
+address := common.HexToAddress("0x147B8eb97fD247D06C4006D269c90C1908Fb5D54")
+instance, err := store.NewStore(address, client)
+if err != nil {
+  log.Fatal(err)
+}
+```
+
+The smart contract that we created has an external method called *SetItem* which takes in two arguments (key, value) in the from of solidity `bytes32`. This means that the Go contract package requires us to pass a byte array of length 32 bytes. Invoking the *SetItem* method requires us to pass the `auth` object we created earlier. Behind the scenes this method will encode this function call with it's arguments, set it as the `data` property of the transaction, and sign it with the private key. The result will be a signed transaction object.
+
+```go
 key := [32]byte{}
 value := [32]byte{}
 copy(key[:], []byte("foo"))
@@ -21,18 +75,20 @@ if err != nil {
 fmt.Printf("tx sent: %s", tx.Hash().Hex()) // tx sent: 0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870
 ```
 
-[https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870](https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870)
+We can see now that the transaction has been successfully sent on the network: [https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870](https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870)
 
-Read the mapping value.
+To verify that the key/value was set, we read the smart contract mapping value.
 
 ```go
-result, err := instance.Items(&bind.CallOpts{}, key)
+result, err := instance.Items(nil, key)
 if err != nil {
   log.Fatal(err)
 }
 
 fmt.Println(string(result[:])) // "bar"
 ```
+
+There you have it.
 
 **Full code**
 
@@ -134,7 +190,7 @@ func main() {
 
 	fmt.Printf("tx sent: %s", tx.Hash().Hex()) // tx sent: 0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870
 
-	result, err := instance.Items(&bind.CallOpts{}, key)
+	result, err := instance.Items(nil, key)
 	if err != nil {
 		log.Fatal(err)
 	}

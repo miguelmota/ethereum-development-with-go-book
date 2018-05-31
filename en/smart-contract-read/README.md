@@ -2,6 +2,17 @@
 
 These section requires knowledge of how to compile a smart contract's ABI to a Go contract file. If you haven't already gone through it, please [read the section](../smart-contract-compile) first.
 
+In the previous section we learned how to initialize a contract instance in our Go application. Now we're going to read the smart contract using the provided methods by the new contract instance. If you recall we had a global variable named `version` in our contract that was set during deployment. Because it's public that means that they'll be a getter function automatically created for us. Constant and view functions also accept `bind.CallOpts` as the first argument. To learn about what options you can pass checkout the type's [documentation](https://godoc.org/github.com/ethereum/go-ethereum/accounts/abi/bind#CallOpts) but usually this is set to `nil`.
+
+```go
+version, err := instance.Version(nil)
+if err != nil {
+  log.Fatal(err)
+}
+
+fmt.Println(version) // "1.0"
+```
+
 **Full code**
 
 Commands
@@ -43,7 +54,6 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
 
@@ -62,7 +72,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	version, err := instance.Version(&bind.CallOpts{})
+	version, err := instance.Version(nil)
 	if err != nil {
 		log.Fatal(err)
 	}
