@@ -1,10 +1,8 @@
 # Ethereum Development with Go
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/168240/40767424-5863e30a-6467-11e8-8c96-7995652ade86.png" width="320" alt="Gopher" />
+  <img src="https://user-images.githubusercontent.com/168240/40770360-514cb760-646f-11e8-92ef-4c0665d0b266.png" width="320" alt="Gopher" />
 </p>
-
-**Note: this is a work in progress**
 
 This little book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language. You'll learn how to interact with smart contracts using golang and much more.
 

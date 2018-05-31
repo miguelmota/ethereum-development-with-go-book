@@ -11,11 +11,31 @@
     "website": "styles/website.css"
   },
   "plugins": [
+    "autocover",
     "analytics"
   ],
   "pluginsConfig": {
     "analytics": {
       "google": "UA-39494276-11"
+    },
+    "fontsettings": {
+      "theme": "white",
+      "family": "sans",
+      "size": 2
+    },
+    "autocover": {
+      "font": {
+        "size": null,
+        "family": "Impact",
+        "color": "#FFF"
+      },
+      "size": {
+        "w": 1800,
+        "h": 2360
+      },
+      "background": {
+        "color": "#09F"
+      }
     }
   }
 }
