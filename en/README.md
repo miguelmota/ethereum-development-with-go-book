@@ -1,7 +1,7 @@
 # Ethereum Development with Go
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/168240/40634619-c78ff28c-62aa-11e8-9920-316dbc2ef1c2.png" width="400" alt="Gopher" />
+  <img src="https://user-images.githubusercontent.com/168240/40767424-5863e30a-6467-11e8-8c96-7995652ade86.png" width="400" alt="Gopher" />
 </p>
 
 **Note: this is a work in progress**
