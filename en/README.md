@@ -1,9 +1,5 @@
 # Ethereum Development with Go
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/168240/40770360-514cb760-646f-11e8-92ef-4c0665d0b266.png" width="320" alt="Gopher" />
-</p>
-
 This little book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language. You'll learn how to interact with smart contracts using golang and much more.
 
 This book is composed of many examples that I wish I had encountered before when I first started doing Ethereum development with Go. This book will walk you through most things that you should be aware of in order for you to be a productive Ethereum developer using Go.

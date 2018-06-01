@@ -2,7 +2,7 @@ all:
 	@echo "no default"
 
 install:
-	npm install gitbook-cli -g
+	npm install gitbook-cli@latest -g
 
 serve:
 	gitbook serve

@@ -3,7 +3,7 @@
 > A little book on [Ethereum](https://www.ethereum.org/) Development with [Go](https://golang.org/) (golang)
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/168240/40770360-514cb760-646f-11e8-92ef-4c0665d0b266.png" width="320" alt="Gopher" />
+  <img src="https://user-images.githubusercontent.com/168240/40827620-efd5bd82-6532-11e8-8001-89447f7e5fe4.jpg" width="320" alt="Book cover" />
 </p>
 
 ## Online
