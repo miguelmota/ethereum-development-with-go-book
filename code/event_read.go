@@ -1,40 +1,3 @@
-# Reading Event Logs
-
-**Full code**
-
-Commands
-
-```bash
-solc --abi Store.sol | awk '/JSON ABI/{x=1;next}x' > Store.abi
-solc --bin Store.sol | awk '/Binary:/{x=1;next}x' > Store.bin
-abigen --bin=Store.bin --abi=Store.abi --pkg=store --out=Store.go
-```
-
-[Store.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contracts/Store.sol)
-
-```solidity
-pragma solidity ^0.4.24;
-
-contract Store {
-  event ItemSet(bytes32 key, bytes32 value);
-
-  string public version;
-  mapping (bytes32 => bytes32) public items;
-
-  constructor(string _version) public {
-    version = _version;
-  }
-
-  function setItem(bytes32 key, bytes32 value) external {
-    items[key] = value;
-    emit ItemSet(key, value);
-  }
-}
-```
-
-[event_read.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/event_read.go)
-
-```go
 package main
 
 import (
@@ -98,4 +61,3 @@ func main() {
 		fmt.Println(topics[1])
 	}
 }
-```
