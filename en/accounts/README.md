@@ -2,7 +2,7 @@
 
 Accounts on Ethereum are either a wallet address or a smart contract address. They look like `0x71c7656ec7ab88b098defb751b7401b5f6d8976f` and they're what you use for sending ETH to another user and also are used for referring to a smart contract on the blockchain when needing to interact with it. They are unique and are derived from a private key. We'll go more in depth into private/public key pairs in later sections.
 
-In order to use account addresses with go-ethereum, you must converted them the go-ethereum `common.Address` type.
+In order to use account addresses with go-ethereum, you must first convert them the go-ethereum `common.Address` type.
 
 ```go
 address := common.HexToAddress("0x71c7656ec7ab88b098defb751b7401b5f6d8976f")
@@ -10,7 +10,7 @@ address := common.HexToAddress("0x71c7656ec7ab88b098defb751b7401b5f6d8976f")
 fmt.Println(address.Hex()) // 0x71C7656EC7ab88b098defB751B7401B5f6d8976F
 ```
 
-Pretty much you'd use this type anywhere you'd pass an ethereum address to methods from go-ethereum.
+Pretty much you'd use this type anywhere you'd pass an ethereum address to methods from go-ethereum. Now that you the basics of accounts and addresses, let's learn how to retrieve the ETH account balance in the next section.
 
 ---
 

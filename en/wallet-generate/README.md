@@ -21,7 +21,7 @@ We can now convert it to a hexadecimal string by using the go-ethereum `hexutil`
 fmt.Println(hexutil.Encode(privateKeyBytes)[2:]) // fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19
 ```
 
-This is the private which is used for signing transactions and is to be treated like a password and never be shared, since who ever is in posses of it will have access to all your funds.
+This is the private key which is used for signing transactions and is to be treated like a password and never be shared, since who ever is in possesion of it will have access to all your funds.
 
 Since the public key is derived from the private key, go-ethereum's crypto private key has a `Public` method that will return the public key.
 

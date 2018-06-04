@@ -1,6 +1,6 @@
 # Setting up the Client
 
-Setting up the Ethereum client in Go is very simple. Import the `ethclient` go-ethereum package and initialize it by calling `Dial` which accepts a provider URL.
+Setting up the Ethereum client in Go is a fundamental step required for interacting with the blockchain. First import the `ethclient` go-ethereum package and initialize it by calling `Dial` which accepts a provider URL.
 
 You can connect to the infura gateway if you don't have an existing client. Infura manages a bunch of Ethereum [geth and parity] nodes that are secure, reliable, scalable and lowers the entry to barrier for newcomers when it comes to plugging into the Ethereum network.
 

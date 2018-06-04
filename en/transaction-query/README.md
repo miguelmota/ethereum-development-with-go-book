@@ -1,6 +1,6 @@
 # Querying Transactions
 
-In the [previous section](../block-query) we learned how to read a block and all it's data given the block number. We can read the the transactions in a block by calling the `Transaction` method which returns a list of `Transaction` type. It's then trivial to iterate over the collection and retreieve any information regarding the transaction.
+In the [previous section](../block-query) we learned how to read a block and all it's data given the block number. We can read the transactions in a block by calling the `Transaction` method which returns a list of `Transaction` type. It's then trivial to iterate over the collection and retreieve any information regarding the transaction.
 
 ```go
 for _, tx := range block.Transactions() {

@@ -1,6 +1,6 @@
 # Querying Blocks
 
-Querying block with go-ethereum is very simple. You can call the client's `HeaderByNumber` to return header information about a block. It'll return the latest block header if you pass `nil`.
+Querying blocks with go-ethereum is a simple process. You can call the client's `HeaderByNumber` to return header information about a block. It'll return the latest block header if you pass `nil`.
 
 ```go
 header, err := client.HeaderByNumber(context.Background(), nil)
@@ -37,6 +37,8 @@ if err != nil {
 
 fmt.Println(count) // 144
 ```
+
+In the next section we'll learn how to query transactions in a block.
 
 ---
 
