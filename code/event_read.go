@@ -10,6 +10,7 @@ import (
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 
 	store "./contracts" // for demo
@@ -57,7 +58,11 @@ func main() {
 		for i := range vLog.Topics {
 			topics[i] = vLog.Topics[i].Hex()
 		}
-		fmt.Println(topics[0])
-		fmt.Println(topics[1])
+
+		fmt.Println(topics[0]) // 0xe79e73da417710ae99aa2088575580a60415d359acfad9cdd3382d59c80281d4
 	}
+
+	eventSignature := []byte("ItemSet(bytes32,bytes32)")
+	hash := crypto.Keccak256Hash(eventSignature)
+	fmt.Println(hash.Hex()) // 0xe79e73da417710ae99aa2088575580a60415d359acfad9cdd3382d59c80281d4
 }

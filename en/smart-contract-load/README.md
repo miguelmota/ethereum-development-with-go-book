@@ -2,7 +2,7 @@
 
 These section requires knowledge of how to compile a smart contract's ABI to a Go contract file. If you haven't already gone through it, please [read the section](../smart-contract-compile) first.
 
-Once you've compiled your smart contract's ABI to a Go package using the `abigen` tool, the next step is to call the "New" method, which is in the format "New<ContractName>", so in our example if you recall it's going to be *NewStore*. This initializer method takes in the address of the smart contract and returns a contract instance that you can start interact with it.
+Once you've compiled your smart contract's ABI to a Go package using the `abigen` tool, the next step is to call the "New" method, which is in the format `New<ContractName>`, so in our example if you recall it's going to be *NewStore*. This initializer method takes in the address of the smart contract and returns a contract instance that you can start interact with it.
 
 ```go
 address := common.HexToAddress("0x147B8eb97fD247D06C4006D269c90C1908Fb5D54")
