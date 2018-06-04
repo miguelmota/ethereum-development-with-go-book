@@ -2,5 +2,7 @@
 _book
 todo.txt
 *.pdf
+*.epub
+*.mobi
 deploy.sh
 node_modules
