@@ -1,5 +1,53 @@
 # Subscribing to Event Logs
 
+First thing we need to do in order to subscribe to event logs is dial to a websocket enabled Ethereum client. Fortunately for us, Infura supports websockets.
+
+```go
+client, err := ethclient.Dial("wss://rinkeby.infura.io/ws")
+if err != nil {
+  log.Fatal(err)
+}
+```
+
+The next step is to create a filter query. In this example we'll be reading all events coming from the example contract that we've created in the previous lessons.
+
+```go
+contractAddress := common.HexToAddress("0x147B8eb97fD247D06C4006D269c90C1908Fb5D54")
+query := ethereum.FilterQuery{
+  Addresses: []common.Address{contractAddress},
+}
+```
+
+The way we'll be receiving events is through a Go channel. Let's create one with type of `Log` from the go-ethereum `core/types` package.
+
+```go
+logs := make(chan types.Log)
+```
+
+Now all we have to do is subscribe by calling `SubscribeFilterLogs` from the client, which takes in the query options and the output channel. This will return a subscription struct containing unsubscribe and error methods.
+
+```go
+sub, err := client.SubscribeFilterLogs(context.Background(), query, logs)
+if err != nil {
+  log.Fatal(err)
+}
+```
+
+Finally all we have to do is setup an continous loop with a select statement to read in either new log events or the subscription error.
+
+```go
+for {
+  select {
+  case err := <-sub.Err():
+    log.Fatal(err)
+  case vLog := <-logs:
+    fmt.Println(vLog) // pointer to event log
+  }
+}
+```
+
+You'll have to parse the log entries, which we learned how to do in the [previous section](../event-read).
+
 ---
 
 ### Full code
@@ -61,7 +109,7 @@ func main() {
 		Addresses: []common.Address{contractAddress},
 	}
 
-	var logs = make(chan types.Log)
+	logs := make(chan types.Log)
 	sub, err := client.SubscribeFilterLogs(context.Background(), query, logs)
 	if err != nil {
 		log.Fatal(err)

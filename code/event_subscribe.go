@@ -22,7 +22,7 @@ func main() {
 		Addresses: []common.Address{contractAddress},
 	}
 
-	var logs = make(chan types.Log)
+	logs := make(chan types.Log)
 	sub, err := client.SubscribeFilterLogs(context.Background(), query, logs)
 	if err != nil {
 		log.Fatal(err)
