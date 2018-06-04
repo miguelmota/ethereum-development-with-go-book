@@ -24,7 +24,11 @@ if err != nil {
 fmt.Println(balance) // 25729324269165216042
 ```
 
-**Full code** [account_balance.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/account_balance.go)
+---
+
+### Full code
+
+[account_balance.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/account_balance.go)
 
 ```go
 package main

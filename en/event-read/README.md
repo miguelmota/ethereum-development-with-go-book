@@ -71,7 +71,9 @@ fmt.Println(hash.Hex()) // 0xe79e73da417710ae99aa2088575580a60415d359acfad9cdd33
 
 That's all there is to reading logs. In the next section we'll learn how to subscribe to log events.
 
-**Full code**
+---
+
+### Full code
 
 Commands
 

@@ -12,7 +12,11 @@ fmt.Println(address.Hex()) // 0x71C7656EC7ab88b098defB751B7401B5f6d8976F
 
 Pretty much you'd use this type anywhere you'd pass an ethereum address to methods from go-ethereum.
 
-**Full code** [address.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/address.go)
+---
+
+### Full code
+
+[address.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/address.go)
 
 ```go
 package main

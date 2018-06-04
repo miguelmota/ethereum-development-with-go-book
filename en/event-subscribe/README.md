@@ -1,6 +1,8 @@
 # Subscribing to Event Logs
 
-**Full code**
+---
+
+### Full code
 
 Commands
 

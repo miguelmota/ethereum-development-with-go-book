@@ -31,7 +31,9 @@ _ = instance // will be using the instance in the next section
 
 Yes it's that simply. You can take the transaction hash and see the deployment status on Etherscan: [https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0](https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0)
 
-**Full code**
+---
+
+### Full code
 
 Commands
 

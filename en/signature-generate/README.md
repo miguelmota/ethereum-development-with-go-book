@@ -32,7 +32,11 @@ fmt.Println(hexutil.Encode(signature)) // 0x789a80053e4927d0a898db8e065e948f5cf0
 
 Now that we have successfully generated the signature, in the next section we'll learn how to verify that the signature indeed was signed by the holder of that private key.
 
-**Full code** [signature_generate.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/signature_generate.go)
+---
+
+### Full code
+
+[signature_generate.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/signature_generate.go)
 
 ```go
 package main

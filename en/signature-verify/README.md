@@ -57,7 +57,11 @@ fmt.Println(verified) // true
 
 These are the basics in generating and verifying ECDSA signatures with the go-ethereum package.
 
-**Full code** [signature_verify.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/signature_verify.go)
+---
+
+### Full code
+
+[signature_verify.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/signature_verify.go)
 
 ```go
 package main

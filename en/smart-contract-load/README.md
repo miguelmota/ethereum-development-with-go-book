@@ -14,7 +14,9 @@ if err != nil {
 _ = instance // we'll be using this in the next section
 ```
 
-**Full code**
+---
+
+### Full code
 
 Commands
 

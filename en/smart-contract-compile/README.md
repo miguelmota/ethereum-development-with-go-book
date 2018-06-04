@@ -85,8 +85,9 @@ abigen --bin=Store.bin --abi=Store.abi --pkg=store --out=Store.go
 
 That's it for this lesson. In the next lessons we'll learn how to deploy the smart contract, and then interact with it.
 
+---
 
-**Full code**
+### Full code
 
 Commands
 

@@ -66,7 +66,11 @@ fmt.Println(tx.Hash().Hex()) // 0x5d49fcaa394c97ec8a9c3e7bd9e8388d420fb050a52083
 fmt.Println(isPending)       // false
 ```
 
-**Full code** [transactions.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transactions.go)
+---
+
+### Full code
+
+[transactions.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transactions.go)
 
 ```go
 package main

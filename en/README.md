@@ -14,6 +14,14 @@ Ethereum is quickly evolving and things may go out of date sooner than anticipat
 
 [https://ethereum-go-book.org/ethereum-development-with-go.pdf](https://ethereum-go-book.org/ethereum-development-with-go.pdf)
 
+#### EPUB
+
+[https://ethereum-go-book.org/ethereum-development-with-go.epub](https://ethereum-go-book.org/ethereum-development-with-go.epub)
+
+#### MOBI
+
+[https://ethereum-go-book.org/ethereum-development-with-go.mobi](https://ethereum-go-book.org/ethereum-development-with-go.mobi)
+
 ## Introduction
 
 > Ethereum is an open-source, public, blockchain-based distributed computing platform and operating system featuring smart contract (scripting) functionality. It supports a modified version of Nakamoto consensus via transaction based state transitions.

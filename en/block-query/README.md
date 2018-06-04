@@ -38,7 +38,11 @@ if err != nil {
 fmt.Println(count) // 144
 ```
 
-**Full code** [blocks.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/blocks.go)
+---
+
+### Full code
+
+[blocks.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/blocks.go)
 
 ```go
 package main

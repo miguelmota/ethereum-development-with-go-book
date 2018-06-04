@@ -90,7 +90,9 @@ fmt.Println(string(result[:])) // "bar"
 
 There you have it.
 
-**Full code**
+---
+
+### Full code
 
 Commands
 

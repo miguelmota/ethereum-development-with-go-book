@@ -13,7 +13,9 @@ if err != nil {
 fmt.Println(version) // "1.0"
 ```
 
-**Full code**
+---
+
+### Full code
 
 Commands
 

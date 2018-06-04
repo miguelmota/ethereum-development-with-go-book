@@ -14,6 +14,14 @@
 
 [https://ethereum-go-book.org/ethereum-development-with-go.pdf](https://ethereum-go-book.org/ethereum-development-with-go.pdf)
 
+## EPUB
+
+[https://ethereum-go-book.org/ethereum-development-with-go.epub](https://ethereum-go-book.org/ethereum-development-with-go.epub)
+
+## MOBI
+
+[https://ethereum-go-book.org/ethereum-development-with-go.mobi](https://ethereum-go-book.org/ethereum-development-with-go.mobi)
+
 ## License
 
 [CC0-1.0](./LICENSE.md)

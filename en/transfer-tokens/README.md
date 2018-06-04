@@ -104,7 +104,11 @@ fmt.Printf("tx sent: %s", signedTx.Hash().Hex()) // tx sent: 0xa56316b637a94c4cc
 
 You can check the progress on Etherscan: [https://rinkeby.etherscan.io/tx/0xa56316b637a94c4cc0331c73ef26389d6c097506d581073f927275e7a6ece0bc](https://rinkeby.etherscan.io/tx/0xa56316b637a94c4cc0331c73ef26389d6c097506d581073f927275e7a6ece0bc)
 
-**Full code** [transfer_tokens.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transfer_tokens.go)
+---
+
+### Full code
+
+[transfer_tokens.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transfer_tokens.go)
 
 ```go
 package main
