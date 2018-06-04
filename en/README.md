@@ -8,19 +8,19 @@ Ethereum is quickly evolving and things may go out of date sooner than anticipat
 
 #### Online
 
-[https://ethereum-go-book.org](https://ethereum-go-book.org/)
+[https://goethereumbook.org](https://goethereumbook.org/)
 
 #### PDF
 
-[https://ethereum-go-book.org/ethereum-development-with-go.pdf](https://ethereum-go-book.org/ethereum-development-with-go.pdf)
+[https://goethereumbook.org/ethereum-development-with-go.pdf](https://goethereumbook.org/ethereum-development-with-go.pdf)
 
 #### EPUB
 
-[https://ethereum-go-book.org/ethereum-development-with-go.epub](https://ethereum-go-book.org/ethereum-development-with-go.epub)
+[https://goethereumbook.org/ethereum-development-with-go.epub](https://goethereumbook.org/ethereum-development-with-go.epub)
 
 #### MOBI
 
-[https://ethereum-go-book.org/ethereum-development-with-go.mobi](https://ethereum-go-book.org/ethereum-development-with-go.mobi)
+[https://goethereumbook.org/ethereum-development-with-go.mobi](https://goethereumbook.org/ethereum-development-with-go.mobi)
 
 ## Introduction
 
