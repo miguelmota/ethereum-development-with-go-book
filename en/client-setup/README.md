@@ -14,7 +14,7 @@ You may also pass the path to the IPC endpoint file if you have a local instance
 client, err := ethclient.Dial("/home/user/.ethereum/geth.ipc")
 ```
 
-Using the ethclient is a fundamental thing you'll need to start with for every Go Ethereum project.
+Using the ethclient is a necessary thing you'll need to start with for every Go Ethereum project and you'll be seeing this step a lot throughout this book.
 
 ---
 

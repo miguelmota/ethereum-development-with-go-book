@@ -27,6 +27,8 @@
 * [Swarm](swarm/README.md)
   * [Storing Data on Swarm](swarm-store/README.md)
   * [Reading Data on Swarm](swarm-read/README.md)
+* [Utilities](util/README.md)
+  * [Collection of Utility Functions](util-go/README.md)
 * [Resources](resources/README.md)
 
 * [Glossary](GLOSSARY.md)

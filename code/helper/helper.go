@@ -74,25 +74,6 @@ func (s *Service) GetTokenBalance(_tokenAddress string, _accountAddress string) 
 	return bal, nil
 }
 
-// GetTokenAllowance get token allowance
-func (s *Service) GetTokenAllowance(_tokenAddress string, _accountAddress string, _spenderAddress string) (*big.Int, error) {
-	var allowed *big.Int
-	tokenAddress := common.HexToAddress(_tokenAddress)
-	accountAddress := common.HexToAddress(_accountAddress)
-	spenderAddress := common.HexToAddress(_spenderAddress)
-	instance, err := token.NewTokenCaller(tokenAddress, s.Client)
-	if err != nil {
-		return allowed, err
-	}
-
-	allowed, err = instance.Allowance(&bind.CallOpts{Pending: false}, accountAddress, spenderAddress)
-	if err != nil {
-		return allowed, err
-	}
-
-	return allowed, nil
-}
-
 // GetTokenDecimals get token decimals
 func (s *Service) GetTokenDecimals(tokenAddress string) (*big.Int, error) {
 	var decimals *big.Int

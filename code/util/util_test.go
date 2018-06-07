@@ -1,13 +1,11 @@
-// +build unit
-
-package ethereum
+package util
 
 import (
-	"encoding/hex"
 	"math/big"
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/shopspring/decimal"
 )
 
@@ -49,8 +47,6 @@ func TestIsZeroAddress(t *testing.T) {
 	validAddress := common.HexToAddress("0x323b5d4c32345ced77393b3530b1eed0f346429d")
 	zeroAddress := common.HexToAddress("0x0000000000000000000000000000000000000000")
 
-	// Test common.Address input
-
 	{
 		isZeroAddress := IsZeroAddress(validAddress)
 
@@ -66,8 +62,6 @@ func TestIsZeroAddress(t *testing.T) {
 			t.Error("Expected to be true")
 		}
 	}
-
-	// Test string input
 
 	{
 		isZeroAddress := IsZeroAddress(validAddress.Hex())
@@ -86,39 +80,10 @@ func TestIsZeroAddress(t *testing.T) {
 	}
 }
 
-func TestGetSigRSV(t *testing.T) {
-	t.Parallel()
-	sig, err := hex.DecodeString("1f4ab7e26711f235331edc67bd697fd0c7628dd5ffcab333870640dee329914b2bce958fb3ee54817b1d5102e364a9164f46f732f4a02a9d5cd9569b085f211200")
-	if err != nil {
-		t.Errorf("Got error %s", err)
-	}
-
-	expectedR := "0x1f4ab7e26711f235331edc67bd697fd0c7628dd5ffcab333870640dee329914b"
-	expectedS := "0x2bce958fb3ee54817b1d5102e364a9164f46f732f4a02a9d5cd9569b085f2112"
-	expectedV := 27
-	rsv := GetSigRSV(sig)
-	if expectedR != rsv.R {
-		t.Errorf("Expected %s, got %s", expectedR, rsv.R)
-	}
-
-	if expectedS != rsv.S {
-		t.Errorf("Expected %s, got %s", expectedS, rsv.S)
-	}
-
-	if expectedV != rsv.V {
-		t.Errorf("Expected %v, got %v", expectedV, rsv.V)
-	}
-}
-
-func TestGetSigRSVBytes(t *testing.T) {
-	t.Parallel()
-	// TODO
-}
-
-func TestDecimalsToWei(t *testing.T) {
+func TestToWei(t *testing.T) {
 	t.Parallel()
 	amount := decimal.NewFromFloat(0.02)
-	got := DecimalsToWei(amount, 18)
+	got := ToWei(amount, 18)
 	expected := new(big.Int)
 	expected.SetString("20000000000000000", 10)
 	if got.Cmp(expected) != 0 {
@@ -126,25 +91,15 @@ func TestDecimalsToWei(t *testing.T) {
 	}
 }
 
-func TestEthToWei(t *testing.T) {
-	t.Parallel()
-	amountInEth := decimal.NewFromFloat(0.02)
-	got := EthToWei(amountInEth)
-	expected := new(big.Int)
-	expected.SetString("20000000000000000", 10)
-	if got.Cmp(expected) != 0 {
-		t.Errorf("Expected %s, got %s", expected, got)
-	}
-}
-
-func TestWeiToDecimals(t *testing.T) {
+func TestToDecimal(t *testing.T) {
 	t.Parallel()
 	weiAmount := big.NewInt(0)
 	weiAmount.SetString("20000000000000000", 10)
-	ethAmount := WeiToDecimals(weiAmount, int(18))
-	expected := decimal.NewFromFloat(0.02)
-	if !ethAmount.Equals(expected) {
-		t.Error("%s does not equal expected %s", ethAmount, expected)
+	ethAmount := ToDecimal(weiAmount, 18)
+	f64, _ := ethAmount.Float64()
+	expected := 0.02
+	if f64 != expected {
+		t.Errorf("%v does not equal expected %v", ethAmount, expected)
 	}
 }
 
@@ -157,6 +112,25 @@ func TestCalcGasLimit(t *testing.T) {
 	expected.SetString("42000000000000", 10)
 	gasCost := CalcGasCost(gasLimit, gasPrice)
 	if gasCost.Cmp(expected) != 0 {
-		t.Error("expected %s, got %s", gasCost, expected)
+		t.Errorf("expected %s, got %s", gasCost, expected)
+	}
+}
+
+func TestSigRSV(t *testing.T) {
+	t.Parallel()
+
+	sig := "0x789a80053e4927d0a898db8e065e948f5cf086e32f9ccaa54c1908e22ac430c62621578113ddbb62d509bf6049b8fb544ab06d36f916685a2eb8e57ffadde02301"
+	r, s, v := SigRSV(sig)
+	expectedR := "789a80053e4927d0a898db8e065e948f5cf086e32f9ccaa54c1908e22ac430c6"
+	expectedS := "2621578113ddbb62d509bf6049b8fb544ab06d36f916685a2eb8e57ffadde023"
+	expectedV := uint8(28)
+	if hexutil.Encode(r[:])[2:] != expectedR {
+		t.FailNow()
+	}
+	if hexutil.Encode(s[:])[2:] != expectedS {
+		t.FailNow()
+	}
+	if v != expectedV {
+		t.FailNow()
 	}
 }
