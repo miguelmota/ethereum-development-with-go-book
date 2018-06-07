@@ -16,6 +16,39 @@ client, err := ethclient.Dial("/home/user/.ethereum/geth.ipc")
 
 Using the ethclient is a necessary thing you'll need to start with for every Go Ethereum project and you'll be seeing this step a lot throughout this book.
 
+## Using Ganache
+
+[Ganache](https://github.com/trufflesuite/ganache-cli) (formally known as *testrpc*) is an Ethereum implementation written in Node.js meant for testing purposes while developing dapps locally. Here we'll walk you through on how to install it and connect to it.
+
+First install ganache via [NPM](https://www.npmjs.com/package/ganache-cli).
+
+```bash
+npm install -g ganache-cli
+```
+
+Then run the ganache CLI client.
+
+```bash
+ganache-cli
+```
+
+Now connect to the ganache RPC host on `http://localhost:8545`.
+
+```go
+client, err := ethclient.Dial("http://localhost:8545")
+if err != nil {
+  log.Fatal(err)
+}
+```
+
+You may also you the same mnemonic when starting ganache to generate the same sequence of public addresses.
+
+```bash
+ganache-cli -m "much repair shock carbon improve miss forget sock include bullet interest solution"
+```
+
+I highly recommend getting familiar with ganache by reading their [documentation](http://truffleframework.com/ganache/).
+
 ---
 
 ### Full code

@@ -200,6 +200,10 @@ A proof-of-work system used to limit email spam and denial-of-service attacks, a
 
 The number of hashes that can be performed by a bitcoin miner in a given period of time (usually a second).
 
+## HD Wallet
+
+An HD Wallet, or Hierarchical Deterministic wallet, is a new-age digital wallet that automatically generates a hierarchical tree-like structure of private/public addresses (or keys), thereby addressing the problem of the user having to generate them on his own.
+
 ## Infura
 
 Infura provides secure, reliable, and scalable gateways to the Ethereum network. [https://infura.io/](https://infura.io/)
@@ -223,6 +227,10 @@ A peer-to-peer cryptocurrency based on the Scrypt proof-of-work network. Sometim
 ## Mining
 
 The process by which transactions are verified and added to a blockchain. This process of solving cryptographic problems using computing hardware also triggers the release of cryptocurrencies.
+
+## Mnemonic
+
+A mnemonic phrase, mnemonic recovery phrase or mnemonic seed is a list of words used as a seed to generate the master private key and master chain code for an HD wallet.
 
 ## Multi-signature
 

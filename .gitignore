@@ -6,3 +6,4 @@ todo.txt
 *.mobi
 deploy.sh
 node_modules
+sandbox.go
