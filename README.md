@@ -10,17 +10,13 @@
 
 [https://goethereumbook.org](https://ethereum-go-book.org/)
 
-## PDF
+## E-book
 
-[https://goethereumbook.org/ethereum-development-with-go.pdf](https://goethereumbook.org/ethereum-development-with-go.pdf)
+The e-book is avaiable in different formats.
 
-## EPUB
-
-[https://goethereumbook.org/ethereum-development-with-go.epub](https://goethereumbook.org/ethereum-development-with-go.epub)
-
-## MOBI
-
-[https://goethereumbook.org/ethereum-development-with-go.mobi](https://goethereumbook.org/ethereum-development-with-go.mobi)
+- [PDF](https://goethereumbook.org/ethereum-development-with-go.pdf)
+- [EPUB](https://goethereumbook.org/ethereum-development-with-go.epub)
+- [MOBI](https://goethereumbook.org/ethereum-development-with-go.mobi)
 
 ## License
 

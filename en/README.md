@@ -10,7 +10,7 @@ Ethereum is quickly evolving and things may go out of date sooner than anticipat
 
 [https://goethereumbook.org](https://goethereumbook.org/)
 
-#### Ebook
+#### E-book
 
 The e-book is avaiable in different formats.
 
