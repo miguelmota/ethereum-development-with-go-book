@@ -38,6 +38,14 @@ In this book we'll be using the [go-ethereum](https://github.com/ethereum/go-eth
 
 Etherscan is a website for exploring and drilling down on data that lives on the blockchain. These type of websites are known as *Block Explorers* because they allow you to explore the contents of block (which contain transaction), which are fundamental components of the blockchain. The block contains the data of all the transactions that have been mined within the allocated block time. The block explorer also allows you to view events that were emitted during the execution of the smart contract as well as things such as how much was paid for the gas and amount of ether was transacted, etc...
 
+### Swarm and Whisper
+
+We'll also diving a little bit into Swarm and Whisper, a file storage protocol, and a peer-to-peer messaging protocol respectively, which are the other two pillars requried for achieving completely decentralized and distributed application.
+
+<img src="https://user-images.githubusercontent.com/168240/41317815-2e287afe-6e4b-11e8-89d8-4ec959988b64.png" width="600"/>
+
+<sup><sub><a href="https://ethereum.stackexchange.com/a/388/5093">photo credit</a></sub></sup>
+
 #### About the Author
 
 This book was written by [Miguel Mota](https://github.com/miguelmota), a software developer working in the blockchain space from the always sunny Southern California.
