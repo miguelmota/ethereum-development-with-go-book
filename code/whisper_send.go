@@ -28,13 +28,15 @@ func main() {
 	}
 	fmt.Println(hexutil.Encode(publicKey)) // 0x04f17356fd52b0d13e5ede84f998d26276f1fc9d08d9e73dcac6ded5f3553405db38c2f257c956f32a0c1fca4c3ff6a38a2c277c1751e59a574aecae26d3bf5d1d
 
-	messageHash, err := client.Post(context.Background(), whisperv6.NewMessage{
+	message := whisperv6.NewMessage{
+		Payload:   []byte("Hello"),
+		PublicKey: publicKey,
 		TTL:       60,
 		PowTime:   2,
 		PowTarget: 2.5,
-		Payload:   []byte("Hello"),
-		PublicKey: publicKey,
-	})
+	}
+
+	messageHash, err := client.Post(context.Background(), message)
 	if err != nil {
 		log.Fatal(err)
 	}
