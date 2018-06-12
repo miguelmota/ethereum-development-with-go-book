@@ -1,3 +1,0 @@
-# Storing Data on Swarm
-
-Coming soon...

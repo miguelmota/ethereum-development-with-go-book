@@ -1,3 +1,0 @@
-# Reading Data on Swarm
-
-Coming soon...
