@@ -25,7 +25,7 @@ Export the environment variable `BZZKEY` mapping to the geth account address we 
 export BZZKEY=970ef9790b54425bea2c02e25cab01e48cf92573
 ```
 
-And now run swarm with the specified account to be our swarm account.
+And now run swarm with the specified account to be our swarm account. Swarm by default will run on port `8500`.
 
 ```bash
 $ swarm --bzzaccount $BZZKEY
