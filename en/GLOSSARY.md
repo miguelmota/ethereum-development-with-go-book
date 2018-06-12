@@ -316,6 +316,10 @@ A change to the bitcoin protocol wherein only previously valid blocks/transactio
 
 A method of encrypting text (cyphertext) in which a cryptographic key and algorithm are applied to each binary digit in a data stream, one bit at a time.
 
+## Swarm
+
+Decentralized file storage as part of Ethereum.
+
 ## Token
 
 Is a digital identity for something that can be owned.
@@ -339,6 +343,10 @@ Blockchains that do not have a single owner; they cannot be owned. The purpose o
 ## Wallet
 
 A file that contains a collection of private keys.
+
+## Whisper
+
+A peer-to-peer messaging system as part of Ethereum.
 
 ---
 
