@@ -8,7 +8,7 @@ geth --rpc --shh --ws
 
 Now in our Go application we'll import the go-ethereum whisper client package found at `whisper/shhclient` and initialize the client to connect our local geth node over websockets using the default websocket port `8546`.
 
-```
+```go
 client, err := shhclient.Dial("ws://127.0.0.1:8546")
 if err != nil {
   log.Fatal(err)

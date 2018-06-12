@@ -50,7 +50,7 @@ geth --shh --rpc --ws
 
 [whisper_subscribe.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/whisper_subscribe.go)
 
-```
+```go
 package main
 
 import (
