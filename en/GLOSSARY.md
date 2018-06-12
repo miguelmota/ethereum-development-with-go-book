@@ -212,6 +212,10 @@ Infura provides secure, reliable, and scalable gateways to the Ethereum network.
 
 (ICO) is an event in which a new cryptocurrency sells advance tokens from its overall coinbase, in exchange for upfront capital. ICOs are frequently used for developers of a new cryptocurrency to raise capital.
 
+## IPFS
+
+InterPlanetary File System (IPFS) is a protocol and network designed to create a content-addressable, peer-to-peer method of storing and sharing hypermedia in a distributed file system.
+
 ## Keccak-256
 
 The hashing algorithm used in Ethereum.
