@@ -31,6 +31,8 @@ if err != nil {
 
 Now we can invoke the `Upload` function from our client instance giving it the file object. The second argument is an optional existing manifest string to add the file to, otherwise it'll create on for us.
 
+The hash returned is the swarm hash of a manifest that contains the hello.txt file as its only entry. So by default both the primary content and the manifest is uploaded. The manifest makes sure you could retrieve the file with the correct mime type.
+
 ```go
 manifestHash, err := client.Upload(file, "")
 if err != nil {
