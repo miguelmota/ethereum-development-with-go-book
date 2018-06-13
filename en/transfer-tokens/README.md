@@ -163,7 +163,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	value := big.NewInt(0)      // in wei (0 eth)
+	value := big.NewInt(0) // in wei (0 eth)
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
 		log.Fatal(err)

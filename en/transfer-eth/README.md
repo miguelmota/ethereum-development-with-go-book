@@ -146,7 +146,10 @@ func main() {
 
 	value := big.NewInt(1000000000000000000) // in wei (1 eth)
 	gasLimit := uint64(21000)                // in units
-	gasPrice := big.NewInt(30000000000)      // in wei (30 gwei)
+	gasPrice, err := client.SuggestGasPrice(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
 	var data []byte
