@@ -48,7 +48,7 @@ We'll also diving a little bit into Swarm and Whisper, a file storage protocol, 
 
 <img src="https://user-images.githubusercontent.com/168240/41317815-2e287afe-6e4b-11e8-89d8-4ec959988b64.png" width="600"/>
 
-<sup><sub><a href="https://ethereum.stackexchange.com/a/388/5093">photo credit</a></sub></sup>
+<sup><sub><a href="https://ethereum.stackexchange.com/a/388/5093">image credit</a></sub></sup>
 
 #### About the Author
 
