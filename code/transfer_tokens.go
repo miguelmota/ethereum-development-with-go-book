@@ -7,6 +7,7 @@ import (
 	"log"
 	"math/big"
 
+	ethereum "github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/core/types"
@@ -38,8 +39,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	value := big.NewInt(0)      // in wei (0 eth)
-	gasLimit := uint64(2000000) // in units
+	value := big.NewInt(0) // in wei (0 eth)
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -66,6 +66,15 @@ func main() {
 	data = append(data, methodID...)
 	data = append(data, paddedAddress...)
 	data = append(data, paddedAmount...)
+
+	gasLimit, err := client.EstimateGas(context.Background(), ethereum.CallMsg{
+		To:   &toAddress,
+		Data: data,
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(gasLimit) // 23256
 
 	tx := types.NewTransaction(nonce, tokenAddress, value, gasLimit, gasPrice, data)
 	signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)

@@ -14,12 +14,6 @@ Token transfers don't require ETH to be transferred so set the value to `0`.
 value := big.NewInt(0)
 ```
 
-The gas limit for a standard ERC-20 token transfer is `200000` units.
-
-```go
-gasLimit := uint64(200000) // in units
-```
-
 Store the address you'll be sending tokens to in a variable.
 
 ```go
@@ -78,6 +72,20 @@ var data []byte
 data = append(data, methodID...)
 data = append(data, paddedAddress...)
 data = append(data, paddedAmount...)
+```
+
+The gas limit will depend on the size of the transaction data and computational steps that the smart contract has to perform. Fortunately the client provides the method `EstimateGas` which is able to esimate the gas for us. This function takes a `CallMsg` struct from the `ethereum` package where we specify the data and to address. It'll return the estimated gas limit units we we'll be needing for generating the complete transaction.
+
+```go
+gasLimit, err := client.EstimateGas(context.Background(), ethereum.CallMsg{
+  To:   &toAddress,
+  Data: data,
+})
+if err != nil {
+  log.Fatal(err)
+}
+
+fmt.Println(gasLimit) // 23256
 ```
 
 Next thing we need to do is generate the transaction type, similar to what you've seen in the transfer ETH section, EXCEPT the *to* field will be the token smart contract address. This is a gotcha that confuses people. We must also include the value field which will be 0 ETH, and the data bytes that we just generated.
@@ -156,7 +164,6 @@ func main() {
 	}
 
 	value := big.NewInt(0)      // in wei (0 eth)
-	gasLimit := uint64(2000000) // in units
 	gasPrice, err := client.SuggestGasPrice(context.Background())
 	if err != nil {
 		log.Fatal(err)
@@ -183,6 +190,15 @@ func main() {
 	data = append(data, methodID...)
 	data = append(data, paddedAddress...)
 	data = append(data, paddedAmount...)
+
+	gasLimit, err := client.EstimateGas(context.Background(), ethereum.CallMsg{
+		To:   &toAddress,
+		Data: data,
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(gasLimit) // 23256
 
 	tx := types.NewTransaction(nonce, tokenAddress, value, gasLimit, gasPrice, data)
 	signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)

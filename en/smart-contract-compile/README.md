@@ -35,7 +35,9 @@ make
 make devtools
 ```
 
-We'll create a simple smart contract to test with. This simple contract will be a key/value store with only 1 external method to set a key/value pair by anyone. We also added an event to emit after the value is set.
+We'll create a simple smart contract to test with. More complex smart contracts, and smart contract development in general is out of scope for this book. I highly recommend checking out [truffle framework](http://truffleframework.com/) for developing and testing smart contracts.
+
+This simple contract will be a key/value store with only 1 external method to set a key/value pair by anyone. We also added an event to emit after the value is set.
 
 ```solidity
 pragma solidity ^0.4.24;
@@ -56,6 +58,8 @@ contract Store {
   }
 }
 ```
+
+Although this smart contract is simple and will work for this example,
 
 Now we can generate the ABI from a solidity source file.
 

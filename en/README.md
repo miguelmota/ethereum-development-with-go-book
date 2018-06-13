@@ -4,7 +4,7 @@ description: Learn how to deploy, compile, interact with smart contracts, send t
 
 # Ethereum Development with Go
 
-This little book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language. You'll learn how to interact with smart contracts using golang and much more.
+This little book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language. It is meant to provide a starting point if you're already pretty familiar with Ethereum and Go but don't know where to to start on bringing it all together. You'll learn how to interact with smart contracts and perform general blockchain tasks and queries using Golang.
 
 This book is composed of many examples that I wish I had encountered before when I first started doing Ethereum development with Go. This book will walk you through most things that you should be aware of in order for you to be a productive Ethereum developer using Go.
 
@@ -38,9 +38,9 @@ Solidity is a turing complete programming language for writing smart contracts. 
 
 In this book we'll be using the [go-ethereum](https://github.com/ethereum/go-ethereum), the official Ethereum implementation in Go, to interact with the blockchain. Go-ethereum, also known as *geth* for short, is the most popular Ethereum client and because it's in Go, it provides everything we'll ever need for reading and writing to the blockchain when developing applications using Golang.
 
-#### Etherscan
+#### Block Explorers
 
-Etherscan is a website for exploring and drilling down on data that lives on the blockchain. These type of websites are known as *Block Explorers* because they allow you to explore the contents of block (which contain transaction), which are fundamental components of the blockchain. The block contains the data of all the transactions that have been mined within the allocated block time. The block explorer also allows you to view events that were emitted during the execution of the smart contract as well as things such as how much was paid for the gas and amount of ether was transacted, etc...
+[Etherscan](https://etherscan.io/) is a website for exploring and drilling down on data that lives on the blockchain. These type of websites are known as *Block Explorers* because they allow you to explore the contents of block (which contain transaction), which are fundamental components of the blockchain. The block contains the data of all the transactions that have been mined within the allocated block time. The block explorer also allows you to view events that were emitted during the execution of the smart contract as well as things such as how much was paid for the gas and amount of ether was transacted, etc...
 
 ### Swarm and Whisper
 
