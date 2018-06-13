@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to deploy a smart contract with Go.
+---
+
 # Deploying a Smart Contract
 
 If you haven't already, check out the [section on smart contract compiation](../smart-contract-compile) since this lesson requires knowledge on compiling a solidity smart contract to a Go contract file.

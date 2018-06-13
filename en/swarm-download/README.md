@@ -1,3 +1,7 @@
+---
+description: Tutorial on downloadig files from swarm in Go.
+---
+
 # Downloading Files from Swarm
 
 In the [previous section](../swarm-upload) we uploaded a hello.txt file to swarm and in return we got a manifest hash.

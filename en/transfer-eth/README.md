@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to transfer ETH to another wallet or smart contract with Go.
+---
+
 # Transferring ETH
 
 In this lesson you'll learn how to transfer ETH from one account to another account. If you're already familar with Ethereum then you know that a transaction consists of the amount of ether you're transferring, the gas gas limit, the gas price, a nonce, the receiving address, and optionally data. The transaction must be signed with the private key of the sender before it's broadcasted to the network.

@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to subscribe to smart contract events with Go.
+---
+
 # Subscribing to Event Logs
 
 First thing we need to do in order to subscribe to event logs is dial to a websocket enabled Ethereum client. Fortunately for us, Infura supports websockets.

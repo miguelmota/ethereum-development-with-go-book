@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to compile a smart contract and read the ABI with Go.
+---
+
 # Smart Contract Compilation & ABI
 
 In order to interact with a smart contract, we first must generate the ABI (application binary interface) of the contract and compile the ABI to a format that we can import into our Go application.

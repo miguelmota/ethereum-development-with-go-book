@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to query a smart contract with Go.
+---
+
 # Querying a Smart Contract
 
 These section requires knowledge of how to compile a smart contract's ABI to a Go contract file. If you haven't already gone through it, please [read the section](../smart-contract-compile) first.

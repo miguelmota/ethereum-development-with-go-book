@@ -1,3 +1,7 @@
+---
+description: Tutorial on uploading files to swarm with go.
+---
+
 # Uploading Files to Swarm
 
 In the [previous section](../swarm-setup) we setup a swarm node running as a daemon on port `8500`. Now import the swarm package go-ethereum `swarm/api/client`. I'll be aliasing the package to `bzzclient`.

@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to transfer ERC-20 tokens to another wallet or smart contract with Go.
+---
+
 # Transferring Tokens
 
 This section will walk you through on how to transfer ERC-20 tokens. To learn how to transfer other types tokens that are non-ERC-20 compliant check out the [section on smart contracts](../smart-contracts) to learn how to interact with smart contracts.

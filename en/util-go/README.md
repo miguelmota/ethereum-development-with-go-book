@@ -1,3 +1,7 @@
+---
+description: Collection of useful Ethereum utility functions in Go.
+---
+
 # Collection of Utility Functions
 
 The utility functions' implementation are found below in the [full code](#full-code) section. They are generous in what they accept. Here we'll be showing examples of usage.

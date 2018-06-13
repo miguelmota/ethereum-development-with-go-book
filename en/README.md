@@ -1,3 +1,7 @@
+---
+description: Learn how to deploy, compile, interact with smart contracts, send transactions, use the swarm and whisper protocols, and much more with this little guide book on Ethereum Development with Go.
+---
+
 # Ethereum Development with Go
 
 This little book is to serve as a general help guide for anyone wanting to develop Ethereum applications using the Go programming language. You'll learn how to interact with smart contracts using golang and much more.

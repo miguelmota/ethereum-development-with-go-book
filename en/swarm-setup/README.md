@@ -1,3 +1,7 @@
+---
+description: Tutorial on setting up swarm node.
+---
+
 # Setting up Swarm
 
 To run swarm you first need to install `geth` and `bzzd` which is the swarm daemon.

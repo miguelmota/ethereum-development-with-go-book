@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to generate Ethereum wallets with Go.
+---
+
 # Generating New Wallets
 
 To generate a new wallet first we need to import the go-ethereum `crypto` package that provides the `GenerateKey` method for generating a random private key.

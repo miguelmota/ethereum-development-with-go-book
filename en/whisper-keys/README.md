@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to generate whisper key pairs with Go.
+---
+
 # Generating Whisper Key Pair
 
 In whisper, messages have to be encrypted with either a symmetric or an asymmetric key to prevent them from being read by anyone other than the intended recipient.

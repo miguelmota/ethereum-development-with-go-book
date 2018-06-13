@@ -1,3 +1,7 @@
+---
+description: Tutorial on whisper with Go.
+---
+
 # Connecting Whisper Client
 
 To use whisper, we must first connect to an Ethereum node running whisper. Unfortunately, public gateways such as infura don't support whisper because there is no incentive for processing the messages for free. Infura might support whisper in the near future but for now we must run our own `geth` node. Once you [install geth](https://geth.ethereum.org/downloads/), run it with the `--shh` flag on to enable the whisper protocol, as well as the `--ws` flag to enable websocket support in order to receive messages in real time, and also enable the `--rpc` flag because we'll be communicating over RPC.

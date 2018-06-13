@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to read account balances from the blockchain with Go.
+---
+
 # Account Balances
 
 Reading the balance of an account is pretty simple; call `ethclient.BalanceAt` passing the account address and optional block number.

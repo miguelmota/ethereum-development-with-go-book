@@ -1,3 +1,7 @@
+---
+description: List of resources on Ethereum and Go.
+---
+
 # Resources
 
 - [https://github.com/ethereum/go-ethereum](https://github.com/ethereum/go-ethereum)

@@ -1,3 +1,7 @@
+---
+description: Tutorial on generating signatures with Go.
+---
+
 # Generating a Signature
 
 The components for generating a signature are: the signers private key, and the hash of the data that will be signed. Any hashing algorithm may be used as long as the output is 32 bytes. We'll be using Keccak-256 as the hashing algorithm which is what Ethereum prefers to use.

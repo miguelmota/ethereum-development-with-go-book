@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to verify signatures with Go.
+---
+
 # Verifying a Signature
 
 In the previous section we learned how to sign a piece of data with a private key in order to generate a signature. Now we'll learn how to verify the authenticiy of the signature.

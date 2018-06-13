@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to query blocks in Ethereum with Go.
+---
+
 # Querying Blocks
 
 Querying blocks with go-ethereum is a simple process. You can call the client's `HeaderByNumber` to return header information about a block. It'll return the latest block header if you pass `nil`.

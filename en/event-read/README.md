@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to read smart contract events with Go.
+---
+
 # Reading Event Logs
 
 A smart contract may optionally emit "events" which get stored a logs as part of the transaction receipt. Reading these events are pretty simple. First we need to construct a filter query. We import the `FilterQuery` struct from the go-ethereum package and initialize it with filter options. We tell it the range of blocks that we want to filter through and specify the contract address to read this logs from. In this example we'll be reading all the logs from a particular block, from the smart contract we created in the [smart contract sections](../smart-contract-compile).

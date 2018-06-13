@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to send a message on whisper with Go.
+---
+
 # Sending Messages on Whisper
 
 Before we're able to create a message, we must first have a public key to encrypt the message. In the [previous section](../whisper-keys) we learned how to generate a public and private key pair using the `NewKeyPair` function which returned a key ID that references this key pair. We now have to call the `PublicKey` function to read the key pair's public key in bytes format which we'll be using to encrypt the message.

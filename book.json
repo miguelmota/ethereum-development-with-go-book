@@ -11,8 +11,8 @@
     "website": "styles/website.css"
   },
   "plugins": [
-    "autocover",
-    "analytics"
+    "analytics",
+    "meta"
   ],
   "pluginsConfig": {
     "analytics": {
@@ -36,6 +36,22 @@
       "background": {
         "color": "#09F"
       }
+    },
+    "meta": {
+      "data": [
+        {
+          "name": "keywords",
+          "content": "ethereum, go, golang, development, examples, tutorial, explained, guide, help, reference, stackoverflow, blockchain, smart contracts, swarm, whisper, deploy, erc-20, tokens, coins, eth, gopher"
+        },
+        {
+          "name": "googlebot",
+          "content": "index,follow"
+        },
+        {
+          "name": "application-name",
+          "content": "Go Ethereum"
+        }
+      ]
     }
   }
 }

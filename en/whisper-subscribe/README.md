@@ -1,3 +1,7 @@
+---
+description: Tutorial on how to subscribe to messages on whisper with Go.
+---
+
 # Subscribing to Whisper Messages
 
 In this section we'll be subscribing to whisper messages over websockets. First thing we need is a channel that will be receiving whisper messages in the `Message` type from the `whisper/whisperv6` package.
