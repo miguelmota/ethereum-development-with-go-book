@@ -4,7 +4,7 @@ description: Tutorial on how to read account balances from the blockchain with G
 
 # Account Balances
 
-Reading the balance of an account is pretty simple; call `ethclient.BalanceAt` passing the account address and optional block number.
+Reading the balance of an account is pretty simple; call the `BalanceAt` method of the client passing it the account address and optional block number. Setting `nil` as the block number will return the latest balance.
 
 ```go
 account := common.HexToAddress("0x71c7656ec7ab88b098defb751b7401b5f6d8976f")
@@ -26,6 +26,16 @@ if err != nil {
 }
 
 fmt.Println(balance) // 25729324269165216042
+```
+
+Numbers in ethereum are dealt using the smallest possible unit because they're fixed-point precision, which in the case of ETH it's *wei*. To read the ETH value you must do the calculation `wei / 10^18`.
+
+```go
+fbalance := new(big.Float)
+fbalance.SetString(balance.String())
+ethValue := new(big.Float).Quo(fbalance, big.NewFloat(math.Pow10(18)))
+
+fmt.Println(ethValue) // 25.729324269165216041
 ```
 
 ---
@@ -68,5 +78,11 @@ func main() {
 	}
 
 	fmt.Println(balanceAt) // 25729324269165216042
+
+	fbalance := new(big.Float)
+	fbalance.SetString(balanceAt.String())
+	ethValue := new(big.Float).Quo(fbalance, big.NewFloat(math.Pow10(18)))
+
+	fmt.Println(ethValue) // 25.729324269165216041
 }
 ```

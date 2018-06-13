@@ -76,6 +76,6 @@ func main() {
 	}
 
 	fmt.Println("we have a connection")
-	_ = client // we'll use this in the next section
+	_ = client // we'll use this in the upcoming sections
 }
 ```
