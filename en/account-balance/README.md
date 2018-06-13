@@ -28,7 +28,7 @@ if err != nil {
 fmt.Println(balance) // 25729324269165216042
 ```
 
-Numbers in ethereum are dealt using the smallest possible unit because they're fixed-point precision, which in the case of ETH it's *wei*. To read the ETH value you must do the calculation `wei / 10^18`.
+Numbers in ethereum are dealt using the smallest possible unit because they're fixed-point precision, which in the case of ETH it's *wei*. To read the ETH value you must do the calculation `wei / 10^18`. Because we're dealing with big numbers we'll have to import the native Go `math` and `math/big` packages. Here's how'd you do the conversion.
 
 ```go
 fbalance := new(big.Float)
@@ -51,6 +51,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+  "math"
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/common"
