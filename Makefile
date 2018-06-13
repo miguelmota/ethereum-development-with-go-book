@@ -10,11 +10,10 @@ serve:
 build:
 	gitbook build
 
-deploy: build pdf ebook mobi
-	mv ethereum-*.pdf _book/
-	mv ethereum-*.epub _book/
-	mv ethereum-*.mobi _book/
+deploy:
 	./deploy.sh
+
+deploy/all: build pdf ebook mobi deploy
 
 pdf:
 	gitbook pdf ./ ethereum-development-with-go.pdf
