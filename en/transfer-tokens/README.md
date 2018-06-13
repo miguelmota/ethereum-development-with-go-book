@@ -74,7 +74,7 @@ data = append(data, paddedAddress...)
 data = append(data, paddedAmount...)
 ```
 
-The gas limit will depend on the size of the transaction data and computational steps that the smart contract has to perform. Fortunately the client provides the method `EstimateGas` which is able to esimate the gas for us. This function takes a `CallMsg` struct from the `ethereum` package where we specify the data and to address. It'll return the estimated gas limit units we we'll be needing for generating the complete transaction.
+The gas limit will depend on the size of the transaction data and computational steps that the smart contract has to perform. Fortunately the client provides the method `EstimateGas` which is able to esimate the gas for us. This function takes a `CallMsg` struct from the `ethereum` package where we specify the data and to address. It'll return the estimated gas limit units we'll be needing for generating the complete transaction.
 
 ```go
 gasLimit, err := client.EstimateGas(context.Background(), ethereum.CallMsg{
