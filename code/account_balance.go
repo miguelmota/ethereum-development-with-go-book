@@ -22,7 +22,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	fmt.Println(balance) // 25893860171173005034
 
 	blockNumber := big.NewInt(5532993)
@@ -30,12 +29,10 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	fmt.Println(balanceAt) // 25729324269165216042
 
 	fbalance := new(big.Float)
 	fbalance.SetString(balanceAt.String())
 	ethValue := new(big.Float).Quo(fbalance, big.NewFloat(math.Pow10(18)))
-
 	fmt.Println(ethValue) // 25.729324269165216041
 }
