@@ -351,12 +351,3 @@ A file that contains a collection of private keys.
 ## Whisper
 
 A peer-to-peer messaging system as part of Ethereum.
-
----
-
-<sup><sub>
-Credits
-
-- [https://hackernoon.com/blockchain-dictionary-f4d098c9ef89](https://hackernoon.com/blockchain-dictionary-f4d098c9ef89)
-</sub></sup>
-

@@ -36,6 +36,5 @@
   * [Subscribing to Whisper Messages](whisper-subscribe/README.md)
 * [Utilities](util/README.md)
   * [Collection of Utility Functions](util-go/README.md)
-* [Resources](resources/README.md)
-
 * [Glossary](GLOSSARY.md)
+* [Resources](resources/README.md)
