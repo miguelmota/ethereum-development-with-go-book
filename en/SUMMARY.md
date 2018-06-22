@@ -10,6 +10,7 @@
   * [Querying Transactions](transaction-query/README.md)
   * [Transferring ETH](transfer-eth/README.md)
   * [Transferring Tokens](transfer-tokens/README.md)
+  * [Subscribing to New Blocks](block-subscribe/README.md)
 * [Smart Contracts](smart-contracts/README.md)
   * [Smart Contract Compilation & ABI](smart-contract-compile/README.md)
   * [Deploying a Smart Contract](smart-contract-deploy/README.md)
