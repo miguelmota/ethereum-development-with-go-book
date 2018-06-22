@@ -174,7 +174,7 @@ An Ethereum node implementation in Golang. [https://github.com/ethereum/go-ether
 
 ## Go
 
-An awesome programming language with a cute little gopher mascot.
+Go is a programming language created at Google in 2009 by Robert Griesemer, Rob Pike, and Ken Thompson.
 
 ## Golang
 
