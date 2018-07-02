@@ -1,10 +1,11 @@
-# Ethereum Development with Go
-
-> A little book on [Ethereum](https://www.ethereum.org/) Development with [Go](https://golang.org/) (golang)
-
 <p align="center">
   <a href="https://goethereumbook.org"><img src="https://github.com/miguelmota/ethereum-development-with-go-book/raw/master/assets/cover.jpg" width="320" alt="Book cover" /></a>
 </p>
+<br>
+
+# Ethereum Development with Go
+
+> A little book on [Ethereum](https://www.ethereum.org/) Development with [Go](https://golang.org/) (golang)
 
 ## Online
 
