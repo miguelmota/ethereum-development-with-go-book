@@ -7,3 +7,5 @@ todo.txt
 deploy.sh
 node_modules
 sandbox.go
+sandbox2.go
+tmp/
