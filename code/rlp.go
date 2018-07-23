@@ -15,19 +15,37 @@ type simplestruct struct {
 }
 
 func main() {
-	s := new(simplestruct)
+	foo := &simplestruct{
+		A: 123,
+		B: "hello",
+	}
 
-	b, err := hex.DecodeString("C50583343434")
+	// encode
+
+	serialized, err := rlp.EncodeToBytes(&foo)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println(fmt.Sprintf("%x", serialized)) // c77b8568656c6c6f
+
+	// decode
+
+	bar := new(simplestruct)
+
+	b, err := hex.DecodeString("c77b8568656c6c6f")
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	r := bytes.NewReader(b)
-	err = rlp.Decode(r, &s)
+	err = rlp.Decode(r, &bar)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Println(s.A) // 55
-	fmt.Println(s.B) // "444"
+	fmt.Println(bar.A) // 123
+	fmt.Println(bar.B) // "hello"
+
+	// look at tags "-" "tail" "nil"
 }

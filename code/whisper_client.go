@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/ethereum/go-ethereum/whisper/shhclient"
@@ -13,4 +14,5 @@ func main() {
 	}
 
 	_ = client
+	fmt.Println("we have a whisper connection")
 }

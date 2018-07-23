@@ -25,9 +25,9 @@ _ = instance // we'll be using this in the next section
 Commands
 
 ```bash
-solc --abi Store.sol | awk '/JSON ABI/{x=1;next}x' > Store.abi
-solc --bin Store.sol | awk '/Binary:/{x=1;next}x' > Store.bin
-abigen --bin=Store.bin --abi=Store.abi --pkg=store --out=Store.go
+solc --abi Store.sol
+solc --bin Store.sol
+abigen --bin=Store_sol_Store.bin --abi=Store_sol_Store.abi --pkg=store --out=Store.go
 ```
 
 [Store.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contracts/Store.sol)
@@ -82,4 +82,11 @@ func main() {
 	fmt.Println("contract is loaded")
 	_ = instance
 }
+```
+
+solc version used for these examples
+
+```bash
+$ solc --version
+0.4.24+commit.e67f0147.Emscripten.clang
 ```

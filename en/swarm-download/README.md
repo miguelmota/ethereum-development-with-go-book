@@ -13,7 +13,7 @@ manifestHash := "f9192507e2e8e118bfedac428c3aa1dec4ae156e954128ec5fb27f63ee67bca
 Let's inspect the manifest by downloading it first by calling `DownloadManfest`.
 
 ```go
-manifest, err := client.DownloadManifest(manifestHash)
+manifest, isEncrypted, err := client.DownloadManifest(manifestHash)
 if err != nil {
   log.Fatal(err)
 }
@@ -55,6 +55,14 @@ As expected, it logs *hello world* which what our original file contained.
 
 ### Full code
 
+Commands
+
+```bash
+geth account new
+export BZZKEY=970ef9790b54425bea2c02e25cab01e48cf92573
+swarm --bzzaccount $BZZKEY
+```
+
 [swarm_download.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/swarm_download.go)
 
 ```go
@@ -71,10 +79,11 @@ import (
 func main() {
 	client := bzzclient.NewClient("http://127.0.0.1:8500")
 	manifestHash := "2e0849490b62e706a5f1cb8e7219db7b01677f2a859bac4b5f522afd2a5f02c0"
-	manifest, err := client.DownloadManifest(manifestHash)
+	manifest, isEncrypted, err := client.DownloadManifest(manifestHash)
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(isEncrypted) // false
 
 	for _, entry := range manifest.Entries {
 		fmt.Println(entry.Hash)        // 42179060941352ba7b400b16c40f1e1290423a826de2a70587034dc14bc4ab2f

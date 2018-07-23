@@ -51,5 +51,6 @@ func main() {
 	}
 
 	_ = client // we'll be using this in the next section
+	fmt.Println("we have a whisper connection")
 }
 ```

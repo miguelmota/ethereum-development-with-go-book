@@ -82,9 +82,9 @@ That's all there is to reading logs. In the next section we'll learn how to subs
 Commands
 
 ```bash
-solc --abi Store.sol | awk '/JSON ABI/{x=1;next}x' > Store.abi
-solc --bin Store.sol | awk '/Binary:/{x=1;next}x' > Store.bin
-abigen --bin=Store.bin --abi=Store.abi --pkg=store --out=Store.go
+solc --abi Store.sol
+solc --bin Store.sol
+abigen --bin=Store_sol_Store.bin --abi=Store_sol_Store.abi --pkg=store --out=Store.go
 ```
 
 [Store.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contracts/Store.sol)
@@ -180,4 +180,9 @@ func main() {
 	hash := crypto.Keccak256Hash(eventSignature)
 	fmt.Println(hash.Hex()) // 0xe79e73da417710ae99aa2088575580a60415d359acfad9cdd3382d59c80281d4
 }
+```
+
+```bash
+$ solc --version
+0.4.24+commit.e67f0147.Emscripten.clang
 ```

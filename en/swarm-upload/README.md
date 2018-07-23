@@ -33,12 +33,12 @@ if err != nil {
 }
 ```
 
-Now we can invoke the `Upload` function from our client instance giving it the file object. The second argument is an optional existing manifest string to add the file to, otherwise it'll create on for us.
+Now we can invoke the `Upload` function from our client instance giving it the file object. The second argument is an optional existing manifest string to add the file to, otherwise it'll create on for us. The third argument is if we want our data to be encrypted.
 
 The hash returned is the swarm hash of a manifest that contains the hello.txt file as its only entry. So by default both the primary content and the manifest is uploaded. The manifest makes sure you could retrieve the file with the correct mime type.
 
 ```go
-manifestHash, err := client.Upload(file, "")
+manifestHash, err := client.Upload(file, "", false)
 if err != nil {
   log.Fatal(err)
 }
@@ -51,6 +51,14 @@ Now we can access our file at `bzz://2e0849490b62e706a5f1cb8e7219db7b01677f2a859
 ---
 
 ### Full code
+
+Commands
+
+```bash
+geth account new
+export BZZKEY=970ef9790b54425bea2c02e25cab01e48cf92573
+swarm --bzzaccount $BZZKEY
+```
 
 [hello.txt](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/hello.txt)
 
@@ -78,7 +86,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	manifestHash, err := client.Upload(file, "")
+	manifestHash, err := client.Upload(file, "", false)
 	if err != nil {
 		log.Fatal(err)
 	}

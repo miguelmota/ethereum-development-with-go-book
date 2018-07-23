@@ -15,7 +15,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	manifestHash, err := client.Upload(file, "")
+	manifestHash, err := client.Upload(file, "", false)
 	if err != nil {
 		log.Fatal(err)
 	}
