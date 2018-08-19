@@ -52,6 +52,14 @@ for _, vLog := range logs {
 }
 ```
 
+Also, the log struct contains additional information such as the block hash, block number, and transaction hash.
+
+```go
+fmt.Println(vLog.BlockHash.Hex()) // 0x3404b8c050aa0aacd0223e91b5c32fee6400f357764771d0684fa7b3f448f1a8
+fmt.Println(vLog.BlockNumber)     // 2394201
+fmt.Println(vLog.TxHash.Hex())    // 0x280201eda63c9ff6f305fcee51d5eb86167fab40ca3108ec784e8652a0e2b1a6
+```
+
 ### Topics
 
 If your solidity event contains `indexed` event types, then they become a *topic* rather than part of the data property of the log. In solidity you may only have up to 4 topics but only 3 indexed event types. The first topic is *always* the signature of the event. Our example contract didn't contain indexed events, but if it did this is how to read the event topics.
@@ -156,6 +164,10 @@ func main() {
 	}
 
 	for _, vLog := range logs {
+		fmt.Println(vLog.BlockHash.Hex()) // 0x3404b8c050aa0aacd0223e91b5c32fee6400f357764771d0684fa7b3f448f1a8
+		fmt.Println(vLog.BlockNumber)     // 2394201
+		fmt.Println(vLog.TxHash.Hex())    // 0x280201eda63c9ff6f305fcee51d5eb86167fab40ca3108ec784e8652a0e2b1a6
+
 		event := struct {
 			Key   [32]byte
 			Value [32]byte

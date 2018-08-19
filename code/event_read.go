@@ -42,6 +42,10 @@ func main() {
 	}
 
 	for _, vLog := range logs {
+		fmt.Println(vLog.BlockHash.Hex()) // 0x3404b8c050aa0aacd0223e91b5c32fee6400f357764771d0684fa7b3f448f1a8
+		fmt.Println(vLog.BlockNumber)     // 2394201
+		fmt.Println(vLog.TxHash.Hex())    // 0x280201eda63c9ff6f305fcee51d5eb86167fab40ca3108ec784e8652a0e2b1a6
+
 		event := struct {
 			Key   [32]byte
 			Value [32]byte

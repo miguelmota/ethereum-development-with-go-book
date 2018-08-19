@@ -66,7 +66,7 @@ swarm --bzzaccount $BZZKEY
 hello world
 ```
 
-[swarm_upload.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/swarm_upload.go)
+[swarm_upload.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/swarm_upload.go)
 
 ```go
 package main
