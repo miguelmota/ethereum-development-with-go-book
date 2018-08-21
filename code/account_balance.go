@@ -35,4 +35,7 @@ func main() {
 	fbalance.SetString(balanceAt.String())
 	ethValue := new(big.Float).Quo(fbalance, big.NewFloat(math.Pow10(18)))
 	fmt.Println(ethValue) // 25.729324269165216041
+
+	pendingBalance, err := client.PendingBalanceAt(context.Background(), account)
+	fmt.Println(pendingBalance) // 25729324269165216042
 }

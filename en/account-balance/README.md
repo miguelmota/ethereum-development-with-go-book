@@ -38,6 +38,15 @@ ethValue := new(big.Float).Quo(fbalance, big.NewFloat(math.Pow10(18)))
 fmt.Println(ethValue) // 25.729324269165216041
 ```
 
+#### Pending balance
+
+Sometimes you'll want to know what the pending account balance is, for example after submitting or waiting for a transaction to be confirmed. The client provides a similar method to `BalanceAt` called `PendingBalanceAt` which accepts the account address as a parameter.
+
+```go
+pendingBalance, err := client.PendingBalanceAt(context.Background(), account)
+fmt.Println(pendingBalance) // 25729324269165216042
+```
+
 ---
 
 ### Full code
@@ -82,5 +91,8 @@ func main() {
 	fbalance.SetString(balanceAt.String())
 	ethValue := new(big.Float).Quo(fbalance, big.NewFloat(math.Pow10(18)))
 	fmt.Println(ethValue) // 25.729324269165216041
+
+	pendingBalance, err := client.PendingBalanceAt(context.Background(), account)
+	fmt.Println(pendingBalance) // 25729324269165216042
 }
 ```
