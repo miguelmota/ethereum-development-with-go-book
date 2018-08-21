@@ -220,6 +220,10 @@ InterPlanetary File System (IPFS) is a protocol and network designed to create a
 
 The hashing algorithm used in Ethereum.
 
+## Keystore
+
+A file containing an encrypted wallet private keys and wallet metadata.
+
 ## Kovan
 
 A proof-of-authority testnet on the Ethereum blockchain. Supported by Parity only.
