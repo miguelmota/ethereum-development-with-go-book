@@ -220,6 +220,10 @@ InterPlanetary File System (IPFS) is a protocol and network designed to create a
 
 The hashing algorithm used in Ethereum.
 
+## Kovan
+
+A proof-of-authority testnet on the Ethereum blockchain. Supported by Parity only.
+
 ## Ledger
 
 An append-only record store, where records are immutable and may hold more general information than financial records.
@@ -294,7 +298,11 @@ Sets of formal rules describing how to transmit or exchange data, especially acr
 
 ## Rinkeby
 
-A testnet on the Ethereum blockchain.
+A proof-of-authority testnet on the Ethereum blockchain. Supported by Geth only.
+
+## Ropsten
+
+A proof-of-work testnet on the Ethereum blockchain which best simulates production environment. Supported by Geth and Parity.
 
 # Scrypt
 
@@ -315,6 +323,10 @@ Contracts whose terms are recorded in a computer language instead of legal langu
 ## Soft fork
 
 A change to the bitcoin protocol wherein only previously valid blocks/transactions are made invalid. Since old nodes will recognize the new blocks as valid, a softfork is backward-compatible. This kind of fork requires only a majority of the miners upgrading to enforce the new rules.
+
+## Sokol
+
+A proof-of-authority testnet on the Ethereum blockchain. Supported by Parity only.
 
 ## Stream ciphers
 

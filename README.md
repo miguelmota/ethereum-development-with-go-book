@@ -48,6 +48,7 @@ The e-book is avaiable in different formats.
   * [Generating Signatures](en/signature-generate/README.md)
   * [Verifying Signatures](en/signature-verify/README.md)
 * [Testing](en/test/README.md)
+  * [Faucets](en/faucets/README.md)
   * [Using a Simulated Client](en/client-simulated/README.md)
 * [Swarm](en/swarm/README.md)
   * [Setting Up Swarm](en/swarm-setup/README.md)

@@ -26,6 +26,7 @@
   * [Generating Signatures](signature-generate/README.md)
   * [Verifying Signatures](signature-verify/README.md)
 * [Testing](test/README.md)
+  * [Faucets](faucets/README.md)
   * [Using a Simulated Client](client-simulated/README.md)
 * [Swarm](swarm/README.md)
   * [Setting Up Swarm](swarm-setup/README.md)
