@@ -35,7 +35,7 @@ See the same bytecode hex on etherscan [https://rinkeby.etherscan.io/address/0x1
 
 ### Full code
 
-[contract_load.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contract_load.go)
+[contract_bytecode.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contract_bytecode.go)
 
 ```go
 package main
