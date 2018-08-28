@@ -16,7 +16,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	
+	networkID := big.NewInt(1)
 	blockNumber := big.NewInt(5671744)
 	block, err := client.BlockByNumber(context.Background(), blockNumber)
 	if err != nil {
@@ -32,7 +33,7 @@ func main() {
 		fmt.Println(tx.Data())              // []
 		fmt.Println(tx.To().Hex())          // 0x55fE59D8Ad77035154dDd0AD0388D09Dd4047A8e
 
-		if msg, err := tx.AsMessage(types.HomesteadSigner{}); err != nil {
+		if msg, err := tx.AsMessage(types.NewEIP155Signer(networkID)); err == nil {
 			fmt.Println(msg.From().Hex()) // 0x0fD081e3Bb178dc45c0cb23202069ddA57064258
 		}
 
