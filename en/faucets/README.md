@@ -4,6 +4,8 @@ description: Tutorial on using faucets on Ethereum.
 
 # Faucets
 
+A faucet is where you can acquire free [testnet] ETH to use while testing.
+
 Below are faucet links to each respective testnet.
 
 - Ropsten testnet - [https://faucet.ropsten.be](https://faucet.ropsten.be)
