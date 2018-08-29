@@ -32,7 +32,7 @@ Ethereum is a blockchain that allows developers to create applications that can 
 
 #### Solidity
 
-Solidity is a turing complete programming language for writing smart contracts. Solidity gets compiled to bytecode which is what the Ethereum virtual machine exectues.
+Solidity is a Turing complete programming language for writing smart contracts. Solidity gets compiled to bytecode which is what the Ethereum virtual machine executes.
 
 #### go-ethereum
 
