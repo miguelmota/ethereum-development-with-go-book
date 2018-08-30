@@ -46,7 +46,7 @@ The examples in this book were tested with go-ethereum version `1.8.10-stable` a
 
 ### Swarm and Whisper
 
-We'll also be diving a little bit into Swarm and Whisper, a file storage protocol, and a peer-to-peer messaging protocol respectively, which are the other two pillars requried for achieving completely decentralized and distributed application.
+We'll also be diving a little bit into Swarm and Whisper, a file storage protocol, and a peer-to-peer messaging protocol respectively, which are the other two pillars required for achieving completely decentralized and distributed applications.
 
 <img src="https://user-images.githubusercontent.com/168240/41317815-2e287afe-6e4b-11e8-89d8-4ec959988b64.png" width="600"/>
 
