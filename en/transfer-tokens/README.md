@@ -4,7 +4,7 @@ description: Tutorial on how to transfer ERC-20 tokens to another wallet or smar
 
 # Transferring Tokens
 
-This section will walk you through on how to transfer ERC-20 tokens. To learn how to transfer other types tokens that are non-ERC-20 compliant check out the [section on smart contracts](../smart-contracts) to learn how to interact with smart contracts.
+This section will walk you through on how to transfer ERC-20 tokens. To learn how to transfer other types of tokens that are non-ERC-20 compliant check out the [section on smart contracts](../smart-contracts) to learn how to interact with smart contracts.
 
 Assuming you've already connected a client, loaded your private key, and configured the gas price, the next step is to set the data field of the transaction. If you're not sure about what I just said, check out the [section on transferring ETH](../transfer-eth) first.
 

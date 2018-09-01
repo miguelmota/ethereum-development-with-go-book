@@ -45,7 +45,7 @@ publicKeyBytes := crypto.FromECDSAPub(publicKeyECDSA)
 fmt.Println(hexutil.Encode(publicKeyBytes)[4:]) // 9a7df67f79246283fdc93af76d4f8cdd62c4886e8cd870944e817dd0b97934fdd7719d0810951e03418205868a5c1b40b192451367f28e0088dd75e15de40c05
 ```
 
-Now that we have the public key we can easily generate the public address which what you're used to seeing. In order to do the the go-ethereum crypto package has a `PubkeyToAddress` method which accepts an ECDSA public key, and returns the public address.
+Now that we have the public key we can easily generate the public address which is what you're used to seeing. In order to do that, the go-ethereum crypto package has a `PubkeyToAddress` method which accepts an ECDSA public key, and returns the public address.
 
 ```go
 address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()

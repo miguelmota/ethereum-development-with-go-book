@@ -4,7 +4,7 @@ description: Tutorial on how to transfer ETH to another wallet or smart contract
 
 # Transferring ETH
 
-In this lesson you'll learn how to transfer ETH from one account to another account. If you're already familar with Ethereum then you know that a transaction consists of the amount of ether you're transferring, the gas gas limit, the gas price, a nonce, the receiving address, and optionally data. The transaction must be signed with the private key of the sender before it's broadcasted to the network.
+In this lesson you'll learn how to transfer ETH from one account to another account. If you're already familar with Ethereum then you know that a transaction consists of the amount of ether you're transferring, the gas limit, the gas price, a nonce, the receiving address, and optionally data. The transaction must be signed with the private key of the sender before it's broadcasted to the network.
 
 Assuming you've already connected a client, the next step is to load your private key.
 
@@ -17,7 +17,7 @@ if err != nil {
 
 Afterwards we need to get the account nonce. Every transaction requires a nonce. A nonce by definition is a number that is only used once. If it's a new account sending out a transaction then the nonce will be `0`. Every new transaction from an account must have a nonce that the previous nonce incremented by 1. It's hard to keep manual track of all the nonces so the ethereum client provides a helper method `PendingNonceAt` that will return the next nonce you should use.
 
-The function requires the public address of the account we're sending from which we can derive from the private key.
+The function requires the public address of the account we're sending from -- which we can derive from the private key.
 
 ```go
 publicKey := privateKey.Public()
@@ -86,7 +86,7 @@ if err != nil {
 }
 ```
 
-Now we are finally to broadcast the transaction to the entire network by calling `SendTransaction` on the client which takes in the signed transaction.
+Now we are finally ready to broadcast the transaction to the entire network by calling `SendTransaction` on the client which takes in the signed transaction.
 
 ```go
 err = client.SendTransaction(context.Background(), signedTx)

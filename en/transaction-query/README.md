@@ -4,7 +4,7 @@ description: Tutorial on how to query transactions on the blockchain with Go.
 
 # Querying Transactions
 
-In the [previous section](../block-query) we learned how to read a block and all it's data given the block number. We can read the transactions in a block by calling the `Transaction` method which returns a list of `Transaction` type. It's then trivial to iterate over the collection and retrieve any information regarding the transaction.
+In the [previous section](../block-query) we learned how to read a block and all its data given the block number. We can read the transactions in a block by calling the `Transactions` method which returns a list of `Transaction` type. It's then trivial to iterate over the collection and retrieve any information regarding the transaction.
 
 ```go
 for _, tx := range block.Transactions() {
@@ -38,7 +38,7 @@ fmt.Println(receipt.Status) // 1
 fmt.Println(receipt.Logs) // ...
 ```
 
-Another way to iterate over transaction without fetching the block is to call the client's `TransactionInBlock` method. This method accepts only the block hash and the index of the transaction within the block. You can call `TransactionCount` in know how many transactions there are in the block.
+Another way to iterate over transaction without fetching the block is to call the client's `TransactionInBlock` method. This method accepts only the block hash and the index of the transaction within the block. You can call `TransactionCount` to know how many transactions there are in the block.
 
 ```go
 blockHash := common.HexToHash("0x9e8751ebb5069389b855bba72d94902cc385042661498a415979b7b6ee9ba4b9")

@@ -6,7 +6,7 @@ description: Tutorial on how to set up a client to connect to Ethereum with Go.
 
 Setting up the Ethereum client in Go is a fundamental step required for interacting with the blockchain. First import the `ethclient` go-ethereum package and initialize it by calling `Dial` which accepts a provider URL.
 
-You can connect to the infura gateway if you don't have an existing client. Infura manages a bunch of Ethereum [geth and parity] nodes that are secure, reliable, scalable and lowers the entry to barrier for newcomers when it comes to plugging into the Ethereum network.
+You can connect to the infura gateway if you don't have an existing client. Infura manages a bunch of Ethereum [geth and parity] nodes that are secure, reliable, scalable and lowers the barrier to entry for newcomers when it comes to plugging into the Ethereum network.
 
 ```go
 client, err := ethclient.Dial("https://mainnet.infura.io")
@@ -22,7 +22,7 @@ Using the ethclient is a necessary thing you'll need to start with for every Go 
 
 ## Using Ganache
 
-[Ganache](https://github.com/trufflesuite/ganache-cli) (formally known as *testrpc*) is an Ethereum implementation written in Node.js meant for testing purposes while developing dapps locally. Here we'll walk you through on how to install it and connect to it.
+[Ganache](https://github.com/trufflesuite/ganache-cli) (formally known as *testrpc*) is an Ethereum implementation written in Node.js meant for testing purposes while developing dapps locally. Here we'll walk you through how to install it and connect to it.
 
 First install ganache via [NPM](https://www.npmjs.com/package/ganache-cli).
 
@@ -45,7 +45,7 @@ if err != nil {
 }
 ```
 
-You may also you the same mnemonic when starting ganache to generate the same sequence of public addresses.
+You may also use the same mnemonic when starting ganache to generate the same sequence of public addresses.
 
 ```bash
 ganache-cli -m "much repair shock carbon improve miss forget sock include bullet interest solution"
