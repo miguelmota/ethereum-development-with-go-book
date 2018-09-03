@@ -20,6 +20,7 @@
   * [Querying a Smart Contract](smart-contract-read/README.md)
   * [Writing to a Smart Contract](smart-contract-write/README.md)
   * [Reading Smart Contract Bytecode](smart-contract-bytecode/README.md)
+  * [Querying an ERC20 Token Smart Contract](smart-contract-read-erc20/README.md)
 * [Event Logs](events/README.md)
   * [Reading Event Logs](event-read/README.md)
   * [Subscribing to Event Logs](event-subscribe/README.md)

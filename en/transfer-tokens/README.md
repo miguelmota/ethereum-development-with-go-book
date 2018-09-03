@@ -116,6 +116,8 @@ fmt.Printf("tx sent: %s", signedTx.Hash().Hex()) // tx sent: 0xa56316b637a94c4cc
 
 You can check the progress on Etherscan: [https://rinkeby.etherscan.io/tx/0xa56316b637a94c4cc0331c73ef26389d6c097506d581073f927275e7a6ece0bc](https://rinkeby.etherscan.io/tx/0xa56316b637a94c4cc0331c73ef26389d6c097506d581073f927275e7a6ece0bc)
 
+To learn how to load and interact with an ERC20 smart contract, check out the [section on ERC20 token smart contracts](../smart-contract-read-erc20).
+
 ---
 
 ### Full code

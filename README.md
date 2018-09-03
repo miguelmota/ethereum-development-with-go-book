@@ -42,6 +42,7 @@ The e-book is avaiable in different formats.
   * [Querying a Smart Contract](en/smart-contract-read/README.md)
   * [Writing to a Smart Contract](en/smart-contract-write/README.md)
   * [Reading Smart Contract Bytecode](en/smart-contract-bytecode/README.md)
+  * [Querying an ERC20 Token Smart Contract](en/smart-contract-read-erc20/README.md)
 * [Event Logs](en/events/README.md)
   * [Reading Event Logs](en/event-read/README.md)
   * [Subscribing to Event Logs](en/event-subscribe/README.md)
