@@ -4,6 +4,7 @@
   * [Setting up the Client](client-setup/README.md)
 * [Accounts](accounts/README.md)
   * [Account Balances](account-balance/README.md)
+  * [Account Token Balances](account-balance-token/README.md)
   * [Generating New Wallets](wallet-generate/README.md)
   * [Keystores](keystore/README.md)
   * [HD Wallets](hd-wallet/README.md)

@@ -26,6 +26,7 @@ The e-book is avaiable in different formats.
   * [Setting up the Client](en/client-setup/README.md)
 * [Accounts](en/accounts/README.md)
   * [Account Balances](en/account-balance/README.md)
+  * [Account Token Balances](en/account-balance-token/README.md)
   * [Generating New Wallets](en/wallet-generate/README.md)
   * [Keystores](en/keystore/README.md)
   * [HD Wallets](en/hd-wallet/README.md)
