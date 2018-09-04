@@ -9,7 +9,7 @@
 
 ## Online
 
-[https://goethereumbook.org](https://ethereum-go-book.org/)
+[https://goethereumbook.org](https://goethereumbook.org/)
 
 ## E-book
 
