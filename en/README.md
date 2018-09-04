@@ -58,7 +58,7 @@ Join our [Gitter](https://gitter.im/goethereum) channel for Ethereum and Go (gol
 
 #### About the Author
 
-This book was written by [Miguel Mota](https://github.com/miguelmota), a software developer working in the blockchain space from the always sunny Southern California.
+This book was written by [Miguel Mota](https://github.com/miguelmota), a software developer working in the blockchain space from the always sunny Southern California. You can find him on Twitter [@miguelmota](https://twitter.com/miguelmotah)
 
 ---
 
