@@ -67,6 +67,13 @@ The e-book is avaiable in different formats.
 * [Glossary](en/GLOSSARY.md)
 * [Resources](en/resources/README.md)
 
+## Chat
+
+- Join our [Gitter](https://gitter.im/goethereum) channel for Go (golang) help [@goethereum](https://gitter.im/goethereum)
+
+- You can also reach to me on Twitter [@miguelmota](https://twitter.com/miguelmotah)
+
+
 ## License
 
 [CC0-1.0](./LICENSE.md)

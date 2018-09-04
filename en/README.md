@@ -52,6 +52,10 @@ We'll also be diving a little bit into Swarm and Whisper, a file storage protoco
 
 <sup><sub><a href="https://ethereum.stackexchange.com/a/388/5093">image credit</a></sub></sup>
 
+## Chat
+
+Join our [Gitter](https://gitter.im/goethereum) channel for Ethereum and Go (golang) help [@goethereum](https://gitter.im/goethereum)
+
 #### About the Author
 
 This book was written by [Miguel Mota](https://github.com/miguelmota), a software developer working in the blockchain space from the always sunny Southern California.
