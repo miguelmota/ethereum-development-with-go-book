@@ -52,7 +52,7 @@ We'll also be diving a little bit into Swarm and Whisper, a file storage protoco
 
 <sup><sub><a href="https://ethereum.stackexchange.com/a/388/5093">image credit</a></sub></sup>
 
-## Chat
+## Support
 
 Join our [Gitter](https://gitter.im/goethereum) channel for Ethereum and Go (golang) help [@goethereum](https://gitter.im/goethereum)
 
