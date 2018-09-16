@@ -46,7 +46,13 @@ func main() {
 	toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
 	var data []byte
 	tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
-	signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)
+
+	chainID, err := client.NetworkID(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	signedTx, err := types.SignTx(tx, types.NewEIP155Signer(chainID), privateKey)
 	if err != nil {
 		log.Fatal(err)
 	}

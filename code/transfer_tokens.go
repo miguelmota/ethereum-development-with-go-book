@@ -77,7 +77,13 @@ func main() {
 	fmt.Println(gasLimit) // 23256
 
 	tx := types.NewTransaction(nonce, tokenAddress, value, gasLimit, gasPrice, data)
-	signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)
+
+	chainID, err := client.NetworkID(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	signedTx, err := types.SignTx(tx, types.NewEIP155Signer(chainID), privateKey)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -94,10 +94,15 @@ Next thing we need to do is generate the transaction type, similar to what you'v
 tx := types.NewTransaction(nonce, tokenAddress, value, gasLimit, gasPrice, data)
 ```
 
-The next step is to sign the transaction with the private key of the sender.
+The next step is to sign the transaction with the private key of the sender. The `SignTx` method requires the EIP155 signer, which we derive the chain ID from the client.
 
 ```go
-signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)
+chainID, err := client.NetworkID(context.Background())
+if err != nil {
+  log.Fatal(err)
+}
+
+signedTx, err := types.SignTx(tx, types.NewEIP155Signer(chainID), privateKey)
 if err != nil {
   log.Fatal(err)
 }
@@ -204,7 +209,13 @@ func main() {
 	fmt.Println(gasLimit) // 23256
 
 	tx := types.NewTransaction(nonce, tokenAddress, value, gasLimit, gasPrice, data)
-	signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)
+
+	chainID, err := client.NetworkID(context.Background())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	signedTx, err := types.SignTx(tx, types.NewEIP155Signer(chainID), privateKey)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -32,7 +32,8 @@ func main() {
 		},
 	}
 
-	client := backends.NewSimulatedBackend(genesisAlloc)
+	blockGasLimit := uint64(4712388)
+	client := backends.NewSimulatedBackend(genesisAlloc, blockGasLimit)
 
 	fromAddress := auth.From
 	nonce, err := client.PendingNonceAt(context.Background(), fromAddress)
@@ -50,7 +51,8 @@ func main() {
 	toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
 	var data []byte
 	tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
-	signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)
+	chainID := big.NewInt(1)
+	signedTx, err := types.SignTx(tx, types.NewEIP155Signer(chainID), privateKey)
 	if err != nil {
 		log.Fatal(err)
 	}

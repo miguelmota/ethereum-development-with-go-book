@@ -33,10 +33,11 @@ genesisAlloc := map[common.Address]core.GenesisAccount{
 }
 ```
 
-Now we pass the genesis allocation struct to the `NewSimulatedBackend` method from the `accounts/abi/bind/backends` package which will return a new simulated ethereum client.
+Now we pass the genesis allocation struct and a configured block gas limit to the `NewSimulatedBackend` method from the `accounts/abi/bind/backends` package which will return a new simulated ethereum client.
 
 ```go
-client := backends.NewSimulatedBackend(genesisAlloc)
+blockGasLimit := uint64(4712388)
+client := backends.NewSimulatedBackend(genesisAlloc, blockGasLimit)
 ```
 
 You can use this client as you'd normally would. As an example, we'll construct a new transaction and broadcast it.
@@ -58,7 +59,8 @@ if err != nil {
 toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
 var data []byte
 tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
-signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)
+chainID := big.NewInt(1)
+signedTx, err := types.SignTx(tx, types.NewEIP155Signer(chainID), privateKey)
 if err != nil {
   log.Fatal(err)
 }
@@ -134,7 +136,8 @@ func main() {
 		},
 	}
 
-	client := backends.NewSimulatedBackend(genesisAlloc)
+	blockGasLimit := uint64(4712388)
+	client := backends.NewSimulatedBackend(genesisAlloc, blockGasLimit)
 
 	fromAddress := auth.From
 	nonce, err := client.PendingNonceAt(context.Background(), fromAddress)
@@ -152,7 +155,9 @@ func main() {
 	toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
 	var data []byte
 	tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
-	signedTx, err := types.SignTx(tx, types.HomesteadSigner{}, privateKey)
+
+	chainID := big.NewInt(1)
+	signedTx, err := types.SignTx(tx, types.NewEIP155Signer(chainID), privateKey)
 	if err != nil {
 		log.Fatal(err)
 	}

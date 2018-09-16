@@ -95,7 +95,8 @@ func (s *Service) GetTokenDecimals(tokenAddress string) (*big.Int, error) {
 func (s *Service) TransferEth(privateKey string, _toAddress string, amount *big.Int) (*types.Transaction, error) {
 	toAddress := common.HexToAddress(_toAddress)
 
-	signer := types.HomesteadSigner{}
+	chainID := big.NewInt(1)
+	signer := types.NewEIP155Signer(chainID)
 	key, err := crypto.HexToECDSA(privateKey)
 	if err != nil {
 		return &types.Transaction{}, err
@@ -162,7 +163,8 @@ func (s *Service) SignTx(nonce uint64, _toAddress string, amount *big.Int, gasLi
 	}
 
 	toAddress := common.HexToAddress(_toAddress)
-	signer := types.HomesteadSigner{}
+	chainID := big.NewInt(1)
+	signer := types.NewEIP155Signer(chainID)
 
 	if gasPrice == nil {
 		gasPrice, err = s.Client.SuggestGasPrice(context.Background())
