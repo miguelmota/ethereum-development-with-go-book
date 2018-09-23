@@ -79,7 +79,7 @@ func main() {
 			transferEvent.To = common.HexToAddress(vLog.Topics[2].Hex())
 
 			fmt.Printf("From: %s\n", transferEvent.From.Hex())
-			fmt.Printf("To: %s\n", transferEvent.From.Hex())
+			fmt.Printf("To: %s\n", transferEvent.To.Hex())
 			fmt.Printf("Tokens: %s\n", transferEvent.Tokens.String())
 
 		case logApprovalSigHash.Hex():

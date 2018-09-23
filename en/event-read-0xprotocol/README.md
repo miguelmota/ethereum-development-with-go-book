@@ -12,7 +12,7 @@ Install solc version `0.4.11`
 npm i -g solc@0.4.11
 ```
 
-Create the 0x protocol exchange smart contract interface as `Exchange.sol`:
+Create the 0x protocol exchange smart contract interface for event logs as `Exchange.sol`:
 
 ```solidity
 pragma solidity 0.4.11;
@@ -146,16 +146,16 @@ Now we'll iterate through all the logs and set up a switch statement to filter b
 
 ```go
 for _, vLog := range logs {
-	fmt.Printf("Log Block Number: %d\n", vLog.BlockNumber)
+  fmt.Printf("Log Block Number: %d\n", vLog.BlockNumber)
   fmt.Printf("Log Index: %d\n", vLog.Index)
 
   switch vLog.Topics[0].Hex() {
   case logFillEvent.Hex():
-    // TODO
+    //
   case logCancelEvent.Hex():
-    // TODO
+    //
   case logErrorEvent.Hex():
-    // TODO
+    //
   }
 }
 ```
