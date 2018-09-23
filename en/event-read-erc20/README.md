@@ -25,6 +25,8 @@ Commands
 ```go
 ```
 
+solc version used for these examples
+
 ```bash
 $ solc --version
 0.4.24+commit.e67f0147.Emscripten.clang

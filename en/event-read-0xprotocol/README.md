@@ -428,6 +428,8 @@ func main() {
 }
 ```
 
+solc version used for these examples
+
 ```bash
 $ solc --version
 0.4.11+commit.68ef5810.Emscripten.clang
