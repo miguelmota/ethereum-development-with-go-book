@@ -50,7 +50,7 @@ for {
 }
 ```
 
-You'll have to parse the log entries, which we learned how to do in the [previous section](../event-read).
+You'll have to parse the log entries, which we'll learn how to do in the [next section](../event-read).
 
 ---
 

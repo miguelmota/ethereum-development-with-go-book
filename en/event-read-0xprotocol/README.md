@@ -12,7 +12,42 @@ Install solc version `0.4.11`
 npm i -g solc@0.4.11
 ```
 
-Then use `abigen` to create the Go `exchange` package.
+Create the 0x protocol exchange smart contract interface as `Exchange.sol`:
+
+```solidity
+pragma solidity 0.4.11;
+
+contract Exchange {
+    event LogFill(
+        address indexed maker,
+        address taker,
+        address indexed feeRecipient,
+        address makerToken,
+        address takerToken,
+        uint filledMakerTokenAmount,
+        uint filledTakerTokenAmount,
+        uint paidMakerFee,
+        uint paidTakerFee,
+        bytes32 indexed tokens, // keccak256(makerToken, takerToken), allows subscribing to a token pair
+        bytes32 orderHash
+    );
+
+    event LogCancel(
+        address indexed maker,
+        address indexed feeRecipient,
+        address makerToken,
+        address takerToken,
+        uint cancelledMakerTokenAmount,
+        uint cancelledTakerTokenAmount,
+        bytes32 indexed tokens,
+        bytes32 orderHash
+    );
+
+    event LogError(uint8 indexed errorId, bytes32 indexed orderHash);
+}
+```
+
+Then use `abigen` to create the Go `exchange` package given the abi:
 
 ```bash
 solc --abi Exchange.sol
@@ -111,6 +146,7 @@ Now we'll iterate through all the logs and set up a switch statement to filter b
 
 ```go
 for _, vLog := range logs {
+	fmt.Printf("Log Block Number: %d\n", vLog.BlockNumber)
   fmt.Printf("Log Index: %d\n", vLog.Index)
 
   switch vLog.Topics[0].Hex() {
@@ -201,6 +237,7 @@ fmt.Printf("Order Hash: %s\n", hexutil.Encode(errorEvent.OrderHash[:]))
 Putting it all together and running it we'll see the following output:
 
 ```bash
+Log Block Number: 6383482
 Log Index: 35
 Log Name: LogFill
 Maker: 0x8dd688660ec0BaBD0B8a2f2DE3232645F73cC5eb
@@ -216,6 +253,7 @@ Tokens: 0xf08499c9e419ea8c08c4b991f88632593fb36baf4124c62758acb21898711088
 Order Hash: 0x306a9a7ecbd9446559a2c650b4cfc16d1fb615aa2b3f4f63078da6d021268440
 
 
+Log Block Number: 6383482
 Log Index: 38
 Log Name: LogFill
 Maker: 0x04aa059b2e31B5898fAB5aB24761e67E8a196AB8
@@ -231,6 +269,7 @@ Tokens: 0x97ef123f2b566f36ab1e6f5d462a8079fbe34fa667b4eae67194b3f9cce60f2a
 Order Hash: 0xac270e88ce27b6bb78ee5b68ebaef666a77195020a6ab8922834f07bc9e0d524
 
 
+Log Block Number: 6383488
 Log Index: 43
 Log Name: LogCancel
 Maker: 0x0004E79C978B95974dCa16F56B516bE0c50CC652
@@ -259,8 +298,35 @@ abigen --abi="Exchange.sol:Exchange.abi" --pkg=exchange --out=Exchange.go
 [Exchange.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contracts_0xprotocol/Exchange.sol)
 
 ```solidity
-contract Exchange is SafeMath {
-  // see Exchange.sol link above for full source code
+pragma solidity 0.4.11;
+
+contract Exchange {
+    event LogFill(
+        address indexed maker,
+        address taker,
+        address indexed feeRecipient,
+        address makerToken,
+        address takerToken,
+        uint filledMakerTokenAmount,
+        uint filledTakerTokenAmount,
+        uint paidMakerFee,
+        uint paidTakerFee,
+        bytes32 indexed tokens, // keccak256(makerToken, takerToken), allows subscribing to a token pair
+        bytes32 orderHash
+    );
+
+    event LogCancel(
+        address indexed maker,
+        address indexed feeRecipient,
+        address makerToken,
+        address takerToken,
+        uint cancelledMakerTokenAmount,
+        uint cancelledTakerTokenAmount,
+        bytes32 indexed tokens,
+        bytes32 orderHash
+    );
+
+    event LogError(uint8 indexed errorId, bytes32 indexed orderHash);
 }
 ```
 
@@ -354,6 +420,7 @@ func main() {
 	logErrorEvent := common.HexToHash("36d86c59e00bd73dc19ba3adfe068e4b64ac7e92be35546adeddf1b956a87e90")
 
 	for _, vLog := range logs {
+		fmt.Printf("Log Block Number: %d\n", vLog.BlockNumber)
 		fmt.Printf("Log Index: %d\n", vLog.Index)
 
 		switch vLog.Topics[0].Hex() {

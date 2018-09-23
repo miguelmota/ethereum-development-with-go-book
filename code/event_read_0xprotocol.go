@@ -85,6 +85,7 @@ func main() {
 	logErrorEvent := common.HexToHash("36d86c59e00bd73dc19ba3adfe068e4b64ac7e92be35546adeddf1b956a87e90")
 
 	for _, vLog := range logs {
+		fmt.Printf("Log Block Number: %d\n", vLog.BlockNumber)
 		fmt.Printf("Log Index: %d\n", vLog.Index)
 
 		switch vLog.Topics[0].Hex() {

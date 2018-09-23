@@ -42,7 +42,7 @@ The examples in this book were tested with go-ethereum version `1.8.10-stable` a
 
 #### Block Explorers
 
-[Etherscan](https://etherscan.io/) is a website for exploring and drilling down on data that lives on the blockchain. These type of websites are known as *Block Explorers* because they allow you to explore the contents of blocks (which contain transactions). Blocks are fundamental components of the blockchain. The block contains the data of all the transactions that have been mined within the allocated block time. The block explorer also allows you to view events that were emitted during the execution of the smart contract as well as things such as how much was paid for the gas and amount of ether was transacted, etc...
+[Etherscan](https://etherscan.io/) is a website for exploring and drilling down on data that lives on the blockchain. These type of websites are known as *Block Explorers* because they allow you to explore the contents of blocks (which contain transactions). Blocks are fundamental components of the blockchain. The block contains the data of all the transactions that have been mined within the allocated block time. The block explorer also allows you to view events that were emitted during the execution of the smart contract as well as things such as how much was paid for the gas and amount of ether was transacted, etc.
 
 ### Swarm and Whisper
 

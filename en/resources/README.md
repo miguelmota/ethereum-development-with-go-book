@@ -42,3 +42,4 @@ List of resources on Ethereum, Solidity, and Go.
 - [Truffle](https://truffleframework.com/)
 - [Infura](https://infura.io/)
 - [Remix IDE](https://remix.ethereum.org/)
+- [Keccak-256 Online](https://emn178.github.io/online-tools/keccak_256.html)
