@@ -54,7 +54,7 @@ We'll also be diving a little bit into Swarm and Whisper, a file storage protoco
 
 ## Support
 
-Join our [Gitter](https://gitter.im/goethereum) channel for Ethereum and Go (golang) help [@goethereum](https://gitter.im/goethereum)
+Join the [#ethereum](https://gophers.slack.com/messages/C9HP1S9V2/) channel on the [gophers slack](https://invite.slack.golangbridge.org/) for Go (golang) help.
 
 #### About the Author
 

@@ -71,9 +71,9 @@ The e-book is avaiable in different formats.
 
 ## Chat
 
-- Join our [Gitter](https://gitter.im/goethereum) channel for Go (golang) help [@goethereum](https://gitter.im/goethereum)
+- Join the [#ethereum](https://gophers.slack.com/messages/C9HP1S9V2/) channel on the [gophers slack](https://invite.slack.golangbridge.org/) for Go (golang) help
 
-- You can also reach to me on Twitter [@miguelmota](https://twitter.com/miguelmotah)
+- You can also reach out to me on Twitter [@miguelmota](https://twitter.com/miguelmotah)
 
 
 ## License

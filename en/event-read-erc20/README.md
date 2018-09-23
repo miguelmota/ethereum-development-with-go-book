@@ -15,7 +15,7 @@ Commands
 ```bash
 ```
 
-[ERC20.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contracts_erc20/ERC20.sol)
+[erc20.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contracts_erc20/erc20.sol)
 
 ```solidity
 ```
