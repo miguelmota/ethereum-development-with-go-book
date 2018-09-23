@@ -47,6 +47,8 @@ The e-book is avaiable in different formats.
 * [Event Logs](en/events/README.md)
   * [Reading Event Logs](en/event-read/README.md)
   * [Subscribing to Event Logs](en/event-subscribe/README.md)
+  * [Reading ERC-20 Token Event Logs](en/event-read-erc20/README.md)
+  * [Reading 0x Protocol Event Logs](en/event-read-0xprotocol/README.md)
 * [Signatures](en/signatures/README.md)
   * [Generating Signatures](en/signature-generate/README.md)
   * [Verifying Signatures](en/signature-verify/README.md)

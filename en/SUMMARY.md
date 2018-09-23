@@ -25,6 +25,8 @@
 * [Event Logs](events/README.md)
   * [Reading Event Logs](event-read/README.md)
   * [Subscribing to Event Logs](event-subscribe/README.md)
+  * [Reading ERC-20 Token Event Logs](event-read-erc20/README.md)
+  * [Reading 0x Protocol Event Logs](event-read-0xprotocol/README.md)
 * [Signatures](signatures/README.md)
   * [Generating Signatures](signature-generate/README.md)
   * [Verifying Signatures](signature-verify/README.md)
