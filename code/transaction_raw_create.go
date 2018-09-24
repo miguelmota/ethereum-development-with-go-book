@@ -59,7 +59,8 @@ func main() {
 	}
 
 	ts := types.Transactions{signedTx}
-	rawTx := hex.EncodeToString(ts.GetRlp(0))
+	rawTxBytes := ts.GetRlp(0)
+	rawTxHex := hex.EncodeToString(rawTxBytes)
 
-	fmt.Printf(rawTx) // f86...772
+	fmt.Printf(rawTxHex) // f86...772
 }

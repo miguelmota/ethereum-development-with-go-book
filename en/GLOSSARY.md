@@ -304,6 +304,10 @@ Sets of formal rules describing how to transmit or exchange data, especially acr
 
 A proof-of-authority testnet on the Ethereum blockchain. Supported by Geth only.
 
+## RLP
+
+[Recursive Length Prefix](https://github.com/ethereum/wiki/wiki/RLP) (RLP) is a standard to encode arbitrarily nested arrays of binary data. RLP is the main encoding method used to serialize objects in Ethereum.
+
 ## Ropsten
 
 A proof-of-work testnet on the Ethereum blockchain which best simulates production environment. Supported by Geth and Parity.
