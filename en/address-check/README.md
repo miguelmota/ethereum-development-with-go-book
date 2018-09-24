@@ -6,7 +6,7 @@ description: Tutorial on how to check if an address is a smart contract or an ac
 
 This section will describe how to validate an address and determine if it's a smart contract address.
 
-## Check if Address is valid
+## Check if Address is Valid
 
 We can use a simple regular expression to check if the ethereum address is valid:
 
