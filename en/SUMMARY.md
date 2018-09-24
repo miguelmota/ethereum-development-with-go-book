@@ -15,6 +15,8 @@
   * [Transferring ETH](transfer-eth/README.md)
   * [Transferring Tokens](transfer-tokens/README.md)
   * [Subscribing to New Blocks](block-subscribe/README.md)
+  * [Create Raw Transaction](transaction-raw-create/README.md)
+  * [Send Raw Transaction](transaction-send-send/README.md)
 * [Smart Contracts](smart-contracts/README.md)
   * [Smart Contract Compilation & ABI](smart-contract-compile/README.md)
   * [Deploying a Smart Contract](smart-contract-deploy/README.md)

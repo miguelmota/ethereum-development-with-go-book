@@ -37,6 +37,8 @@ The e-book is avaiable in different formats.
   * [Transferring ETH](en/transfer-eth/README.md)
   * [Transferring Tokens](en/transfer-tokens/README.md)
   * [Subscribing to New Blocks](en/block-subscribe/README.md)
+  * [Create Raw Transaction](en/transaction-raw-send/README.md)
+  * [Send Raw Transaction](en/transaction-raw-send/README.md)
 * [Smart Contracts](en/smart-contracts/README.md)
   * [Smart Contract Compilation & ABI](en/smart-contract-compile/README.md)
   * [Deploying a Smart Contract](en/smart-contract-deploy/README.md)
