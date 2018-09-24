@@ -8,6 +8,7 @@
   * [Generating New Wallets](wallet-generate/README.md)
   * [Keystores](keystore/README.md)
   * [HD Wallets](hd-wallet/README.md)
+  * [Address Check](address-check/README.md)
 * [Transactions](transactions/README.md)
   * [Querying Blocks](block-query/README.md)
   * [Querying Transactions](transaction-query/README.md)
