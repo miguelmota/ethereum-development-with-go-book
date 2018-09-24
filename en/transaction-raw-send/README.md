@@ -2,7 +2,7 @@
 description: Tutorial on how to send a raw Ethereum transaction with Go.
 ---
 
-# Send reate Raw Transaction
+# Send Raw Transaction
 
 ---
 
