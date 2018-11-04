@@ -78,6 +78,35 @@ The e-book is avaiable in different formats.
 
 - You can also reach out to me on Twitter [@miguelmota](https://twitter.com/miguelmotah)
 
+## Development
+
+Install dependencies
+
+```bash
+make install
+```
+
+Run gitbook serve
+
+```bash
+make serve
+```
+
+Visit [http://localhost:4000](http://localhost:4000)
+
+## Contributing
+
+Adding a new translation
+
+1. Set up [development environment](#development)
+
+2. Add language to `LANGS.md`
+
+3. Copy the the `en` directory and rename it with the 2 letter language code of the language you're translating to (e.g. `zh`)
+
+4. Translate content
+
+5. Set `"root"` to `"./"` in `book.json`
 
 ## License
 
