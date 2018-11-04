@@ -80,13 +80,13 @@ The e-book is avaiable in different formats.
 
 ## Development
 
-Install dependencies
+Install dependencies:
 
 ```bash
 make install
 ```
 
-Run gitbook serve
+Run gitbook server:
 
 ```bash
 make serve
@@ -96,7 +96,7 @@ Visit [http://localhost:4000](http://localhost:4000)
 
 ## Contributing
 
-Adding a new translation
+Instruction for adding a new translation:
 
 1. Set up [development environment](#development)
 
