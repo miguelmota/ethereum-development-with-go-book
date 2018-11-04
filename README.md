@@ -96,7 +96,7 @@ Visit [http://localhost:4000](http://localhost:4000)
 
 ## Contributing
 
-Instruction for adding a new translation:
+Instructions for adding a new translation:
 
 1. Set up [development environment](#development)
 
