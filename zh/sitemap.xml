@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://goethereumbook.org/</loc>
+  <lastmod>2018-06-13T00:49:48+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/client/</loc>
+  <lastmod>2018-06-13T00:49:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/client-setup/</loc>
+  <lastmod>2018-06-13T00:49:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/accounts/</loc>
+  <lastmod>2018-06-13T00:49:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/account-balance/</loc>
+  <lastmod>2018-06-13T00:49:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/wallet-generate/</loc>
+  <lastmod>2018-06-13T00:49:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/transactions/</loc>
+  <lastmod>2018-06-13T00:49:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/block-query/</loc>
+  <lastmod>2018-06-13T00:49:49+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/transaction-query/</loc>
+  <lastmod>2018-06-13T00:49:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/transfer-eth/</loc>
+  <lastmod>2018-06-13T00:49:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/transfer-tokens/</loc>
+  <lastmod>2018-06-13T00:49:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/smart-contracts/</loc>
+  <lastmod>2018-06-13T00:49:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/smart-contract-compile/</loc>
+  <lastmod>2018-06-13T00:49:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/smart-contract-deploy/</loc>
+  <lastmod>2018-06-13T00:49:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/smart-contract-load/</loc>
+  <lastmod>2018-06-13T00:49:51+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/smart-contract-read/</loc>
+  <lastmod>2018-06-13T00:49:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/smart-contract-write/</loc>
+  <lastmod>2018-06-13T00:49:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/events/</loc>
+  <lastmod>2018-06-13T00:49:52+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/event-read/</loc>
+  <lastmod>2018-06-13T00:49:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/event-subscribe/</loc>
+  <lastmod>2018-06-13T00:49:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/signatures/</loc>
+  <lastmod>2018-06-13T00:49:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/signature-generate/</loc>
+  <lastmod>2018-06-13T00:49:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/signature-verify/</loc>
+  <lastmod>2018-06-13T00:49:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/swarm/</loc>
+  <lastmod>2018-06-13T00:49:53+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/swarm-setup/</loc>
+  <lastmod>2018-06-13T00:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/swarm-upload/</loc>
+  <lastmod>2018-06-13T00:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/swarm-download/</loc>
+  <lastmod>2018-06-13T00:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/whisper/</loc>
+  <lastmod>2018-06-13T00:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/whisper-client/</loc>
+  <lastmod>2018-06-13T00:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/whisper-keys/</loc>
+  <lastmod>2018-06-13T00:49:54+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/whisper-send/</loc>
+  <lastmod>2018-06-13T00:49:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/whisper-subscribe/</loc>
+  <lastmod>2018-06-13T00:49:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/util/</loc>
+  <lastmod>2018-06-13T00:49:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/util-go/</loc>
+  <lastmod>2018-06-13T00:49:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/resources/</loc>
+  <lastmod>2018-06-13T00:49:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/GLOSSARY.html</loc>
+  <lastmod>2018-06-13T00:49:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/.</loc>
+  <lastmod>2018-06-13T00:49:48+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://goethereumbook.org/ethereum-development-with-go.pdf</loc>
+  <lastmod>2018-06-13T00:50:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>

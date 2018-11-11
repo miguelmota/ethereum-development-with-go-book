@@ -1,0 +1,103 @@
+---
+description: Tutorial on how to query blocks in Ethereum with Go.
+---
+
+# Querying Blocks
+
+There's two ways you can query block information as we'll see.
+
+#### Block header
+
+You can call the client's `HeaderByNumber` to return header information about a block. It'll return the latest block header if you pass `nil`.
+
+```go
+header, err := client.HeaderByNumber(context.Background(), nil)
+if err != nil {
+  log.Fatal(err)
+}
+
+fmt.Println(header.Number.String()) // 5671744
+```
+
+#### Full block
+
+Call the client's `BlockByNumber` method to get the full block. You can read all the contents and metadata of the block such as block number, block timestamp, block hash, block difficulty, as well as the list of transactions and much much more.
+
+```go
+blockNumber := big.NewInt(5671744)
+block, err := client.BlockByNumber(context.Background(), blockNumber)
+if err != nil {
+  log.Fatal(err)
+}
+
+fmt.Println(block.Number().Uint64())     // 5671744
+fmt.Println(block.Time().Uint64())       // 1527211625
+fmt.Println(block.Difficulty().Uint64()) // 3217000136609065
+fmt.Println(block.Hash().Hex())          // 0x9e8751ebb5069389b855bba72d94902cc385042661498a415979b7b6ee9ba4b9
+fmt.Println(len(block.Transactions()))   // 144
+```
+
+Call `TransactionCount` to return just the count of transactions in a block.
+
+```go
+count, err := client.TransactionCount(context.Background(), block.Hash())
+if err != nil {
+  log.Fatal(err)
+}
+
+fmt.Println(count) // 144
+```
+
+In the next section we'll learn how to query transactions in a block.
+
+---
+
+### Full code
+
+[blocks.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/blocks.go)
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+	"math/big"
+
+	"github.com/ethereum/go-ethereum/ethclient"
+)
+
+func main() {
+	client, err := ethclient.Dial("https://mainnet.infura.io")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	header, err := client.HeaderByNumber(context.Background(), nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(header.Number.String()) // 5671744
+
+	blockNumber := big.NewInt(5671744)
+	block, err := client.BlockByNumber(context.Background(), blockNumber)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(block.Number().Uint64())     // 5671744
+	fmt.Println(block.Time().Uint64())       // 1527211625
+	fmt.Println(block.Difficulty().Uint64()) // 3217000136609065
+	fmt.Println(block.Hash().Hex())          // 0x9e8751ebb5069389b855bba72d94902cc385042661498a415979b7b6ee9ba4b9
+	fmt.Println(len(block.Transactions()))   // 144
+
+	count, err := client.TransactionCount(context.Background(), block.Hash())
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(count) // 144
+}
+```

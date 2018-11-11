@@ -1,0 +1,26 @@
+.gitbook-link {
+  display: none !important;
+}
+
+body::-webkit-scrollbar,
+.book-summary::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+body::-webkit-scrollbar-track,
+.book-summary::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body::-webkit-scrollbar-thumb,
+.book-summary::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.05);
+  border: 1px solid transparent;
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,0.05), inset 0 -1px 0 rgba(0,0,0,0.1);
+}
+
+body::-webkit-scrollbar-thumb:hover,
+.book-summary::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 1px 1px 0 rgba(0,0,0,0.1), inset 0 -1px 0 rgba(0,0,0,0.2);
+}
