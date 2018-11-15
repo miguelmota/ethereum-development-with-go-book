@@ -4,7 +4,7 @@ description: Tutorial on how to send a raw Ethereum transaction with Go.
 
 # Send Raw Transaction
 
-In the [previous section](../transaction-raw-create) we learned how to do create a raw transaction. Now we'll learn how to broadcast it to the Ethereum network in order for it to get processed and mined.
+In the [previous section](../transaction-raw-create) we learned how to create a raw transaction. Now we'll learn how to broadcast it to the Ethereum network in order for it to get processed and mined.
 
 First decode the raw transaction hex to bytes format.
 
