@@ -38,7 +38,7 @@ fmt.Printf(rawTxHex)
 // f86d8202b38477359400825208944592d8f8d7b001e72cb26a73e4fa1806a51ac79d880de0b6b3a7640000802ba0699ff162205967ccbabae13e07cdd4284258d46ec1051a70a51be51ec2bc69f3a04e6944d508244ea54a62ebf9a72683eeadacb73ad7c373ee542f1998147b220e
 ```
 
-And now you have the raw transaction data which you can use to broadcast at a future date. In the [next section](../transaction-raw-send) we'll learn how to do broadcast a raw transaction.
+And now you have the raw transaction data which you can use to broadcast at a future date. In the [next section](../transaction-raw-send) we'll learn how to broadcast a raw transaction.
 
 ---
 
