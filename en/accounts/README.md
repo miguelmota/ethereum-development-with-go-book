@@ -14,7 +14,7 @@ address := common.HexToAddress("0x71c7656ec7ab88b098defb751b7401b5f6d8976f")
 fmt.Println(address.Hex()) // 0x71C7656EC7ab88b098defB751B7401B5f6d8976F
 ```
 
-Pretty much you'd use this type anywhere you'd pass an ethereum address to methods from go-ethereum. Now that you the basics of accounts and addresses, let's learn how to retrieve the ETH account balance in the next section.
+Pretty much you'd use this type anywhere you'd pass an ethereum address to methods from go-ethereum. Now that you know the basics of accounts and addresses, let's learn how to retrieve the ETH account balance in the next section.
 
 ---
 
