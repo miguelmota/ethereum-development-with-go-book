@@ -1,7 +1,8 @@
 ---
-description: Tutorial on whisper with Go.
+描述: 用Go使用whisper的教程。
 ---
 
 # Whisper
 
-Whisper is a simple peer-to-peer identity-based messaging system designed to be a building block in the next generation of decentralized applications. It was designed to provide resilience and privacy at considerable expense. In the upcoming sections we'll set up an Ethereum node with whisper support and then we'll learn how to send and receive encrypted messages on the whisper protocol.
+Whisper是一种简单的基于点对点身份的消息传递系统，旨在成为下一去中心化的应用程序的构建块。 它旨在以相当的代价提供弹性和隐私。 在接下来的部分中，我们将设置一个支持Whisper的以太坊节点，然后我们将学习如何在Whisper协议上发送和接收加密消息。
+

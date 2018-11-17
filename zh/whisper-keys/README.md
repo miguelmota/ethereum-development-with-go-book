@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to generate whisper key pairs with Go.
+描述: 用Go生成whisper密钥对的。
 ---
 
 # Generating Whisper Key Pair

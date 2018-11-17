@@ -1,16 +1,17 @@
 ---
-description: Tutorial on whisper with Go.
+描述: 用Go使用whisper的教程。
 ---
 
-# Connecting Whisper Client
+# 连接Whisper客户端
 
-To use whisper, we must first connect to an Ethereum node running whisper. Unfortunately, public gateways such as infura don't support whisper because there is no incentive for processing the messages for free. Infura might support whisper in the near future but for now we must run our own `geth` node. Once you [install geth](https://geth.ethereum.org/downloads/), run it with the `--shh` flag on to enable the whisper protocol, as well as the `--ws` flag to enable websocket support in order to receive messages in real time, and also enable the `--rpc` flag because we'll be communicating over RPC.
+
+要使用耳语，我们必须首先连接到运行whisper的以太坊节点。 不幸的是，诸如infura之类的公共网关不支持whisper，因为没有金钱动力免费处理这些消息。 Infura可能会在不久的将来支持whisper，但现在我们必须运行我们自己的`geth`节点。一旦你[安装 geth](https://geth.ethereum.org/downloads/), 运行geth的时候加 `--shh` flag开支持whisper协议, 并且加 `--ws`flag和 `--rpc`，来支持websocket来接收实时信息，
 
 ```bash
 geth --rpc --shh --ws
 ```
 
-Now in our Go application we'll import the go-ethereum whisper client package found at `whisper/shhclient` and initialize the client to connect our local geth node over websockets using the default websocket port `8546`.
+现在在我们的Go应用程序中，我们将导入在`whisper / shhclient`中找到的go-ethereum whisper客户端软件包并初始化客户端，使用默认的websocket端口“8546”通过websockets连接我们的本地geth节点。
 
 ```go
 client, err := shhclient.Dial("ws://127.0.0.1:8546")
@@ -21,7 +22,7 @@ if err != nil {
 _ = client // we'll be using this in the next section
 ```
 
-Now that we're dialed in let's create a key pair for encrypting the message before we send it in the [next section](../whisper-keys).
+现在我们已经拨打了，让我们创建一个密钥对来加密消息，然后再发送消息 [在下一章节](../whisper-keys).
 
 ---
 
