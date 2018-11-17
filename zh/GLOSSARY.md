@@ -1,373 +1,376 @@
-# Glossary
+# 词汇表
 
-## Addresses
+## Addresses 地址
 
-Used to receive and send transactions on the network. An address is a string of alphanumeric characters, but can also be represented as a scannable QR code. They are derived from the public/private ECDSA key pair.
+以来在以太坊中收发交易的地址，通常有数字和字母组成，也可以表示为一个二维码，由ECDSA密匙对衍生。
 
-## Agreement Ledgers
 
-Distributed ledgers used by two or more parties to negotiate and reach and agreement.
+## Agreement Ledgers 共识账本
 
-## Altcoin
+由两方或者多方来进行协商和达成共识的记账本。
 
-An abbreviation of "Bitcoin alternative". Currently, the majority of altcoins are forks of Bitcoin with usually minor changes to the proof of work (POW) algorithm of the Bitcoin blockchain. The most prominent altcoin is Litecoin. Litecoin introduces changes to the original Bitcoin protocol such as decreased block generation time, increased maximum number of coins and different hashing algorithm.
+## Altcoin 代币
 
-## Attestation Ledgers
+比特币替代品的缩写。目前大部分的代币都是比特币经过一些对做工证明微小改动的的分叉。其中最引人瞩目的是莱特币。莱特币对原来比特币的改动包括减少出块时间，增加最大的币的数量，和一个不同的哈希算法。
 
-Distributed ledgers that provide a durable record of agreements, commitments or statements, providing evidence (attestation) that these agreements, commitments or statements were made.
+## Attestation Ledgers 查证账本
 
-## ASIC
+一个专门为协议，承诺或者声明等，提供证明存在证据的（用来认证）的分布式账本。
 
-An acronym for "Application Specific Integrated Circuit". ASICs are silicon chips specifically designed to do a single task. In the case of bitcoin, they are designed to process SHA-256 hashing problems to mine new bitcoins.
+## ASIC 应用特制集成电路
 
-## Bitcoin
+"Application Specific Integrated Circuit"应用特制集成电路的缩写。ASICs是专门为某个单独的应用设计的硅芯片。就比特币来说，它们通常指专门用来计算SHA-256来进行挖比特币的芯片。
 
-Currently the most well known cryptocurrency, based on the proof-of-work blockchain.
+## Bitcoin 比特币
 
-## Blockchain
+目前最著名的虚拟货币，基于做工证明（proof-of-work）。
 
-A type of distributed ledger, comprised of unchangable, digitally recorded data in packages called blocks (rather like collating them on to a single sheet of paper). Each block is then ‘chained’ to the next block, using a cryptographic signature. This allows block chains to be used like a ledger, which can be shared and accessed by anyone with the appropriate permissions.
+## Blockchain 区块链
 
-## Block Ciphers
+一种不可篡改，用一个叫区块的结构数字化存储数据的分布式账本。每个区块再被数字签名“链”到下一个区块。这是的区块链可以用来做记账本，并切可以被有合适权限的个体分享，和使用。
 
-A method of encrypting text (to produce ciphertext) in which a cryptographic key and algorithm are applied to a block of data at once as a group rather than to one bit at a time.
+## Block Ciphers 区块加密器
 
-## Block Height
+一种对一整个区块的数据一起作为一个组群来进行用密匙和算法进行文本加密的的方法。而不是一个比特一个比特的算。
 
-Refers to the number of blocks connected together in the block chain. For example, Height 0, would be the very first block, which is also called the Genesis Block.
+## Block Height 区块高度
 
-## Block Rewards
+用来指区块链中链在一起的区块的个数。比如，高度0就是指第一个区块，通常也叫创世区块。
 
-Rewards given to a miner which has successfully hashed a transaction block. Block rewards can be a mixture of coins and transaction fees, depending on the policy used by the cryptocurrency in question, and whether all of the coins have already been successfully mined. The current block reward for the Bitcoin network is 25 bitcoins for each block.
+## Block Rewards 区块奖励
 
-## Central Ledger
+当矿工成功算出一个块得到的奖励。取决于具体的币种，还有是否所有的币都已经被挖完，区块奖励可以是币和交易费的混合。目前比特币网络的区块奖励是25个比特币每个块。
 
-Refers to a ledger maintained by a central agency.
+## Central Ledger 中央记账本
 
-## Chain Linking
+特制由一个中样机构维护的记账本。
 
-The process of connecting two blockchains with each other, thus allowing transactions between the chains to take place. This will allow blockchains like Bitcoin to communicate with other sidechains, allowing the exchange of assets between them
+## Chain Linking 跨链
 
-## Cipher
+吧两天不同区块链连到一起，并且允许跨链交易的的过程。这会允许像比特币这类的区块链与其他侧链通信并进行资产交易。
 
-The algorithm used for the encryption and/or decryption of information. In common language, 'cipher' is also used to refer to an encryption message, also known as 'code'.
+## Cipher 加密器
 
-## Confirmation
+用来加密和解密信息的算法。通常讲，“cipher”也可以指一个加密消息，或者“编码”。
 
-The blockchain transaction has been verified by the network. This happens through a process known as mining, in a proof-of-work system (e.g. Bitcoin). Once a transaction is confirmed, it cannot be reversed or double spent. The more confirmations a transaction has, the harder it becomes to perform a double spend attack.
+## Confirmation 确认
 
-## Consensus Process
+区块种的交易会被区块链网络确认。在一个做工证明的系统（如比特币）中，这个确认过程也被称为挖矿。一旦一笔交易被确认，它就不可以被逆转或者双花。交易被区块记录后的块数的个数，也叫确认的次数。比如，交易是3个区块前被确认的，那么我们就说交易有三个“确认”。确认的数量越多，双花攻击的难度就越大。
 
-A group of peers responsible for maintaining a distributed ledger use to reach consensus on the ledger's contents.
+## Consensus Process 共识过程
 
-## Consortium Blockchain
+一群负责维护一个分布式记账本的节点对记账本状态和内容达成共识的过程。
 
-A blockchain where the consensus process is controlled by a pre-selected set of nodes; for example, one might imagine a consortium of 15 financial institutions, each of which operates a node and of which ten must sign every block for the block to be valid. The right to read the blockchain may be public or restricted to the participants. There are also hybrid routes such as the root hashes of the blocks being public together with an API that allows members of the public to make a limited number of queries and get back cryptographic proofs of some parts of the blockchain state. These blockchains may be considered "partially decentralized".
+## Consortium Blockchain 联盟链
 
-## Cryptoanalysis
+一个共识过程有一组提前选出的节点控制的区块链。比如，你可以想象一个由15个金融机构组成的联盟，每个机构运营自己的节点，但是每个区块一定要有15个机构中的10个签名才能生效。也有混合模式，比如区块的根哈希是公开的，并且提供一个允许公共成员进行查询，并且获取加密证明部分区块链状态的的API。这类的区块链可以称为“半去中心化”。
 
-The study of methods for obtaining the meaning of encrypted information, without access to the secret information that is normally required to do so.
+## Cryptoanalysis 加密分析学
 
-## Cryptocurrency
+一门通过分析，在不用私钥的情况下获取加密信息的学科。
 
-A form of digital currency based on mathematics, where encryption techniques are used to regulate the generation of units of currency and verify the transfer of funds. Furthermore, cryptocurrencies operate independently of a central bank.
+## Cryptocurrency 加密货币
 
-## Cryptography
+一种基于数学的数字货币形式，其中加密技术用于规范货币单位的生成并验证资金的转移。 此外，加密货币独立于中央银行运作。
 
-Refers to the process of encrypting and decrypting information.
+## Cryptography 加密学
 
-## dApp
+指加密和解密信息的过程。
 
-A decentralized application that must be completely open-source, it must operate autonomously, and with no entity controlling the majority of its tokens.
+## dApp 去中心应用
 
-## DAO
+去中心化的应用程序必须是完全开源的，它必须自主运行，并且没有实体控制其大部分代币。
 
-(Decentralized Autonomous Organization) can be thought of as a corporation run without any human involvement under the control of an incorruptible set of business rules.
+## DAO 去中心独立组织
 
-## The DAO
+（分散的自治组织）可以被认为是在不可破坏的业务规则的控制下的，没有任何人为控制运行的组织。
 
-A venture capital fund built on Ethereum that caused a soft and hark fork.
+## The DAO （一个风投基金的名字）
 
-## Decryption
+一个基于以太坊的风险投机构。它们造成了很多的软分叉和硬分叉。
 
-The process of turning cipher-text back into plaintext
+## Decryption 解密
 
-## Encryption
+将密文重新转换为明文的过程。
 
-The process of turning a clear-text message (plaintext) into a data stream (cipher-text), which looks like a meaningless and random sequence of bits.
+## Encryption 加密
 
-## ERC
+将明文消息（明文）转换为看起来像无意义的随机比特序列数据流（密文）的过程。
 
-ERC stands for Ethereum Request for Comments. An ERC is a proposal for Ethereum.
+## ERC 以太坊协商意见请求（Ethereum Request for Comments）的缩写
 
-## ERC-20
+ERC是Ethereum Request for Comments的缩写. 一个ERC是一个对Ethereum的提案。
 
-A specfication for tokens on Ethereum.
+## ERC-20 第20号ERC，目前大部分以太坊代币都遵守的规范
 
-## Ether
+一个以太坊代币的标准。
 
-The native token of the Ethereum blockchain which is used to pay for transaction fees, miner rewards and other services on the network.
+## Ether 以太币
 
-## Ethereum
+以太坊区块链的原生代币，用于支付网络上的交易费，矿工奖励和其他服务。
 
-An open software platform based on blockchain technology that enables developers to write smart contracts and build and deploy decentralized applications.
+## Ethereum 以太坊
 
-## Ethereum Classic
+基于区块链技术的开放式软件平台，使开发人员能够编写智能合约，构建和部署分散式应用程序。
 
-A split from an existing cryptocurrency, Ethereum after a hard fork. To learn more about this, click here.
+## Ethereum Classic 以太坊经典版
 
-## EVM
+一个经过硬分叉后的以太坊。
 
-The Ethereum Virtual Machine.
+## EVM 以太坊虚拟机
 
-## EVM Bytecode
+用来运行以太坊二进制码的以太坊虚拟机。
 
-The programming language in which accounts on the Ethereum blockchain can contain code. The EVM code associated with an account is executed every time a message is sent to that account, and has the ability to read/write storage and itself send messages.
+## EVM Bytecode 以太坊虚拟机二进制码
 
-## Digital Commodity
+以太坊区块链上的帐户可以包含的编程语言代码。每次向帐户发送消息时，都会执行与帐户关联的EVM代码，并且能够读取/写入存储，并自行发送消息。
 
-A scarce, electronically transferrable, intangible, with a market value.
+## Digital Commodity 数字商品
 
-## Digital Identity
+通常指稀缺，电子可转让，无形，具有市场价值的数字商品。
 
-An online or networked identity adopted or claimed in cyberspace by an individual, organization, or electronic device.
+## Digital Identity 数字身份
 
-## Distributed Ledgers
+由个人，组织或电子设备在网络空间中采用或声明的在线或网络身份。
 
-A type of database that are spread across multiple sites, countries or institutions. Records are stored one after the other in a continuous ledger. Distributed ledger data can be either "permissioned" or "unpermissioned" to control who can view it.
+## Distributed Ledgers 分布式记账本
 
-## Difficulty
+一种分布在多个站点，国家或机构的数据库。 记录一个接一个地存储在连续的分类帐中。 分布式分类帐数据可以是“需许可”或“不需许可”。这指以控制（谁可以查看）账本的方式区分。
 
-In Proof-of-Work mining, is how hard it is to verify blocks in a blockchain network. In the Bitcoin network, the difficulty of mining adjusts verifying blocks every 2016 blocks. This is to keep block verification time at ten minutes.
+## Difficulty 难度
 
-## Double Spend
+指在Proof-of-Work挖矿中，挖掘区块链网络中的块的难度。 在比特币网络中，挖掘的难度每2016块都会调整。 这是为了将块验证时间保持在十分钟。快了就更难一点，慢了就简单一点。
 
-Refers to a scenario, in the Bitcoin network, where someone tries to send a bitcoin transaction to two different recipients at the same time. However, once a bitcoin transaction is confirmed, it makes it nearly impossible to double spend it. The more confirmations that a particular transaction has, the harder it becomes to double spend the bitcoins.
+## Double Spend 双花
 
-## Fiat currency
+指比特币网络中的某个场景，有人试图同时向两个不同的收件人发送比特币交易。 但是，一旦比特币交易得到确认，就几乎不可能再花费它。 交易的确认越多，双倍花费比特币变得越困难。
 
-is any money declared by a government to be to be valid for meeting a financial obligation, like USD or EUR.
+## Fiat currency 法币
 
-## Fork
+是政府宣布为履行财务义务，如美元或欧元。
 
-The creation of an ongoing alternative version of the blockchain, by creating two blocks simultaneously on different parts of the network. This creates two parallel blockchains, where one of the two is the winning blockchain.
+## Fork 分叉
 
-## Gas
+通过在网络的不同部分同时创建两个块，创建区块链的持续替代版本。 这会在分叉的节点之后创建了两个并行的区块链，其中一个是获胜的区块链。
 
-A measurement roughly equivalent to computational steps (for Ethereum). Every transaction is required to include a gas limit and a fee that it is willing to pay per gas; miners have the choice of including the transaction and collecting the fee or not. Every operation has a gas expenditure; for most operations it is ~3–10, although some expensive operations have expenditures up to 700 and a transaction itself has an expenditure of 21000.
+## Gas 以太坊“燃气”
 
-## Gas Cost
+一直以太坊的计量方式，大致相当于计算量步骤（对于以太坊）。 每项交易都必须包括燃气限额和愿意支付的单位燃气费用; 矿工会根据费用，去选择包括的交易。 每项操作都有燃气开支; 对于大多数操作而言，它是在3-10，尽管一些昂贵的操作有高达700的支出，而以太币交易本身的支出为21000个燃气。
 
-Gas cost is the gas limit multiplied by the gas price.
+## Gas Cost “燃气” 花费
 
-## Gas Limit
+燃气费用是燃气上限乘以燃气价格。
 
-Max number of computational units that the transaction should use up in the smart contrat execution.
+## Gas Limit ”燃气“上限
 
-## Gas Price
+事务在智能合约执行中应该耗尽的最大燃气上限。
+
+## Gas Price ”燃气“ 价格
 
 The price per computational unit.
 
-## Geth
+## Geth Go以太坊客户端的简称
 
-An Ethereum node implementation in Golang. [https://github.com/ethereum/go-ethereum](https://github.com/ethereum/go-ethereum)
+一个Go实现的以太坊客户端。 [https://github.com/ethereum/go-ethereum](https://github.com/ethereum/go-ethereum)
 
-## Go
+## Go 狗语言（笑）
 
-Go is a programming language created at Google in 2009 by Robert Griesemer, Rob Pike, and Ken Thompson.
+Go是由Robert Griesemer，Rob Pike和Ken Thompson于2009年在Google创建的一种编程语言。
 
-## Golang
+## Golang Go编程语言
 
-The Go programming language.
+Go编程语言。
 
-## go-ethereum
+## go-ethereum Go实现的以太坊客户端
 
-The Ethereum implementation in Golang.
+Go实现的以太坊客户端项目名。
 
-## Halving
+## Halving （收益）减半
 
-Bitcoins have a finite supply, which makes them a scarce digital commodity. The total amount of bitcoins that will ever be issued is 21 million. The number of bitcoins generated per block is decreased 50% every four years. This is called "halving". The final halving will take place in the year 2140.
+比特币的供应量有限，这使得它们成为稀缺的数字商品。 发行的比特币总量为2100万。 每个块产生的比特币数量每四年减少50％。 这称为“减半”。 最后一半将在2140年进行。
 
-## Hard fork
+## Hard fork 硬分叉
 
-A change to the blockchain protocol that makes previously invalid blocks/transactions valid, and therefore requires all users to upgrade their clients.
+通过对区块链协议的更改使先前无效的块/事务有效，因此需要所有用户升级其客户端。
 
-## Hashcash
+## Hashcash 哈希现金
 
-A proof-of-work system used to limit email spam and denial-of-service attacks, and more recently has become known for its use in bitcoin (and other cryptocurrencies) as part of the mining algorithm.
+用于限制电子邮件垃圾邮件和拒绝服务攻击的基于工作量证明的区块链系统，并且最近因其在比特币（和其他加密货币）中作为挖掘算法的一部分使用而闻名。
 
-## Hashrate
+## Hashrate 哈希速率（一种对算力的描述）
 
-The number of hashes that can be performed by a bitcoin miner in a given period of time (usually a second).
+比特币矿工在给定时间内（通常是一秒钟）可以计算的哈希数。
 
-## HD Wallet
+## HD Wallet 硬件钱包
 
-An HD Wallet, or Hierarchical Deterministic wallet, is a new-age digital wallet that automatically generates a hierarchical tree-like structure of private/public addresses (or keys), thereby addressing the problem of the user having to generate them on his own.
+硬件钱包或分级确定性钱包是一种新的数字钱包，它自动生成私有/公共地址（或密钥）的树状结构，从而解决用户必须自己生成它们的问题。
 
-## Infura
+## Infura 一个提供以太坊全节点服务
 
-Infura provides secure, reliable, and scalable gateways to the Ethereum network. [https://infura.io/](https://infura.io/)
+Infura为以太坊网络提供安全，可靠和可扩展的网关。 [https://infura.io/](https://infura.io/)
 
-## Initial Coin Offering
+## Initial Coin Offering 发币
 
-(ICO) is an event in which a new cryptocurrency sells advance tokens from its overall coinbase, in exchange for upfront capital. ICOs are frequently used for developers of a new cryptocurrency to raise capital.
+（ICO）是一种新的加密货币从其整体币库中销售预付代币的事件，以换取前期资本。 ICO经常被用于新加密货币的开发者以筹集资金。
 
-## IPFS
+## IPFS 星际文件系统的缩写
 
-InterPlanetary File System (IPFS) is a protocol and network designed to create a content-addressable, peer-to-peer method of storing and sharing hypermedia in a distributed file system.
+行星际文件系统（IPFS）是一种协议和网络，旨在创建一种在分布式文件系统中点对点的存储和共享，内容可寻址的，超媒体的的对等方法。
 
-## Keccak-256
+## Keccak-256 一个以太坊常用加密哈希算法的名词
 
-The hashing algorithm used in Ethereum.
+以太坊中使用的哈希算法。
 
-## Keystore
+## Keystore 密匙库
 
-A file containing an encrypted wallet private keys and wallet metadata.
+包含加密钱包私钥和钱包元数据的文件。
 
-## Kovan
+## Kovan 科文（一个以太坊测试网的名称）
 
-A proof-of-authority testnet on the Ethereum blockchain. Supported by Parity only.
+一个基于权威证明的以太坊测试网. 只有Parity支持.
 
-## Ledger
+## Ledger 记账本
 
-An append-only record store, where records are immutable and may hold more general information than financial records.
+仅允许附加记录存储（append only），其中记录是不可变的，并且记录除财务记录外更多的一般信息。
 
-## Litecoin
+## Litecoin 莱特币
 
-A peer-to-peer cryptocurrency based on the Scrypt proof-of-work network. Sometimes referred to as the silver of bitcoin’s gold.
+一个基于Scrypt算法和做工证明的点对点加密货币。有时被称为加密货币的白银（如果比特币是黄金的话）。
 
-## Mining
+## Mining 挖矿
 
-The process by which transactions are verified and added to a blockchain. This process of solving cryptographic problems using computing hardware also triggers the release of cryptocurrencies.
+不断寻找符合标准的特殊哈希值，并验证交易并将其添加到区块链的过程。 使用计算硬件计算加密问题的这一过程也会触发加密货币的生成（挖矿奖励）。
 
-## Mnemonic
+## Mnemonic 助记符（通常用来恢复密匙）
 
-A mnemonic phrase, mnemonic recovery phrase or mnemonic seed is a list of words used as a seed to generate the master private key and master chain code for an HD wallet.
+助记符短语，助记符恢复短语或助记符种子是用作生成HD钱包的主私钥和主链代码的种子的单词列表。
 
-## Multi-signature
+## Multi-signature 多签名
 
-(multisig) addresses allow multiple parties to require more than one key to authorize a transaction. The needed number of signatures is agreed at the creation of the address. Multi signature addresses have a much greater resistance to theft.
+（multisig）多签名地址允许对多方要求密钥来授权交易。 在创建地址时决定所需数量的签名。 多签名地址具有更大的防盗能力。
 
-## Node
+## Node 节点
 
-Any computer that connects to the blockchain network.
+任何连接到区块链网络的计算机。
 
-## Nonce
+## Nonce 去重数（一个只能用一次的数字）
 
-A number only used once.
+一个只使用一次的数字。
 
-## Full node
+## Full node 全节点
 
-A node that fully enforces all of the rules of the blockchain.
+一个完全执行区块链所有规则的节点。
 
-## Parity
+## Parity 奇偶（一个Rust实现的以太坊客户端）
 
-An Ethereum implementation written in the Rust language. [https://github.com/paritytech/parity](https://github.com/paritytech/parity)
+用Rust语言编写的以太坊实现。 [https://github.com/paritytech/parity](https://github.com/paritytech/parity)
 
-## P2P
+## P2P 点对点的缩写
 
-P2P stands for Peer to Peer.
+P2P 是Peer to Peer（点对点）的缩写.
 
-## Peer-to-peer
+## Peer-to-peer 点对点
 
-Refers to the decentralized interactions that happen between at least two parties in a highly interconnected network. P2P participants deal directly with each other through a single mediation point.
+指在高度互连的网络中至少两方之间发生的去中心化的交互。 P2P参与者通过一个中介点直接相互交往。
 
-## Permissioned Ledger
+## Permissioned Ledger 需要请求权限的记账本
 
-Is a ledger where actors must have permission to access the ledger. Permissioned ledgers may have one or many owners. When a new record is added, the ledger’s integrity is checked by a limited consensus process. This is carried out by trusted actors — government departments or banks, for example — which makes maintaining a shared record much simpler that the consensus process used by unpermissioned ledgers.
+是一个分类帐，其中参与者必须具有访问分类帐的权限。 许可的分类帐可能有一个或多个所有者。 添加新记录时，有限共识流程会检查分类帐的完整性。 这是由可信赖的参与者 - 例如政府部门或银行 - 进行的，这使得保持共享记录比未经许可的分类账使用的共识过程简单得多。
 
-## Permissioned Blockchains
+## Permissioned Blockchains 需要请求权限的区块链
 
-Provide highly-verifiable data sets because the consensus process creates a digital signature, which can be seen by all parties.
+提供高度可验证的数据集，因为共识流程创建了数字签名，所有各方都可以看到。
 
-## Private Key
+## Private Key 私钥
 
-A string of data that shows you have access to bitcoins in a specific wallet. Private keys can be thought of as a password; private keys must never be revealed to anyone but you, as they allow you to spend the bitcoins from your bitcoin wallet through a cryptographic signature.
+一串数据，显示您可以支配特定钱包中的比特币。 私钥可以被认为是密码; 除了您之外，不要向任何人泄露私钥，因为它们允许您通过加密签名从比特币钱包中使用比特币。
 
-## Proof of Authority
+## Proof of Authority 权威证明
 
-A consensus mechanism in a private blockchain which essentially gives one client (or a specific number of clients) with one particular private key the right to make all of the blocks in the blockchain.
+私有区块链中的共识机制，它基本上为一个客户端（或特定数量的客户端）提供了一个特定私钥，以便在区块链中生成所有块。
 
-## Proof of Stake
+## Proof of Stake 利权证明
 
-An alternative to the proof-of-work system, in which your existing stake in a cryptocurrency (the amount of that currency that you hold) is used to calculate the amount of that currency that you can mine.
+工作量证明系统的替代方案，其中您使用加密货币的现有股份（您持有的货币金额）来计算您可以开采的货币金额。
 
-## Proof of Work
+## Proof of Work 做工证明
 
-A system that ties mining capability to computational power. Blocks must be hashed, which is in itself an easy computational process, but an additional variable is added to the hashing process to make it more difficult. When a block is successfully hashed, the hashing must have taken some time and computational effort. Thus, a hashed block is considered proof of work.
+将采矿能力与计算能力联系起来的系统。 必须对块进行散列，这本身就是一个简单的计算过程，但是在散列过程中添加了一个额外的变量，使其更加困难。 成功散列块时，散列必须花费一些时间和计算量。 因此，散列块被认为是工作的证据。
 
-## Protocols
+## Protocols 协议
 
-Sets of formal rules describing how to transmit or exchange data, especially across a network.
+描述如何传输或交换数据的正式规则集，尤其是在网络中。
 
-## Rinkeby
+## Rinkeby 一个以太坊测试网的名称
 
-A proof-of-authority testnet on the Ethereum blockchain. Supported by Geth only.
+以太坊区块链上的权威证明的测试网。 仅由Geth支持。
 
-## RLP
+## RLP 递归长度前缀编码标准的缩写
 
-[Recursive Length Prefix](https://github.com/ethereum/wiki/wiki/RLP) (RLP) is a standard to encode arbitrarily nested arrays of binary data. RLP is the main encoding method used to serialize objects in Ethereum.
+[Recursive Length Prefix](https://github.com/ethereum/wiki/wiki/RLP) (RLP) 是一种编码任意嵌套的二进制数据数组的标准。 RLP是用于序列化以太坊中对象的主要编码方法。
 
-## Ropsten
+## Ropsten 一个做工证明的以太坊测试网
 
-A proof-of-work testnet on the Ethereum blockchain which best simulates production environment. Supported by Geth and Parity.
+以太坊区块链上的工作证明的测试网，可以最好地模拟生产环境。 由Geth和Parity支持。
 
-# Scrypt
+## Scrypt 一个做工证明的哈希算法
 
-An alternative proof of work system to SHA-256, designed to be particularly friendly to CPU and GPU miners, while offering little advantage to ASIC miners.
+SHA-256的另一种工作系统证明，旨在对CPU和GPU矿工特别友好，同时为尽力无视ASIC矿工提的优势。
 
-## SHA256
+## SHA256 一个加密哈希方程的名称（应用于比特币）
 
-The cryptographic function used as the basis for bitcoin’s proof of work system.
+一个加密函数，比特币工作系统证明的基础。
 
-## Signature
+## Signature 签名
 
-A digital signature is a mathematical scheme for presenting the authenticity of digital messages or documents.
+数字签名是用于呈现数字消息或文档的真实性的数学方案。
 
-## Smart contract
+## Smart contract 智能合约
 
-Contracts whose terms are recorded in a computer language instead of legal language. Smart contracts can be automatically executed by a computing system, such as a suitable distributed ledger system.
+合同的条款以计算机语言或代码，而非法律语言记录。 智能合约可以由计算系统自动执行，例如合适的分布式分类帐系统。
 
-## Soft fork
+## Soft fork 软分叉
 
-A change to the bitcoin protocol wherein only previously valid blocks/transactions are made invalid. Since old nodes will recognize the new blocks as valid, a softfork is backward-compatible. This kind of fork requires only a majority of the miners upgrading to enforce the new rules.
+对比特币协议的改变，其中仅使先前有效的块/事务无效。 由于旧节点将新块识别为有效，因此softfork是向后兼容的。 这种分支只需要大多数矿工升级来执行新规则。
 
-## Sokol
+## Sokol 一个只有Parity 客户端支持的以太坊测试网
 
-A proof-of-authority testnet on the Ethereum blockchain. Supported by Parity only.
+一个以太坊区块链上的权威证明的测试网。 仅受Parity客户端支持。
 
-## Stream ciphers
 
-A method of encrypting text (cyphertext) in which a cryptographic key and algorithm are applied to each binary digit in a data stream, one bit at a time.
+## Stream ciphers 数据流加密器
 
-## Swarm
+一种加密文本（密文）的方法，其中加密密钥和算法一次一位地应用于数据流中的每个二进制数字。
 
-Decentralized file storage as part of Ethereum.
+## Swarm 直译为虫群，以太坊中的分布式文件存储组件
 
-## Token
+去中心化的文件存储，以太坊的一部分。
 
-Is a digital identity for something that can be owned.
+## Token 代币
 
-## Tokenless Ledger
+是可以拥有的东西的数字身份。
 
-Refers to a distributed ledger that doesn’t require a native currency to operate.
+## Tokenless Ledger 无代币记账本
 
-## Transaction Block
+指的是不需要本地货币运行的分布式分类帐。
 
-A collection of transactions on the bitcoin network, gathered into a block that can then be hashed and added to the blockchain.
+## Transaction Block 交易块
 
-## Transaction Fees
+比特币网络上的一系列交易，聚集到一个块中，然后可以对其进行哈希处理并添加到区块链中。
 
-Small fees imposed on some transactions sent across the bitcoin network. The transaction fee is awarded to the miner that successfully hashes the block containing the relevant transaction.
+## Transaction Fees 交易费
 
-## Unpermissioned ledgers
+通过比特币网络发送的一些交易收取的小额费用。 交易费用将授予成功包含相关交易的区块的矿工。
 
-Blockchains that do not have a single owner; they cannot be owned. The purpose of an unpermissioned ledger is to allow anyone to contribute data to the ledger and for everyone in possession of the ledger to have identical copies.
+## Unpermissioned ledgers 无权限记账本
 
-## Wallet
+没有单一所有者的区块链; 不能被任何个体拥有。 无需许可的分类帐的目的是允许任何人向分类帐和拥有分类帐的每个人提供相同副本的数据。
 
-A file that contains a collection of private keys.
+## Wallet 钱包
 
-## Whisper
+包含私钥集合的文件。
 
-A peer-to-peer messaging system as part of Ethereum.
+## Whisper 直译为悄悄话，以太坊中的一个点对点消息系统
+
+作为以太坊的一部分的，点对点消息传递系统。
+
