@@ -1,7 +1,7 @@
 ---
-概述: Tutorial on how to 智能合约 with Go.
+概述: 用Go使用以太坊智能合约的教程。
 ---
 
 # 智能合约
 
-In the 下个章节s we'll learn how to compile, deploy, read, and write to smart contract using Go.
+在下个章节中我们会介绍如何用Go来编译，部署，写入和读取智能合约。

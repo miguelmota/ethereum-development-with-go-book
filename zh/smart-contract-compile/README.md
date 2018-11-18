@@ -1,20 +1,20 @@
 ---
-概述: Tutorial on how to compile a smart contract and read the ABI with Go.
+概述: 用Go编译智能合约并读取ABI的教程。
 ---
 
-# Smart Contract Compilation & ABI
+# 智能合约的编译与ABI
 
-In order to interact with a smart contract, we first must generate the ABI (application binary interface) of the contract and compile the ABI to a format that we can import into our Go application.
+与智能合约交互，我们要先生成相应智能合约的应用二进制接口ABI(application binary interface)，并把ABI编译成我们可以在Go应用中调用的格式。
 
-The first step is to install the [Solidity compiler](https://solidity.readthedocs.io/en/latest/installing-solidity.html) (`solc`).
+第一步是安装 [Solidity编译器](https://solidity.readthedocs.io/en/latest/installing-solidity.html) (`solc`).
 
-Solc is available as a snapcraft package for Ubuntu.
+Solc 在Ubuntu上有snapcraft包。
 
 ```bash
 sudo snap install solc --edge
 ```
 
-Solc is available as a Homebrew package for macOS.
+Solc在macOS上有Homebrew的包。
 
 ```bash
 brew update
@@ -22,11 +22,11 @@ brew tap ethereum/ethereum
 brew install solidity
 ```
 
-For other platforms or for installing from source, check out the official solidity [install guide](https://solidity.readthedocs.io/en/latest/installing-solidity.html#building-from-source).
+其他的平台或者从源码编译的教程请查阅官方solidity文档[install guide](https://solidity.readthedocs.io/en/latest/installing-solidity.html#building-from-source).
 
-We also need to install a tool called `abigen` for generating the ABI from a solidity smart contract.
+我们还得安装一个叫`abigen`的工具，来从solidity智能合约生成ABI。
 
-Assuming you have Go all set up on your computer, simply run the following to install the `abigen` tool.
+假设您已经在计算机上设置了Go，只需运行以下命令即可安装`abigen`工具。
 
 ```bash
 go get -u github.com/ethereum/go-ethereum
@@ -35,9 +35,9 @@ make
 make devtools
 ```
 
-We'll create a simple smart contract to test with. More complex 智能合约, and smart contract development in general is out of scope for this book. I highly recommend checking out [truffle framework](http://truffleframework.com/) for developing and testing 智能合约.
+我们将创建一个简单的智能合约来测试。 学习更复杂的智能合约，或者智能合约的开发的内容则超出了本书的范围。 我强烈建议您查看[truffle framework](http://truffleframework.com/) 来学习开发和测试智能合约。
 
-This simple contract will be a key/value store with only 1 external method to set a key/value pair by anyone. We also added an event to emit after the value is set.
+这里只是一个简单的合约，就是一个键/值存储，只有一个外部方法来设置任何人的键/值对。 我们还在设置值后添加了要发出的事件。
 
 ```solidity
 pragma solidity ^0.4.24;
@@ -59,35 +59,37 @@ contract Store {
 }
 ```
 
-Although this smart contract is simple it'll will work for this example.
+虽然这个智能合约很简单，但它将适用于这个例子。
 
-Now we can generate the ABI from a solidity source file.
+现在我们可以从一个solidity文件生成ABI。
 
 ```bash
 solc --abi Store.sol
 ```
 
-It'll write it to a file called `Store_sol_Store.abi`
+它会将其写入名为“Store_sol_Store.abi”的文件中
 
-Now let's convert the ABI to a Go file that we can import. This new file will contain all the available methods the we can use to interact with the smart contract from our Go application.
+现在让我们用`abigen`将ABI转换为我们可以导入的Go文件。 这个新文件将包含我们可以用来与Go应用程序中的智能合约进行交互的所有可用方法。
 
 ```bash
 abigen --abi=Store_sol_Store.abi --pkg=store --out=Store.go
 ```
 
-In order to deploy a smart contract from Go, we also need to compile the solidity smart contract to EVM bytecode. The EVM bytecode is what will be sent in the data field of the transaction. The bin file is required for generating the deploy methods on the Go contract file.
+为了从Go部署智能合约，我们还需要将solidity智能合约编译为EVM字节码。 EVM字节码将在事务的数据字段中发送。 在Go文件上生成部署方法需要bin文件。
+
 
 ```bash
 solc --bin Store.sol
 ```
 
-Now we compile the Go contract file which will include the deploy methods because we includes the bin file.
+现在我们编译Go合同文件，其中包括deploy方法，因为我们包含了bin文件。
 
 ```bash
 abigen --bin=Store_sol_Store.bin --abi=Store_sol_Store.abi --pkg=store --out=Store.go
 ```
 
-That's it for this lesson. In the next lessons we'll learn how to deploy the smart contract, and then interact with it.
+在接下来的课程中，我们将学习如何部署智能合约，然后与之交互。
+
 
 ---
 
