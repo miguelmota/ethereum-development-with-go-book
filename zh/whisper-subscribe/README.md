@@ -1,16 +1,16 @@
 ---
-description: Tutorial on how to subscribe to messages on whisper with Go.
+描述: 用Go在whisper中监听/订阅消息的教程。
 ---
 
-# Subscribing to Whisper Messages
+# 监听/订阅Whisper消息
 
-In this section we'll be subscribing to whisper messages over websockets. First thing we need is a channel that will be receiving whisper messages in the `Message` type from the `whisper/whisperv6` package.
+在本节中，我们将订阅websockets上的Whisper消息。 我们首先需要的是一个通道，它将从`whisper/whisperv6`包中的`Message`类型接收Whispe消息。
 
 ```go
 messages := make(chan *whisperv6.Message)
 ```
 
-Before we invoke a subscription, we first need to determine the criteria. From the whisperv6 package initialize a new `Criteria` object. Since we're only interested in messages targeted to us, we'll set the `PrivateKeyID` property on the criteria object to the same key ID we used for encrypting messages.
+在我们调用订阅之前，我们首先需要确定消息的过滤标准。 从whisperv6包中初始化一个新的`Criteria`对象。 由于我们只对定位到我们的消息感兴趣，因此我们将条件对象上的`PrivateKeyID`属性设置为我们用于加密消息的相同密钥ID。
 
 ```go
 criteria := whisperv6.Criteria{
@@ -18,7 +18,7 @@ criteria := whisperv6.Criteria{
 }
 ```
 
-Next we invoke the client's `SubscribeMessages` method which subscribes to messages that match the given criteria. This method is not supported over HTTP; only supported on bi-directional connections such as websockets and IPC. The last argument is the messages channel we created earlier.
+接下来，我们调用客户端的`SubscribeMessages`方法，该方法订阅符合给定条件的消息。 HTTP不支持此方法; 仅支持双向连接，例如websockets和IPC。 最后一个参数是我们之前创建的消息通道。
 
 ```go
 sub, err := client.SubscribeMessages(context.Background(), criteria, messages)
@@ -27,7 +27,7 @@ if err != nil {
 }
 ```
 
-Now that we have our subscription, we can use a `select` statement to read messages as they come in and also to handle errors from the subscription. If you recall from the previous section, the message content is in the `Payload` property as a byte slice which we can convert back to a human readable string.
+现在我们已经订阅了，我们可以使用`select`语句来读取消息，并处理订阅中的错误。 如果您从上一节回忆起来，消息内容在`Payload`属性中作为字节切片，我们可以将其转换回人类可读的字符串。
 
 ```go
 for {
@@ -40,7 +40,7 @@ for {
 }
 ```
 
-Check out the full code below for a complete working example. That's all there is to whisper message subscriptions.
+查看下面的完整代码，获取完整的栗子。 这就是消息订阅的所有内容。
 
 ---
 

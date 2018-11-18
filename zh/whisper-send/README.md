@@ -1,10 +1,11 @@
 ---
-description: Tutorial on how to send a message on whisper with Go.
+描述: 用Go在whisper上发送消息的教程。
 ---
 
-# Sending Messages on Whisper
+# 在Whisper上发送消息
 
-Before we're able to create a message, we must first have a public key to encrypt the message. In the [previous section](../whisper-keys) we learned how to generate a public and private key pair using the `NewKeyPair` function which returned a key ID that references this key pair. We now have to call the `PublicKey` function to read the key pair's public key in bytes format which we'll be using to encrypt the message.
+
+在我们能够创建消息之前，我们必须首先使用公钥来加密消息。在[上个章节](../whisper-keys)中，我们学习了如何使用`NewKeyPair`函数生成公钥和私钥对，该函数返回了引用该密钥对的密钥ID。 我们现在必须调用`PublicKey`函数以字节格式读取密钥对的公钥，我们将使用它来加密消息。
 
 ```go
 publicKey, err := client.PublicKey(context.Background(), keyID)
@@ -15,13 +16,13 @@ if err != nil {
 fmt.Println(hexutil.Encode(publicKey)) // 0x04f17356fd52b0d13e5ede84f998d26276f1fc9d08d9e73dcac6ded5f3553405db38c2f257c956f32a0c1fca4c3ff6a38a2c277c1751e59a574aecae26d3bf5d1d
 ```
 
-Now we'll construct our whisper message by initializing the `NewMessage` struct from the go-ethereum `whisper/whisperv6` package, which requires the following properties:
+现在我们将通过从go-ethereum`whisper/whisperv6`包中初始化`NewMessage`结构来构造我们的私语消息，这需要以下属性：
 
-- `Payload` as the message content in bytes format
-- `PublicKey` as the key we'll use for encryption
-- `TTL` as the time-to-live in seconds for the message
-- `PowTime` as maximal time in seconds to be spent on proof of work.
-- `PowTarget` as the minimal PoW target required for this message.
+- `Payload` 字节格式的消息内容
+- `PublicKey` 加密的公钥
+- `TTL` 消息的活跃时间
+- `PowTime` 做工证明的时间上限
+- `PowTarget` 做工证明的时间下限
 
 ```go
 message := whisperv6.NewMessage{
@@ -33,7 +34,7 @@ message := whisperv6.NewMessage{
 }
 ```
 
-We can now broadcast to the network by invoking the client's `Post` function giving it the message, will it'll return a hash of the message.
+我们现在可以通过调用客户端的`Post`函数向网络广播，给它消息，它是否会返回消息的哈希值。
 
 ```go
 messageHash, err := client.Post(context.Background(), message)
@@ -44,7 +45,7 @@ if err != nil {
 fmt.Println(messageHash) // 0xdbfc815d3d122a90d7fb44d1fc6a46f3d76ec752f3f3d04230fe5f1b97d2209a
 ```
 
-In the [next section](../whisper-subscribe) we'll see how we can create a message subscription to be able to receive the messages in real time.
+在[下个章节](../whisper-subscribe)中我们将看到如何创建消息订阅以便能够实时接收消息。
 
 ---
 
