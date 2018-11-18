@@ -1,14 +1,14 @@
 ---
-概述: Tutorial on how to query blocks in Ethereum with Go.
+概述: 用Go查询以太坊区块。
 ---
 
-# Querying Blocks
+# 查询区块 
 
-There's two ways you can query block information as we'll see.
+正如我们所见，您可以有两种方式查询区块信息。
 
-#### Block header
+#### 区块头 
 
-You can call the client's `HeaderByNumber` to return header information about a block. It'll return the latest block header if you pass `nil`.
+您可以调用客户端的`HeadByNumber`来返回有关一个区块的头信息。若您传入`nil`，它将返回最新的区块头。
 
 ```go
 header, err := client.HeaderByNumber(context.Background(), nil)
@@ -19,9 +19,9 @@ if err != nil {
 fmt.Println(header.Number.String()) // 5671744
 ```
 
-#### Full block
+#### 完整区块 
 
-Call the client's `BlockByNumber` method to get the full block. You can read all the contents and metadata of the block such as block number, block timestamp, block hash, block difficulty, as well as the list of transactions and much much more.
+调用客户端的`BlockByNumber`方法来获得完整区块。您可以读取该区块的所有内容和元数据，例如，区块号，区块时间戳，区块摘要，区块难度以及交易列表等等。
 
 ```go
 blockNumber := big.NewInt(5671744)
@@ -37,7 +37,7 @@ fmt.Println(block.Hash().Hex())          // 0x9e8751ebb5069389b855bba72d94902cc3
 fmt.Println(len(block.Transactions()))   // 144
 ```
 
-Call `TransactionCount` to return just the count of transactions in a block.
+调用`Transaction`只返回一个区块的交易数目。
 
 ```go
 count, err := client.TransactionCount(context.Background(), block.Hash())
@@ -48,8 +48,7 @@ if err != nil {
 fmt.Println(count) // 144
 ```
 
-In the 下个章节 we'll learn how to query transactions in a block.
-
+在下个章节，我们将学习查询区块中的交易。
 ---
 
 ### 完整代码
