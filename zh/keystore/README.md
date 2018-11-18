@@ -1,12 +1,12 @@
 ---
-概述: Tutorial on creating and importing a keystore with Go.
+概述: 用Go创建和导入keystore。
 ---
 
 # Keystores
 
-A keystore is a file containing an encrypted wallet private key. Keystores in go-ethereum can only contain one wallet key pair per file. To generate keystores first you must invoke `NewKeyStore` giving it the directory path to save the keystores. After that, you may generate a new wallet by calling the method `NewAccount` passing it a password for encryption. Every time you call `NewAccount` it will generate a new keystore file on disk.
+keystore是一个包含经过加密了的钱包私钥。go-ethereum中的keystore，每个文件只能包含一个钱包密钥对。要生成keystore，首先您必须调用`NewKeyStore`，给它提供保存keystore的目录路径。然后，您可调用`NewAccount`方法创建新的钱包，并给它传入一个用于加密的口令。您每次调用`NewAccount`，它将在磁盘上生成新的keystore文件。
 
-Here's a full example of generating a new keystore account.
+这是一个完整的生成新的keystore账户的示例。
 
 ```go
 ks := keystore.NewKeyStore("./wallets", keystore.StandardScryptN, keystore.StandardScryptP)
@@ -19,9 +19,9 @@ if err != nil {
 fmt.Println(account.Address.Hex()) // 0x20F8D42FB0F667F2E53930fed426f225752453b3
 ```
 
-Now to import your keystore you basically need to invoke `NewKeyStore` again as usual and then call the `Import` method which accepts the keystore JSON data as bytes. The second argument is the password used to encrypt it in order to decrypt it. The third argument is to specify a new encryption password but we'll use the same one in the example. Importing the account will give you access to the account as expected but it'll generate a new keystore file! There's no point in having two of the same thing so we'll delete the old one.
+现在要导入您的keystore，您基本上像往常一样再次调用`NewKeyStore`，然后调用`Import`方法，该方法接收keystore的JSON数据作为字节。第二个参数是用于加密私钥的口令。第三个参数是指定一个新的加密口令，但我们在示例中使用一样的口令。导入账户将允许您按期访问该账户，但它将生成新keystore文件！有两个相同的事物是没有意义的，所以我们将删除旧的。
 
-Here's an example of importing a keystore and accessing the account.
+这是一个导入keystore和访问账户的示例。
 
 ```go
 file := "./wallets/UTC--2018-07-04T09-58-30.122808598Z--20f8d42fb0f667f2e53930fed426f225752453b3"
