@@ -1,16 +1,17 @@
 ---
-概述: Tutorial on downloadig files from swarm in Go.
+概述: 用Go从Swarm下载文件的教程。
 ---
 
-# Downloading Files from Swarm
+# 从Swarm下载文件
 
-In the [上个章节](../swarm-upload) we uploaded a hello.txt file to swarm and in return we got a manifest hash.
+在[上个章节](../swarm-upload) 我们将一个hello.txt文件上传到swarm，作为返回值，我们得到了一个内容清单哈希。
 
 ```go
 manifestHash := "f9192507e2e8e118bfedac428c3aa1dec4ae156e954128ec5fb27f63ee67bcac"
 ```
 
-Let's inspect the manifest by downloading it first by calling `DownloadManfest`.
+让我们首先通过调用“DownloadManfest”来下载它，并检查清单的内容。
+
 
 ```go
 manifest, isEncrypted, err := client.DownloadManifest(manifestHash)
@@ -19,7 +20,7 @@ if err != nil {
 }
 ```
 
-We can iterate over the manifest entries and see what the content-type, size, and content hash are.
+我们可以遍历清单条目，看看内容类型，大小和内容哈希是什么。
 
 ```go
 for _, entry := range manifest.Entries {
@@ -29,7 +30,8 @@ for _, entry := range manifest.Entries {
 }
 ```
 
-If you're familiar with swarm urls, they're in the format `bzz:/<hash>/<path>`, so in order to download the file we specify the manifest hash and path. The path in this case is an empty string. We pass this data to the `Download` function and get back a file object.
+如果您熟悉swarm url，它们的格式为`bzz：/ <hash> / <path>`，因此为了下载文件，我们指定了清单哈希和路径。 在这个例子里，路径是一个空字符串。 我们将这些数据传递给`Download`函数并返回一个文件对象。
+
 
 ```go
 file, err := client.Download(manifestHash, "")
@@ -38,7 +40,7 @@ if err != nil {
 }
 ```
 
-We may now read and print the contents of the returned file reader.
+我们现在可以阅读并打印返回的文件阅读器的内容。
 
 ```go
 content, err := ioutil.ReadAll(file)
@@ -49,7 +51,7 @@ if err != nil {
 fmt.Println(string(content)) // hello world
 ```
 
-As expected, it logs *hello world* which what our original file contained.
+正如预期的那样，它记录了我们原始文件所包含的 *hello world*。
 
 ---
 

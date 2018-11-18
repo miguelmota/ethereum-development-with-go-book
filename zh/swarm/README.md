@@ -1,10 +1,11 @@
 ---
-概述: Tutorial on swarm with Go.
+概述: 用Go进行Swarm相关开发的教程。
 ---
 
 # Swarm
 
-Swarm in Ethereum's decentralized and distributed storage solution, comparable to IPFS. Swarm is a peer to peer data sharing network in which files are addressed by the hash of their content. Similar to Bittorrent, it is possible to fetch the data from many nodes at once and as long as a single node hosts a piece of data, it will remain accessible everywhere. This approach makes it possible to distribute data without having to host any kind of server - data accessibility is location independent. Other nodes in the network can be incentivised to replicate and store the data themselves, obviating the need for hosting services when the original nodes are not connected to the network.
+Swarm是以太坊的去中心化和分布式的存储解决方案，与IPFS类似。 Swarm是一种点对点数据共享网络，其中文件通过其内容的哈希来寻址。与Bittorrent类似，可以同时从多个节点获取数据，只要单个节点承载分发数据，它就可以随处被访问。这种方法可以在不必依靠托管任何类型服务器的情况下分发数据 - 数据可访问性与位置无关。可以激励网络中的其他节点自己复制和存储数据，从而在原节点未连接到网络时避免了对托管服务的依赖。
 
-Swarm's incentive mechanism, Swap (Swarm Accounting Protocol), is a protocol by which peers in the Swarm network keep track of chunks delivered and received and the resulting (micro-) payments owed. On its own, SWAP can function in a wider context however it's usually presented as a generic micropayment scheme suited for pairwise accounting between peers. while generic by design, the first use of it is for accounting of bandwidth as part of the incentivisation of data transfer in the Swarm decentralised peer to peer storage network.
+Swarm的激励机制Swap（Swarm Accounting Protocol）是一种协议，通过该协议，Swarm网络中的个体可以跟踪传送和接收的数据块，以及由此产生相应的（微）付款。 SWAP本身可以在更广泛的背景下运行，但它通常表现为适用于点对点之间成对会计的通用微支付方案。虽然设计通用，但它的第一个用途是将带宽计算作为Swarm去中心化的点对点存储网络中数据传输的激励的一部分。
+
 

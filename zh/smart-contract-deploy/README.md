@@ -30,7 +30,7 @@ if err != nil {
 fmt.Println(address.Hex())   // 0x147B8eb97fD247D06C4006D269c90C1908Fb5D54
 fmt.Println(tx.Hash().Hex()) // 0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0
 
-_ = instance // will be using the instance in the next section
+_ = instance // will be using the instance in the 下个章节
 ```
 
 Yes it's that simply. You can take the transaction hash and see the deployment status on Etherscan: [https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0](https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0)

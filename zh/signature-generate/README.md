@@ -34,7 +34,7 @@ if err != nil {
 fmt.Println(hexutil.Encode(signature)) // 0x789a80053e4927d0a898db8e065e948f5cf086e32f9ccaa54c1908e22ac430c62621578113ddbb62d509bf6049b8fb544ab06d36f916685a2eb8e57ffadde02301
 ```
 
-Now that we have successfully generated the signature, in the next section we'll learn how to verify that the signature indeed was signed by the holder of that private key.
+Now that we have successfully generated the signature, in the 下个章节 we'll learn how to verify that the signature indeed was signed by the holder of that private key.
 
 ---
 

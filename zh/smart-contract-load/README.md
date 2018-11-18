@@ -15,7 +15,7 @@ if err != nil {
   log.Fatal(err)
 }
 
-_ = instance // we'll be using this in the next section
+_ = instance // we'll be using this in the 下个章节
 ```
 
 ---

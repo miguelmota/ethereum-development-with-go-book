@@ -19,7 +19,7 @@ if err != nil {
   log.Fatal(err)
 }
 
-_ = client // we'll be using this in the next section
+_ = client // we'll be using this in the 下个章节
 ```
 
 现在我们已经拨打了，让我们创建一个密钥对来加密消息，然后再发送消息 [在下一章节](../whisper-keys).
@@ -51,7 +51,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	_ = client // we'll be using this in the next section
+	_ = client // we'll be using this in the 下个章节
 	fmt.Println("we have a whisper connection")
 }
 ```

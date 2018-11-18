@@ -4,4 +4,4 @@
 
 # 智能合约
 
-In the next sections we'll learn how to compile, deploy, read, and write to smart contract using Go.
+In the 下个章节s we'll learn how to compile, deploy, read, and write to smart contract using Go.

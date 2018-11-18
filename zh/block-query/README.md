@@ -48,7 +48,7 @@ if err != nil {
 fmt.Println(count) // 144
 ```
 
-In the next section we'll learn how to query transactions in a block.
+In the 下个章节 we'll learn how to query transactions in a block.
 
 ---
 
