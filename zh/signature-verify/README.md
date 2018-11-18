@@ -1,20 +1,21 @@
 ---
-概述: Tutorial on how to verify signatures with Go.
+概述: 用Go来验证签名的教程。
 ---
 
-# Verifying a Signature
+# 验证签名
 
-In the 上个章节 we learned how to sign a piece of data with a private key in order to generate a signature. Now we'll learn how to verify the authenticiy of the signature.
+在上个章节中，我们学习了如何使用私钥对一段数据进行签名以生成签名。 现在我们将学习如何验证签名的真实性。
 
-We need to have 3 things to verify the signature: the signature, the hash of the original data, and the public key of the signer. With this information we can determine if the private key holder of the public key pair did indeed sign the message.
+我们需要有3件事来验证签名：签名，原始数据的哈希以及签名者的公钥。 利用该信息，我们可以确定公钥对的私钥持有者是否确实签署了该消息。
 
-First we'll need the public key in bytes format.
+首先，我们需要以字节格式的公钥。
+
 
 ```go
 publicKeyBytes := crypto.FromECDSAPub(publicKeyECDSA)
 ```
 
-Next we'll need the original data hashed. In the previous lesson we used Keccak-256 to generate the hash, so we'll do the same in order to verify the signature.
+接下来我们将需要原始数据哈希。 在上一课中，我们使用Keccak-256生成哈希，因此我们将执行相同的操作以验证签名。
 
 ```go
 data := []byte("hello")
@@ -22,7 +23,7 @@ hash := crypto.Keccak256Hash(data)
 fmt.Println(hash.Hex()) // 0x1c8aff950685c2ed4bc3174f3472287b56d9517b9c948127319a09a7a36deac8
 ```
 
-Now assuming we have the signature in bytes format, we can call `Ecrecover` (elliptic curve signature recover) from the go-ethereum `crypto` package to retrieve the public key of the signer. This function takes in the hash and signature in bytes format.
+现在假设我们有字节格式的签名，我们可以从go-ethereum`crypto`包调用`Ecrecover`（椭圆曲线签名恢复）来检索签名者的公钥。 此函数采用字节格式的哈希和签名。
 
 ```go
 sigPublicKey, err := crypto.Ecrecover(hash.Bytes(), signature)
@@ -31,14 +32,14 @@ if err != nil {
 }
 ```
 
-To verify we simply now have to compare the signature's public key with the expected public key and if they match then the expected public key holder is indeed the signer of the original message.
+为了验证我们现在必须将签名的公钥与期望的公钥进行比较，如果它们匹配，那么预期的公钥持有者确实是原始消息的签名者。
 
 ```go
 matches := bytes.Equal(sigPublicKey, publicKeyBytes)
 fmt.Println(matches) // true
 ```
 
-There's also the `SigToPub` method which does the same thing expect it'll return the signature's public key in the ECDSA type.
+还有`SigToPub`方法做同样的事情，区别是它将返回ECDSA类型中的签名公钥。
 
 ```go
 sigPublicKeyECDSA, err := crypto.SigToPub(hash.Bytes(), signature)
@@ -51,7 +52,7 @@ matches = bytes.Equal(sigPublicKeyBytes, publicKeyBytes)
 fmt.Println(matches) // true
 ```
 
-For convenience, the crypto package provides the `VerifySignature` function which takes in the signature, hash of the original data, and the public key in bytes format. It returns a boolean which will be true if the public key matches the signature's signer. An important gotcha is that we must first remove the last byte of the signture because it's the ECDSA recover ID which must not be included.
+为方便起见，`go-ethereum/crypto`包提供了`VerifySignature`函数，该函数接收原始数据的签名，哈希值和字节格式的公钥。 它返回一个布尔值，如果公钥与签名的签名者匹配，则为true。 一个重要的问题是我们必须首先删除signture的最后一个字节，因为它是ECDSA恢复ID，不能包含它。
 
 ```go
 signatureNoRecoverID := signature[:len(signature)-1] // remove recovery ID
@@ -59,7 +60,7 @@ verified := crypto.VerifySignature(publicKeyBytes, hash.Bytes(), signatureNoReco
 fmt.Println(verified) // true
 ```
 
-These are the basics in generating and verifying ECDSA signatures with the go-ethereum package.
+这些就是使用go-ethereum软件包生成和验证ECDSA签名的基础知识。
 
 ---
 

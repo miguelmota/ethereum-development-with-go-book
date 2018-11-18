@@ -1,7 +1,7 @@
 ---
-概述: Tutorial on signatures with Go.
+概述: 用Go签名的教程。
 ---
 
-# Signatures
+# 签名
 
-A digital signature allows non-repudiation as it means the person who signed the message had to be in possession of the private key and so therefore the message is authentic. Anyone can verify the authenticity of the message as long as they have the hash of the original data and the public key of the signer. Signatures are a fundamental component is blockchain and we'll learn how to generate and verify signatures in the next few lessons.
+数字签名允许不可否认性，因为这意味着签署消息的人必须拥有私钥，来证明消息是真实的。 任何人都可以验证消息的真实性，只要它们具有原始数据的散列和签名者的公钥即可。 签名是区块链的基本组成部分，我们将在接下来的几节课中学习如何生成和验证签名。
