@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to read smart contract events with Go.
+概述: Tutorial on how to read smart contract events with Go.
 ---
 
 # Reading Event Logs

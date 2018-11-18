@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to query blocks in Ethereum with Go.
+概述: Tutorial on how to query blocks in Ethereum with Go.
 ---
 
 # Querying Blocks

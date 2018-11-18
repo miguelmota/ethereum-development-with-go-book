@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to compile a smart contract and read the ABI with Go.
+概述: Tutorial on how to compile a smart contract and read the ABI with Go.
 ---
 
 # Smart Contract Compilation & ABI

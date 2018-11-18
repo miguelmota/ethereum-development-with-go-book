@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to verify signatures with Go.
+概述: Tutorial on how to verify signatures with Go.
 ---
 
 # Verifying a Signature

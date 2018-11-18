@@ -1,5 +1,5 @@
 ---
-description: Tutorial on signatures with Go.
+概述: Tutorial on signatures with Go.
 ---
 
 # Signatures

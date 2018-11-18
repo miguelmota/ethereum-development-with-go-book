@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to check if an address is a smart contract or an account with Go.
+概述: Tutorial on how to check if an address is a smart contract or an account with Go.
 ---
 
 # Address Check

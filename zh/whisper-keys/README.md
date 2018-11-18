@@ -1,5 +1,5 @@
 ---
-描述: 用Go生成whisper密钥对的。
+概述: 用Go生成whisper密钥对的。
 ---
 
 # 生成 Whisper 密匙对

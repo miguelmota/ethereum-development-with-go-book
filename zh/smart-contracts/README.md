@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to smart contracts with Go.
+概述: Tutorial on how to smart contracts with Go.
 ---
 
 # Smart Contracts

@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to subscribe to smart contract events with Go.
+概述: Tutorial on how to subscribe to smart contract events with Go.
 ---
 
 # Subscribing to Event Logs

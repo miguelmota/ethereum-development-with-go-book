@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to load an initialize a smart contract with Go.
+概述: Tutorial on how to load an initialize a smart contract with Go.
 ---
 
 # Loading a Smart Contract

@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to read account token balances from the blockchain with Go.
+概述: Tutorial on how to read account token balances from the blockchain with Go.
 ---
 
 # Account Token Balances

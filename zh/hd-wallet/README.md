@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to create or use an HD wallet in Go.
+概述: Tutorial on how to create or use an HD wallet in Go.
 ---
 
 # HD Wallet

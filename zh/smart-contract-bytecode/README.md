@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to read the bytecode of a deployed smart contract with Go.
+概述: Tutorial on how to read the bytecode of a deployed smart contract with Go.
 ---
 
 # Reading Smart Contract Bytecode

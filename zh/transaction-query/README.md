@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to query transactions on the blockchain with Go.
+概述: Tutorial on how to query transactions on the blockchain with Go.
 ---
 
 # Querying Transactions

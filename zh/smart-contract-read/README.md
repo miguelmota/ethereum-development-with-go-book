@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to query a smart contract with Go.
+概述: Tutorial on how to query a smart contract with Go.
 ---
 
 # Querying a Smart Contract

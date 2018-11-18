@@ -1,5 +1,5 @@
 ---
-描述:  Tutorial on how to generate Ethereum wallets with Go.
+概述: Tutorial on how to generate Ethereum wallets with Go.
 ---
 
 # Generating New Wallets

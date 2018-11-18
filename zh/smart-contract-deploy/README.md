@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to deploy a smart contract with Go.
+概述: Tutorial on how to deploy a smart contract with Go.
 ---
 
 # Deploying a Smart Contract

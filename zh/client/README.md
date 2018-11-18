@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to setup the Ethereum client with Go.
+概述: Tutorial on how to setup the Ethereum client with Go.
 ---
 
 # Client

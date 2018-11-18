@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to read the 0x Protocol smart contract event logs with Go.
+概述: Tutorial on how to read the 0x Protocol smart contract event logs with Go.
 ---
 
 # Reading 0x Protocol Event Logs

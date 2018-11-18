@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to transfer ETH to another wallet or smart contract with Go.
+概述: Tutorial on how to transfer ETH to another wallet or smart contract with Go.
 ---
 
 # Transferring ETH

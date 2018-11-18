@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to subscribe to latest blocks in Ethereum with Go.
+概述: Tutorial on how to subscribe to latest blocks in Ethereum with Go.
 ---
 
 # Subscribing to New Blocks

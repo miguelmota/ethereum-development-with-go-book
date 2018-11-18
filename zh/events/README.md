@@ -1,5 +1,5 @@
 ---
-description: Tutorial on Ethereum event logs with Go.
+概述: Tutorial on Ethereum event logs with Go.
 ---
 
 # Events

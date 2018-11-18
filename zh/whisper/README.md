@@ -1,5 +1,5 @@
 ---
-描述: 用Go使用whisper的教程。
+概述: 用Go使用whisper的教程。
 ---
 
 # Whisper

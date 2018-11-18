@@ -1,5 +1,5 @@
 ---
-description: Tutorial on generating signatures with Go.
+概述: Tutorial on generating signatures with Go.
 ---
 
 # Generating a Signature

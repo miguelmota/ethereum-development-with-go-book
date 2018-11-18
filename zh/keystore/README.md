@@ -1,5 +1,5 @@
 ---
-description: Tutorial on creating and importing a keystore with Go.
+概述: Tutorial on creating and importing a keystore with Go.
 ---
 
 # Keystores

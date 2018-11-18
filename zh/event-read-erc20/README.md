@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to read ERC-20 Token smart contract events with Go.
+概述: Tutorial on how to read ERC-20 Token smart contract events with Go.
 ---
 
 # Reading ERC-20 Token Event Logs

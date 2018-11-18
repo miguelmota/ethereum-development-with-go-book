@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to send a raw Ethereum transaction with Go.
+概述: Tutorial on how to send a raw Ethereum transaction with Go.
 ---
 
 # Send Raw Transaction

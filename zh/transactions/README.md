@@ -1,5 +1,5 @@
 ---
-description: Tutorial on transactions with Go.
+概述: Tutorial on transactions with Go.
 ---
 
 # Transactions

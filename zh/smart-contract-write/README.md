@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to write to a smart contract with Go.
+概述: Tutorial on how to write to a smart contract with Go.
 ---
 
 # Writing to a Smart Contract

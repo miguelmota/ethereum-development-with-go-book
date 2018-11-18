@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to load an Ethereum account with Go.
+概述: Tutorial on how to load an Ethereum account with Go.
 ---
 
 # Accounts

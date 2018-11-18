@@ -1,5 +1,5 @@
 ---
-描述: 用Go在whisper上发送消息的教程。
+概述: 用Go在whisper上发送消息的教程。
 ---
 
 # 在Whisper上发送消息

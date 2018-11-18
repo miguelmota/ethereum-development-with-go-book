@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to create a raw Ethereum transaction with Go.
+概述: Tutorial on how to create a raw Ethereum transaction with Go.
 ---
 
 # Create Raw Transaction

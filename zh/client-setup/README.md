@@ -1,5 +1,5 @@
 ---
-description: Tutorial on how to set up a client to connect to Ethereum with Go.
+概述: Tutorial on how to set up a client to connect to Ethereum with Go.
 ---
 
 # Setting up the Client
