@@ -1,10 +1,10 @@
 ---
-概述: Tutorial on how to subscribe to smart contract events with Go.
+概述: 用Go订阅智能合约事件日志的教程。
 ---
 
-# Subscribing to Event Logs
+# 订阅时间日志
 
-First thing we need to do in order to subscribe to event logs is dial to a websocket enabled Ethereum client. Fortunately for us, Infura supports websockets.
+为了订阅事件日志，我们需要做的第一件事就是拨打启用websocket的以太坊客户端。 幸运的是，Infura支持websockets。
 
 ```go
 client, err := ethclient.Dial("wss://rinkeby.infura.io/ws")
@@ -13,7 +13,7 @@ if err != nil {
 }
 ```
 
-The next step is to create a filter query. In this example we'll be reading all events coming from the example contract that we've created in the previous lessons.
+下一步是创建筛选查询。 在这个例子中，我们将阅读来自我们在之前课程中创建的示例合约中的所有事件。
 
 ```go
 contractAddress := common.HexToAddress("0x147B8eb97fD247D06C4006D269c90C1908Fb5D54")
@@ -22,13 +22,14 @@ query := ethereum.FilterQuery{
 }
 ```
 
-The way we'll be receiving events is through a Go channel. Let's create one with type of `Log` from the go-ethereum `core/types` package.
+我们接收事件的方式是通过Go channel。 让我们从go-ethereum`core/types`包创建一个类型为`Log`的channel。
 
 ```go
 logs := make(chan types.Log)
 ```
 
-Now all we have to do is subscribe by calling `SubscribeFilterLogs` from the client, which takes in the query options and the output channel. This will return a subscription struct containing unsubscribe and error methods.
+现在我们所要做的就是通过从客户端调用`SubscribeFilterLogs`来订阅，它接收查询选项和输出通道。 这将返回包含unsubscribe和error方法的订阅结构。
+
 
 ```go
 sub, err := client.SubscribeFilterLogs(context.Background(), query, logs)
@@ -37,7 +38,7 @@ if err != nil {
 }
 ```
 
-Finally all we have to do is setup an continous loop with a select statement to read in either new log events or the subscription error.
+最后，我们要做的就是使用select语句设置一个连续循环来读入新的日志事件或订阅错误。
 
 ```go
 for {
@@ -50,7 +51,7 @@ for {
 }
 ```
 
-You'll have to parse the log entries, which we'll learn how to do in the [下个章节](../event-read).
+我们会在[下个章节](../event-read)介绍如何解析日志。
 
 ---
 
