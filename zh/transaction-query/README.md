@@ -77,7 +77,7 @@ fmt.Println(isPending)       // false
 
 ---
 
-### Full code
+### 完整代码
 
 [transactions.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transactions.go)
 

@@ -38,7 +38,7 @@ Now that we have successfully generated the signature, in the next section we'll
 
 ---
 
-### Full code
+### 完整代码
 
 [signature_generate.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/signature_generate.go)
 

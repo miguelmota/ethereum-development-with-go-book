@@ -37,7 +37,7 @@ Yes it's that simply. You can take the transaction hash and see the deployment s
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

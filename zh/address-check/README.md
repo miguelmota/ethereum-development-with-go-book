@@ -51,7 +51,7 @@ fmt.Printf("is contract: %v\n", isContract) // is contract: false
 
 ---
 
-### Full code
+### 完整代码
 
 [address_check.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/address_check.go)
 

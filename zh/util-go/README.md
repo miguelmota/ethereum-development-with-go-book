@@ -58,7 +58,7 @@ fmt.Println(v)                        // 28
 
 ---
 
-### Full code
+### 完整代码
 
 [util.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/util/util.go)
 

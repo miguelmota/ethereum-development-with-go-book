@@ -128,7 +128,7 @@ fmt.Printf("tx sent: %s", signedTx.Hash().Hex()) // tx sent: 0xa56316b637a94c4cc
 
 ---
 
-### Full code
+### 完整代码
 
 [transfer_tokens.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transfer_tokens.go)
 

@@ -19,7 +19,7 @@ fmt.Println(version) // "1.0"
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

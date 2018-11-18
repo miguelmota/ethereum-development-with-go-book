@@ -96,7 +96,7 @@ There you have it.
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

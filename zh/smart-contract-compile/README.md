@@ -91,7 +91,7 @@ That's it for this lesson. In the next lessons we'll learn how to deploy the sma
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

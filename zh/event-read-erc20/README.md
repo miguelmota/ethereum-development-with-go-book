@@ -175,7 +175,7 @@ Compare the parsed log output to what's on etherscan: [https://etherscan.io/tx/0
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

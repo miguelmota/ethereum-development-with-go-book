@@ -97,7 +97,7 @@ So remember that the simulated client allows you to manually mine blocks at your
 
 ----
 
-### Full code
+### 完整代码
 
 [client_simulated.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/client_simulated.go)
 

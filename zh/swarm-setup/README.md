@@ -42,7 +42,7 @@ Now that we have the swarm daemon set up and running, let's learn how to upload 
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

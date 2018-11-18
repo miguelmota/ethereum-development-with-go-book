@@ -44,7 +44,7 @@ for {
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

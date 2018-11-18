@@ -54,7 +54,7 @@ You'll have to parse the log entries, which we'll learn how to do in the [next s
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

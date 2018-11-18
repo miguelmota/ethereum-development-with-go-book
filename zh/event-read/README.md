@@ -85,7 +85,7 @@ That's all there is to reading and parsing logs. To learn how to subscribe to lo
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 
