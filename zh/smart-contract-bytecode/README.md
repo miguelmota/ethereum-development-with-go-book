@@ -33,7 +33,7 @@ See the same bytecode hex on etherscan [https://rinkeby.etherscan.io/address/0x1
 
 ---
 
-### Full code
+### 完整代码
 
 [contract_bytecode.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contract_bytecode.go)
 

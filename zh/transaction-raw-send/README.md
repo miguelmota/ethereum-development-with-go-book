@@ -36,7 +36,7 @@ You can see the transaction on etherscan: [https://rinkeby.etherscan.io/tx/0xc42
 
 ---
 
-### Full code
+### 完整代码
 
 [transaction_raw_sendreate.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transaction_raw_send.go)
 

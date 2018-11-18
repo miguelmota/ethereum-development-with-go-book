@@ -26,7 +26,7 @@ _ = client // we'll be using this in the next section
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

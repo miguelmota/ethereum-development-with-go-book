@@ -58,7 +58,7 @@ fmt.Println(len(block.Transactions())) // 7
 
 As you can see, you can read the entire block's metadata fields, list of transactions, and much more.
 
-### Full code
+### 完整代码
 
 [block_subscribe.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/block_subscribe.go)
 

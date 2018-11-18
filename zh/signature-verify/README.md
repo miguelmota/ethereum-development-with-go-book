@@ -63,7 +63,7 @@ These are the basics in generating and verifying ECDSA signatures with the go-et
 
 ---
 
-### Full code
+### 完整代码
 
 [signature_verify.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/signature_verify.go)
 

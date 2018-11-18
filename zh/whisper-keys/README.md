@@ -22,7 +22,7 @@ fmt.Println(keyID) // 0ec5cfe4e215239756054992dbc2e10f011db1cdfc88b9ba6301e2f9ea
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

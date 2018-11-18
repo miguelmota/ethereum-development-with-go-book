@@ -49,7 +49,7 @@ fmt.Println(messageHash) // 0xdbfc815d3d122a90d7fb44d1fc6a46f3d76ec752f3f3d04230
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

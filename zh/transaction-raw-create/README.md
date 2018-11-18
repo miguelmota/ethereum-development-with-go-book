@@ -42,7 +42,7 @@ And now you have the raw transaction data which you can use to broadcast at a fu
 
 ---
 
-### Full code
+### 完整代码
 
 [transaction_raw_create.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transaction_raw_create.go)
 

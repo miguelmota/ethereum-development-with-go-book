@@ -92,7 +92,7 @@ See the same information on etherscan: [https://etherscan.io/token/0xa7447644311
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 

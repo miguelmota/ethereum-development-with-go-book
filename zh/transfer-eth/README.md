@@ -106,7 +106,7 @@ Afterwards you can check the progress on a block explorer such as Etherscan: [ht
 
 ---
 
-### Full code
+### 完整代码
 
 [transfer_eth.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/transfer_eth.go)
 

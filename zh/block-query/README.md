@@ -52,7 +52,7 @@ In the next section we'll learn how to query transactions in a block.
 
 ---
 
-### Full code
+### 完整代码
 
 [blocks.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/blocks.go)
 

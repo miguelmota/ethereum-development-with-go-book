@@ -53,7 +53,7 @@ As expected, it logs *hello world* which what our original file contained.
 
 ---
 
-### Full code
+### 完整代码
 
 Commands
 
