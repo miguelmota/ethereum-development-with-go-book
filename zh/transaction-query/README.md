@@ -1,10 +1,10 @@
 ---
-概述: Tutorial on how to query transactions on the blockchain with Go.
+概述: 用Go在以太坊区块链中查询交易的教程。
 ---
 
-# Querying Transactions
+# 查询交易
 
-In the [previous section](../block-query) we learned how to read a block and all its data given the block number. We can read the transactions in a block by calling the `Transactions` method which returns a list of `Transaction` type. It's then trivial to iterate over the collection and retrieve any information regarding the transaction.
+In the [上个章节](../block-query) we learned how to read a block and all its data given the block number. We can read the transactions in a block by calling the `Transactions` method which returns a list of `Transaction` type. It's then trivial to iterate over the collection and retrieve any information regarding the transaction.
 
 ```go
 for _, tx := range block.Transactions() {
