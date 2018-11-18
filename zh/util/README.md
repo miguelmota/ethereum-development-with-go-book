@@ -1,7 +1,7 @@
 ---
-概述: Ethereum utilities in Go.
+概述: Go实现的以太坊的工具函数.
 ---
 
-# Utilities
+# 工具函数
 
-- [Collection of Utility Functions](../util-go)
+- [工具函数集合](../util-go)
