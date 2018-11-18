@@ -1,12 +1,12 @@
 ---
-概述: Tutorial on how to send a raw Ethereum transaction with Go.
+概述: 用Go发送以太坊原始交易事务的教程。
 ---
 
-# Send Raw Transaction
+# 发送原始交易事务
 
-In the [previous section](../transaction-raw-create) we learned how to do create a raw transaction. Now we'll learn how to broadcast it to the Ethereum network in order for it to get processed and mined.
+在[上个章节中](../transaction-raw-create) 我们学会了如何创建原始事务。 现在，我们将学习如何将其广播到以太坊网络，以便最终被处理和被矿工打包到区块。
 
-First decode the raw transaction hex to bytes format.
+首先将原始事务十六进制解码为字节格式。
 
 ```go
 rawTx := "f86d8202b28477359400825208944592d8f8d7b001e72cb26a73e4fa1806a51ac79d880de0b6b3a7640000802ca05924bde7ef10aa88db9c66dd4f5fb16b46dff2319b9968be983118b57bb50562a001b24b31010004f13d9a26b320845257a6cfc2bf819a3d55e3fc86263c5f0772"
@@ -14,14 +14,15 @@ rawTx := "f86d8202b28477359400825208944592d8f8d7b001e72cb26a73e4fa1806a51ac79d88
 rawTxBytes, err := hex.DecodeString(rawTx)
 ```
 
-Now initialize a new `types.Transaction` pointer and call `DecodeBytes` from the go-ethereum `rlp` package passing it the raw transaction bytes and the pointer to the ethereum transaction type. RLP is an encoding method used by Ethereum to serialized and derialized data.
+接下来初始化一个新的`types.Transaction`指针并从go-ethereum`rlp`包中调用`DecodeBytes`，将原始事务字节和指针传递给以太坊事务类型。 RLP是以太坊用于序列化和反序列化数据的编码方法。
+
 
 ```go
 tx := new(types.Transaction)
 rlp.DecodeBytes(rawTxBytes, &tx)
 ```
 
-Now we can easily broadcast the transaction with our ethereum client.
+现在，我们可以使用我们的以太坊客户端轻松地广播交易。
 
 ```go
 err := client.SendTransaction(context.Background(), tx)
@@ -32,7 +33,7 @@ if err != nil {
 fmt.Printf("tx sent: %s", tx.Hash().Hex()) // tx sent: 0xc429e5f128387d224ba8bed6885e86525e14bfdc2eb24b5e9c3351a1176fd81f
 ```
 
-You can see the transaction on etherscan: [https://rinkeby.etherscan.io/tx/0xc429e5f128387d224ba8bed6885e86525e14bfdc2eb24b5e9c3351a1176fd81f](https://rinkeby.etherscan.io/tx/0xc429e5f128387d224ba8bed6885e86525e14bfdc2eb24b5e9c3351a1176fd81f)
+然后你可以去Etherscan看交易的确认过程: [https://rinkeby.etherscan.io/tx/0xc429e5f128387d224ba8bed6885e86525e14bfdc2eb24b5e9c3351a1176fd81f](https://rinkeby.etherscan.io/tx/0xc429e5f128387d224ba8bed6885e86525e14bfdc2eb24b5e9c3351a1176fd81f)
 
 ---
 
