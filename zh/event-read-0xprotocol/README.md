@@ -1,16 +1,18 @@
 ---
-概述: Tutorial on how to read the 0x Protocol smart contract event logs with Go.
+概述: 用Go读取0x Protocol智能合约事件日志的教程
 ---
 
-# Reading 0x Protocol Event Logs
+# 读取0x Protocol事件日志
 
-To read [0x Protocol](https://0xproject.com/) event logs we must first compile the solidity smart contract to a Go package.
+要读取[0x Protocol](https://0xproject.com/)事件日志，我们必须首先将solidity智能合约编译为一个Go包。
 
-Install solc version `0.4.11`
+安装solc版本`0.4.11`
 
 ```bash
 npm i -g solc@0.4.11
 ```
+
+为例如`Exchange.sol`的事件日志创建0x Protocol交易所智能合约接口:
 
 Create the 0x protocol exchange smart contract interface for event logs as `Exchange.sol`:
 
@@ -47,6 +49,8 @@ contract Exchange {
 }
 ```
 
+接着给定abi，使用`abigen`来创建Go`exchange`包：
+
 Then use `abigen` to create the Go `exchange` package given the abi:
 
 ```bash
@@ -54,7 +58,7 @@ solc --abi Exchange.sol
 abigen --abi="Exchange.sol:Exchange.abi" --pkg=exchange --out=Exchange.go
 ```
 
-Now in our Go application let's create the struct types matching the types of the 0xProtocol event log signature:
+现在在我们的Go应用程序中，让我们创建与0xProtocol事件日志签名类型匹配的结构体类型：
 
 ```go
 type LogFill struct {
@@ -88,7 +92,7 @@ type LogError struct {
 }
 ```
 
-Initialize the ethereum client:
+初始化以太坊客户端：
 
 ```go
 client, err := ethclient.Dial("https://mainnet.infura.io")
@@ -97,7 +101,7 @@ if err != nil {
 }
 ```
 
-Create a `FilterQuery` passing the 0x Protocol smart contract address and the desired block range:
+创建一个`FilterQuery`，并为其传递0x Protocol智能合约地址和所需的区块范围：
 
 ```go
 // 0x Protocol Exchange smart contract address
@@ -111,7 +115,7 @@ query := ethereum.FilterQuery{
 }
 ```
 
-Query the logs with `FilterLogs`:
+用`FilterLogs`查询日志：
 
 ```go
 logs, err := client.FilterLogs(context.Background(), query)
@@ -120,7 +124,7 @@ if err != nil {
 }
 ```
 
-Next we'll parse the JSON abi which we'll use unpack the raw log data later:
+接下来我们将解析JSON abi，我们后续将使用解压缩原始日志数据：
 
 ```go
 contractAbi, err := abi.JSON(strings.NewReader(string(exchange.ExchangeABI)))
@@ -129,7 +133,7 @@ if err != nil {
 }
 ```
 
-In order to filter by certain log type, we need to figure out the keccak256 hash of each event log function signature. The event log function signature hash is always `topic[0]` as we'll see soon:
+为了按某种日志类型过滤，我们需要知晓每个事件日志函数签名的keccak256摘要。正如我们很快所见到的那样，事件日志函数签名摘要总是`topic[0]`：
 
 ```go
 // NOTE: keccak256("LogFill(address,address,address,address,address,uint256,uint256,uint256,uint256,bytes32,bytes32)")
@@ -142,7 +146,7 @@ logCancelEvent := common.HexToHash("67d66f160bc93d925d05dae1794c90d2d6d6688b29b8
 logErrorEvent := common.HexToHash("36d86c59e00bd73dc19ba3adfe068e4b64ac7e92be35546adeddf1b956a87e90")
 ```
 
-Now we'll iterate through all the logs and set up a switch statement to filter by event log type:
+现在我们迭代所有的日志并设置一个switch语句来按事件日志类型过滤：
 
 ```go
 for _, vLog := range logs {
@@ -160,7 +164,7 @@ for _, vLog := range logs {
 }
 ```
 
-Now to parse `LogFill` we'll use `abi.Unpack` to parse the raw log data into our log type struct. Unpack will not parse `indexed` event types because those are stored under `topics`, so for those we'll have to parse separately as seen in the example below:
+现在要解析`LogFill`，我们将使用`abi.Unpack`将原始数据类型解析为我们自定义的日志类型结构体。Unpack不会解析`indexed`事件类型，因为这些它们存储在`topics`下，所以对于那些我们必须单独解析，如下例所示：
 
 ```go
 fmt.Printf("Log Name: LogFill\n")
@@ -189,7 +193,7 @@ fmt.Printf("Tokens: %s\n", hexutil.Encode(fillEvent.Tokens[:]))
 fmt.Printf("Order Hash: %s\n", hexutil.Encode(fillEvent.OrderHash[:]))
 ```
 
-Similarly for `LogCancel`:
+对于`LogCancel`类似：
 
 ```go
 fmt.Printf("Log Name: LogCancel\n")
@@ -215,7 +219,7 @@ fmt.Printf("Tokens: %s\n", hexutil.Encode(cancelEvent.Tokens[:]))
 fmt.Printf("Order Hash: %s\n", hexutil.Encode(cancelEvent.OrderHash[:]))
 ```
 
-And finally for `LogError`:
+最后是`LogError`：
 
 ```go
 fmt.Printf("Log Name: LogError\n")
@@ -234,7 +238,7 @@ fmt.Printf("Error ID: %d\n", errorEvent.ErrorID)
 fmt.Printf("Order Hash: %s\n", hexutil.Encode(errorEvent.OrderHash[:]))
 ```
 
-Putting it all together and running it we'll see the following output:
+将它们放在一起并运行我们将看到以下输出：
 
 ```bash
 Log Block Number: 6383482
@@ -282,13 +286,12 @@ Tokens: 0x9dd48110dcc444fdc242510c09bbbbe21a5975cac061d82f7b843bce061ba391
 Order Hash: 0xe43eff38dc27af046bfbd431926926c072bbc7a509d56f6f1a7ae1f5ad7efe4f
 ```
 
-Compare the parsed log output to what's on etherscan: [https://etherscan.io/tx/0xb73a4492c5db1f67930b25ce3869c1e6b9bdbccb239a23b6454925a5bc0e03c5](https://etherscan.io/tx/0xb73a4492c5db1f67930b25ce3869c1e6b9bdbccb239a23b6454925a5bc0e03c5)
-
+将解析后的日志输出与etherscan上的内容进行比较：[https://etherscan.io/tx/0xb73a4492c5db1f67930b25ce3869c1e6b9bdbccb239a23b6454925a5bc0e03c5](https://etherscan.io/tx/0xb73a4492c5db1f67930b25ce3869c1e6b9bdbccb239a23b6454925a5bc0e03c5)
 
 ---
 ### 完整代码
 
-Commands
+命令
 
 ```bash
 solc --abi Exchange.sol
@@ -495,7 +498,7 @@ func main() {
 }
 ```
 
-solc version used for these examples
+这些示例使用的solc版本
 
 ```bash
 $ solc --version
