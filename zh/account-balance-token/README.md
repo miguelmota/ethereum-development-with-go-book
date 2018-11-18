@@ -1,7 +1,7 @@
 ---
-概述: Tutorial on how to read account token balances from the blockchain with Go.
+概述: 用Go从区块链读取账户代币余额教程。
 ---
 
-# Account Token Balances
+# 账户代币余额
 
-To learn how to read account token (ERC20) balances, head over to the [section on ERC20 token smart contracts](../smart-contract-read-erc20).
+要学习如何读取账户代币(ECR20)余额，请前往[ECR20代币智能合约章节](../smart-contract-read-erc20)。
