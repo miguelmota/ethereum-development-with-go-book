@@ -1,9 +1,9 @@
 ---
-概述: Tutorial on how to test your Ethereum application with Go.
+概述: 用Go来测试以太坊应用的教程。
 ---
 
 # Testing
 
-- [Faucets](../faucets)
-- [Using a Simulated Client](../client-simulated)
+- [发币水龙头](../faucets)
+- [使用模拟客户端](../client-simulated)
 
