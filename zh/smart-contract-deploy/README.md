@@ -1,12 +1,13 @@
 ---
-概述: Tutorial on how to deploy a smart contract with Go.
+概述: 用Go部署智能合约的教程。
 ---
 
-# Deploying a Smart Contract
+# 部署智能合约
 
-If you haven't already, check out the [section on smart contract compiation](../smart-contract-compile) since this lesson requires knowledge on compiling a solidity smart contract to a Go contract file.
+如果你还没看之前的章节，请先学习[编译智能合约的章节](../smart-contract-compile)因为这节内容，需要先了解如何将智能合约编译为Go文件。
 
-Assuming you've imported the newly created Go package file generated from `abigen`, and set the ethclient, loaded your private key, the next step is to create a keyed transactor. First import the `accounts/abi/bind` package from go-ethereum and then invoke `NewKeyedTransactor` passing in the private key. Afterwards set the usual properties such as the nonce, gas price, gas limit, and ETH value.
+
+假设你已经导入从`abigen`生成的新创建的Go包文件，并设置ethclient，加载您的私钥，下一步是创建一个有配置密匙的交易发送器(tansactor)。 首先从go-ethereum导入`accounts/abi/bind`包，然后调用传入私钥的`NewKeyedTransactor`。 然后设置通常的属性，如nonce，燃气价格，燃气上线限制和ETH值。
 
 ```go
 auth := bind.NewKeyedTransactor(privateKey)
@@ -16,9 +17,9 @@ auth.GasLimit = uint64(300000) // in units
 auth.GasPrice = gasPrice
 ```
 
-If you recall in the 上个章节, we created a very simpile `Store` contract that sets and stores key/value pairs. The generated Go contract file provides a deploy method. The deploy method name always starts with the word *Deploy* followed by the contract name, in this case it's *Store*.
+如果你还记得上个章节的内容, 我们创建了一个非常简单的“Store”合约，用于设置和存储键/值对。 生成的Go合同文件提供了部署方法。 部署方法名称始终以单词*Deploy*开头，后跟合同名称，在本例中为*Store*。
 
-The deploy function takes in the keyed transactor, the ethclient, and any input arguments that the smart contract constructor might takes in. We've set our smart contract to take in a string argument for the version. This function will return the Ethereum address of the newly deployed contract, the transaction object, the contract instance so that we can start interacting with, and the error if any.
+deploy函数接受有密匙的事务处理器，ethclient，以及智能合约构造函数可能接受的任何输入参数。我们测试的智能合约接受一个版本号的字符串参数。 此函数将返回新部署的合约地址，事务对象，我们可以交互的合约实例，还有错误（如果有）。
 
 ```go
 input := "1.0"
@@ -33,7 +34,7 @@ fmt.Println(tx.Hash().Hex()) // 0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf7
 _ = instance // will be using the instance in the 下个章节
 ```
 
-Yes it's that simply. You can take the transaction hash and see the deployment status on Etherscan: [https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0](https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0)
+就这么简单：）你可以用事务哈希来在Etherscan上查询合约的部署状态: [https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0](https://rinkeby.etherscan.io/tx/0xdae8ba5444eefdc99f4d45cd0c4f24056cba6a02cefbf78066ef9f4188ff7dc0)
 
 ---
 
