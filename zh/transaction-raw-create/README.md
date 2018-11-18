@@ -1,12 +1,12 @@
 ---
-概述: Tutorial on how to create a raw Ethereum transaction with Go.
+概述: 用Go构建以太坊原始交易的教程。
 ---
 
-# Create Raw Transaction
+# 构建原始交易（Raw Transaction）
 
-If you've read the [previous sections](../transfer-eth), then you know how to load your private key to sign transactions. We'll assume you know how to do that by now and now you want to get the raw transaction data to be able to broadcast it at a later time.
+如果你看过[上个章节](../transfer-eth), 那么你知道如何加载你的私钥来签名交易。 我们现在假设你知道如何做到这一点，现在你想让原始交易数据能够在以后广播它。
 
-First construct the transaction object and sign it, for example:
+首先构造事务对象并对其进行签名，例如：
 
 ```go
 tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
@@ -17,19 +17,19 @@ if err != nil {
 }
 ```
 
-Now before we can get the transaction in raw bytes format we'll need to initialize a `types.Transactions` type with the signed transaction as the first value.
+现在，在我们以原始字节格式获取事务之前，我们需要初始化一个`types.Transactions`类型，并将签名后的交易作为第一个值。
 
 ```go
 ts := types.Transactions{signedTx}
 ```
 
-The reason for doing this is because the `Transactions` type provides a `GetRlp` method for returning the transaction in RLP encoded format. RLP is a special encoding method Ethereum uses for serializing objects. The result of this is raw bytes.
+这样做的原因是因为`Transactions`类型提供了一个`GetRlp`方法，用于以RLP编码格式返回事务。 RLP是以太坊用于序列化对象的特殊编码方法。 结果是原始字节。
 
 ```go
 rawTxBytes := ts.GetRlp(0)
 ```
 
-Finally we can very easily turn the raw bytes into a hex string.
+最后，我们可以非常轻松地将原始字节转换为十六进制字符串。
 
 ```go
 rawTxHex := hex.EncodeToString(rawTxBytes)
@@ -38,7 +38,7 @@ fmt.Printf(rawTxHex)
 // f86d8202b38477359400825208944592d8f8d7b001e72cb26a73e4fa1806a51ac79d880de0b6b3a7640000802ba0699ff162205967ccbabae13e07cdd4284258d46ec1051a70a51be51ec2bc69f3a04e6944d508244ea54a62ebf9a72683eeadacb73ad7c373ee542f1998147b220e
 ```
 
-And now you have the raw transaction data which you can use to broadcast at a future date. In the [next section](../transaction-raw-send) we'll learn how to do broadcast a raw transaction.
+接下来，你就可以广播原始交易数据。在[下一章](../transaction-raw-send) 我们将学习如何广播一个原始交易。
 
 ---
 
