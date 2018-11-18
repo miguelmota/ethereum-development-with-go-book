@@ -1,5 +1,5 @@
 ---
-概述: 用Go发交易(`Transaction`)的教程。
+概述: 用Go发交易事务(`Transaction`)的教程。
 ---
 
 # 交易(`Transaction`)
