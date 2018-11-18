@@ -4,9 +4,9 @@
 
 # Querying a Smart Contract
 
-These section requires knowledge of how to compile a smart contract's ABI to a Go contract file. If you haven't already gone through it, please [read the section](../smart-contract-compile) first.
+这写章节需要了解如何将智能合约的ABI编译成Go的合约文件。如果你还没看， 前先读[上一个章节](../smart-contract-compile) 。
 
-In the 上个章节 we learned how to initialize a contract instance in our Go application. Now we're going to read the smart contract using the provided methods by the new contract instance. If you recall we had a global variable named `version` in our contract that was set during deployment. Because it's public that means that they'll be a getter function automatically created for us. Constant and view functions also accept `bind.CallOpts` as the first argument. To learn about what options you can pass checkout the type's [documentation](https://godoc.org/github.com/ethereum/go-ethereum/accounts/abi/bind#CallOpts) but usually this is set to `nil`.
+在上个章节我们学习了如何在Go应用程序中初始化合约实例。 现在我们将使用新合约实例提供的方法来阅读智能合约。 如果你还记得我们在部署过程中设置的合约中有一个名为`version`的全局变量。 因为它是公开的，这意味着它们将成为我们自动创建的getter函数。 常量和view函数也接受`bind.CallOpts`作为第一个参数。了解可用的具体选项要看相应类的[文档](https://godoc.org/github.com/ethereum/go-ethereum/accounts/abi/bind#CallOpts) 一般情况下我们可以用 `nil`。
 
 ```go
 version, err := instance.Version(nil)

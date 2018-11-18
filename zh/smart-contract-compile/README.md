@@ -82,7 +82,7 @@ abigen --abi=Store_sol_Store.abi --pkg=store --out=Store.go
 solc --bin Store.sol
 ```
 
-现在我们编译Go合同文件，其中包括deploy方法，因为我们包含了bin文件。
+现在我们编译Go合约文件，其中包括deploy方法，因为我们包含了bin文件。
 
 ```bash
 abigen --bin=Store_sol_Store.bin --abi=Store_sol_Store.abi --pkg=store --out=Store.go

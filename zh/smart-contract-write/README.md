@@ -1,12 +1,12 @@
 ---
-概述: Tutorial on how to write to a smart contract with Go.
+概述: 用Go向智能合约写入数据的教程。
 ---
 
-# Writing to a Smart Contract
+# 写入智能合约
 
-These section requires knowledge of how to compile a smart contract's ABI to a Go contract file. If you haven't already gone through it, please [read the section](../smart-contract-compile) first.
+这写章节需要了解如何将智能合约的ABI编译成Go的合约文件。如果你还没看， 前先读[上一个章节](../smart-contract-compile) 。
 
-Writing to a smart contract requires us to sign the sign transaction with our private key.
+写入智能合约需要我们用私钥来对交易事务进行签名。
 
 ```go
 privateKey, err := crypto.HexToECDSA("fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19")
@@ -23,7 +23,8 @@ if !ok {
 fromAddress := crypto.PubkeyToAddress(*publicKeyECDSA)
 ```
 
-We'll also need to figure the nonce and gas price.
+我们还需要先查到nonce和燃气价格。
+
 
 ```go
 nonce, err := client.PendingNonceAt(context.Background(), fromAddress)
@@ -37,13 +38,13 @@ if err != nil {
 }
 ```
 
-Next we create a new keyed transactor which takes in the private key.
+接下来，我们创建一个新的keyed transactor，它接收私钥。
 
 ```go
 auth := bind.NewKeyedTransactor(privateKey)
 ```
 
-Then we need to set the standard transaction options attached to the keyed transactor.
+然后我们需要设置keyed transactor的标准交易选项。
 
 ```go
 auth.Nonce = big.NewInt(int64(nonce))
@@ -52,8 +53,7 @@ auth.GasLimit = uint64(300000) // in units
 auth.GasPrice = gasPrice
 ```
 
-Now we load an instance of the smart contract. If you recall in the [上个章节s](../smart-contract-compile) we create a contract called *Store* and generated a Go package file using the `abigen` tool. To initialize it we just invoke the *New* method of the contract package and give the smart contract address and the ethclient, which returns a contract instance that we can use.
-
+现在我们加载一个智能合约的实例。如果你还记得[上个章节](../smart-contract-compile) 我们创建一个名为*Store*的合约，并使用`abigen`工具生成一个Go文件。 要初始化它，我们只需调用合约包的*New*方法，并提供智能合约地址和ethclient，它返回我们可以使用的合约实例。
 
 ```go
 address := common.HexToAddress("0x147B8eb97fD247D06C4006D269c90C1908Fb5D54")
@@ -63,7 +63,8 @@ if err != nil {
 }
 ```
 
-The smart contract that we created has an external method called *SetItem* which takes in two arguments (key, value) in the from of solidity `bytes32`. This means that the Go contract package requires us to pass a byte array of length 32 bytes. Invoking the *SetItem* method requires us to pass the `auth` object we created earlier. Behind the scenes this method will encode this function call with it's arguments, set it as the `data` property of the transaction, and sign it with the private key. The result will be a signed transaction object.
+我们创建的智能合约有一个名为*SetItem*的外部方法，它接受solidity“bytes32”格式的两个参数（key，value）。 这意味着Go合约包要求我们传递一个长度为32个字节的字节数组。 调用*SetItem*方法需要我们传递我们之前创建的`auth`对象（keyed transactor）。 在幕后，此方法将使用它的参数对此函数调用进行编码，将其设置为事务的`data`属性，并使用私钥对其进行签名。 结果将是一个已签名的事务对象。
+
 
 ```go
 key := [32]byte{}
@@ -79,9 +80,9 @@ if err != nil {
 fmt.Printf("tx sent: %s", tx.Hash().Hex()) // tx sent: 0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870
 ```
 
-We can see now that the transaction has been successfully sent on the network: [https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870](https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870)
+现在我就可以看到交易已经成功被发送到了以太坊网络了: [https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870](https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870)
 
-To verify that the key/value was set, we read the smart contract mapping value.
+要验证键/值是否已设置，我们可以读取智能合约中的值。
 
 ```go
 result, err := instance.Items(nil, key)
@@ -92,7 +93,7 @@ if err != nil {
 fmt.Println(string(result[:])) // "bar"
 ```
 
-There you have it.
+搞定！
 
 ---
 

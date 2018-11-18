@@ -1,10 +1,11 @@
 ---
-概述: Tutorial on how to query an ERC20 token smart contract with Go.
+概述: 用Go来查询ERC20代币智能合约的教程。
 ---
 
-# Querying an ERC20 Token Smart Contract
+# 查询ERC20代币智能合约
 
-First create an ERC20 smart contract interface. This is just a contract with the function definitions of the functions that you can call.
+首先创建一个ERC20智能合约interface。 这只是与您可以调用的函数的函数定义的契约。
+
 
 ```solidity
 pragma solidity ^0.4.24;
@@ -26,14 +27,14 @@ contract ERC20 {
 }
 ```
 
-Then compile the smart contract to the JSON ABI, and create a Go token package out of the ABI using `abigen`.
+然后将interface智能合约编译为JSON ABI，并使用`abigen`从ABI创建Go包。
 
 ```
 solc --abi erc20.sol
 abigen --abi=erc20_sol_ERC20.abi --pkg=token --out=erc20.go
 ```
 
-Assuming we already have Ethereum client set up as usual, we can now import the new *token* package into our application and instantiate it. In this example we'll be using the [Golem](https://etherscan.io/address/0xa74476443119a942de498590fe1f2454d7d4ac0d) token.
+假设我们已经像往常一样设置了以太坊客户端，我们现在可以将新的*token*包导入我们的应用程序并实例化它。这个例子里我们用[Golem](https://etherscan.io/address/0xa74476443119a942de498590fe1f2454d7d4ac0d) 代币的地址.
 
 ```go
 tokenAddress := common.HexToAddress("0xa74476443119A942dE498590Fe1f2454d7D4aC0d")
@@ -43,7 +44,7 @@ if err != nil {
 }
 ```
 
-We may now call any ERC20 method that we like. For example, we can query the token balance of a user.
+我们现在可以调用任何ERC20的方法。 例如，我们可以查询用户的代币余额。
 
 ```
 address := common.HexToAddress("0x0536806df512d6cdde913cf95c9886f65b1d3462")
@@ -55,7 +56,7 @@ if err != nil {
 fmt.Printf("wei: %s\n", bal) // "wei: 74605500647408739782407023"
 ```
 
-We can also read the public variables of the ERC20 smart contract.
+我们还可以读ERC20智能合约的公共变量。
 
 ```go
 name, err := instance.Name(&bind.CallOpts{})
@@ -78,7 +79,7 @@ fmt.Printf("symbol: %s\n", symbol)     // "symbol: GNT"
 fmt.Printf("decimals: %v\n", decimals) // "decimals: 18"
 ```
 
-We can do some simple math to convert the balance into a human readable decimal format.
+我们可以做一些简单的数学运算将余额转换为可读的十进制格式。
 
 ```go
 fbal := new(big.Float)
@@ -88,7 +89,7 @@ value := new(big.Float).Quo(fbal, big.NewFloat(math.Pow10(int(decimals))))
 fmt.Printf("balance: %f", value) // "balance: 74605500.647409"
 ```
 
-See the same information on etherscan: [https://etherscan.io/token/0xa74476443119a942de498590fe1f2454d7d4ac0d?a=0x0536806df512d6cdde913cf95c9886f65b1d3462](https://etherscan.io/token/0xa74476443119a942de498590fe1f2454d7d4ac0d?a=0x0536806df512d6cdde913cf95c9886f65b1d3462)
+同样的信息也可以在etherscan上查询: [https://etherscan.io/token/0xa74476443119a942de498590fe1f2454d7d4ac0d?a=0x0536806df512d6cdde913cf95c9886f65b1d3462](https://etherscan.io/token/0xa74476443119a942de498590fe1f2454d7d4ac0d?a=0x0536806df512d6cdde913cf95c9886f65b1d3462)
 
 ---
 

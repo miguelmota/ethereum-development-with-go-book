@@ -1,12 +1,12 @@
 ---
-概述: Tutorial on how to read the bytecode of a deployed smart contract with Go.
+概述: 用Go来读取已经部署的智能合约的字节码的教程。
 ---
 
-# Reading Smart Contract Bytecode
+# 读取智能合约的字节码
 
-Sometimes you'll need to read the bytecode of a deployed smart contract. Since all the smart contract bytecode lives on the blockchain, we can easily fetch it.
+有时您需要读取已部署的智能合约的字节码。 由于所有智能合约字节码都存在于区块链中，因此我们可以轻松获取它。
 
-First set up the client and the smart contract address you want to read the bytecode of.
+首先设置客户端和要读取的字节码的智能合约地址。
 
 ```go
 client, err := ethclient.Dial("https://rinkeby.infura.io")
@@ -17,7 +17,7 @@ if err != nil {
 contractAddress := common.HexToAddress("0x147B8eb97fD247D06C4006D269c90C1908Fb5D54")
 ```
 
-Now all you have to is call the `codeAt` method of the client. The `codeAt` method accepts a smart contract address and an optional block number, and returns the bytecode in bytes format.
+现在你需要调用客户端的`codeAt`方法。 `codeAt`方法接受智能合约地址和可选的块编号，并以字节格式返回字节码。
 
 ```go
 bytecode, err := client.CodeAt(context.Background(), contractAddress, nil) // nil is latest block
@@ -29,7 +29,7 @@ fmt.Println(hex.EncodeToString(bytecode)) // 60806...10029
 ```
 
 
-See the same bytecode hex on etherscan [https://rinkeby.etherscan.io/address/0x147b8eb97fd247d06c4006d269c90c1908fb5d54#code](https://rinkeby.etherscan.io/address/0x147b8eb97fd247d06c4006d269c90c1908fb5d54#code)
+你也可以在etherscan上查询16进制格式的字节码 [https://rinkeby.etherscan.io/address/0x147b8eb97fd247d06c4006d269c90c1908fb5d54#code](https://rinkeby.etherscan.io/address/0x147b8eb97fd247d06c4006d269c90c1908fb5d54#code)
 
 ---
 
