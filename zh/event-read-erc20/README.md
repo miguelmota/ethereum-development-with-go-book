@@ -1,10 +1,10 @@
 ---
-概述: Tutorial on how to read ERC-20 Token smart contract events with Go.
+概述: 用Go来读取ERC20代币智能合约的教程。
 ---
 
-# Reading ERC-20 Token Event Logs
+# 读取ERC-20代币的事件日志
 
-First create the ERC-20 smart contract interface for event logs as `erc20.sol`:
+首先，创建ERC-20智能合约的事件日志的interface文件 `erc20.sol`:
 
 ```solidity
 pragma solidity ^0.4.24;
