@@ -1,33 +1,33 @@
 ---
-概述: Collection of useful Ethereum utility functions in Go.
+概述: 一组用Go的好用的工具函数。
 ---
 
-# Collection of Utility Functions
+# 工具函数集
 
-The utility functions' implementation are found below in the [full code](#full-code) section. They are generous in what they accept. Here we'll be showing examples of usage.
+函数的实现可以在[这里](#full-code). 它们一般接口比较通用. 这里我们先看几个例子。
 
-Check if an address is a valid Ethereum address:
+检查地址是否是有效的以太坊地址:
 
 ```go
 valid := util.IsValidAddress("0x323b5d4c32345ced77393b3530b1eed0f346429d")
 fmt.Println(valid) // true
 ```
 
-Check if an address is a zero address.
+检查地址是否为零地址:
 
 ```go
 zeroed := util.IsZeroAddress("0x0")
 fmt.Println(zeroed) // true
 ```
 
-Convert a decimal to wei. The second argument is the number of decimals.
+将小数转换为wei(整数）。 第二个参数是小数位数。
 
 ```go
 wei := util.ToWei(0.02, 18)
 fmt.Println(wei) // 20000000000000000
 ```
 
-Convert wei to decimals. The second argument is the number of decimals.
+将wei（整数）转换为小数。 第二个参数是小数位数。
 
 ```go
 wei := new(big.Int)
@@ -36,7 +36,7 @@ eth := util.ToDecimal(wei, 18)
 fmt.Println(eth) // 0.02
 ```
 
-Calculate the gas cost given the gas limit and gas price.
+根据燃气上限和燃气价格计算燃气花费。
 
 ```go
 gasLimit := uint64(21000)
@@ -46,7 +46,7 @@ gasCost := util.CalcGasCost(gasLimit, gasPrice)
 fmt.Println(gasCost) // 42000000000000
 ```
 
-Retrieve the R, S, and V values from a signature.
+从签名中提取R，S和V值。
 
 ```go
 sig := "0x789a80053e4927d0a898db8e065e948f5cf086e32f9ccaa54c1908e22ac430c62621578113ddbb62d509bf6049b8fb544ab06d36f916685a2eb8e57ffadde02301"
