@@ -1,7 +1,8 @@
 ---
-概述: Tutorial on Ethereum event logs with Go.
+概述: 用Go与以太坊事件日志交互的教程。
 ---
 
-# Events
+# 事件
 
-智能合约 have the ability to "emit" events during execution. Events are also known as "logs" in Ethereum. The output of the events are stored in transaction receipts under a logs section. Events have become pretty widely used in Ethereum 智能合约 to log when a significant action has occured, particularly in token contracts (i.e. ERC-20) to indicate that a token transfer has occured. These sections will walk you through the process of reading events from the blockchain as well as subscribing to events so that you get notified in real time as the transaction gets mined.
+智能合约具有在执行期间“发出”事件的能力。 事件在以太坊中也称为“日志”。 事件的输出存储在日志部分下的事务处理中。 事件已经在以太坊智能合约中被广泛使用，以便在发生相对重要的动作时记录，特别是在代币合约（即ERC-20）中，以指示代币转账已经发生。 这些部分将引导您完成从区块链中读取事件以及订阅事件的过程，以便交易事务被矿工打包入块的时候及时收到通知。
+
