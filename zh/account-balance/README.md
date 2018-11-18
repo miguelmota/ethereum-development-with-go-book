@@ -49,7 +49,7 @@ fmt.Println(pendingBalance) // 25729324269165216042
 
 ---
 
-### 完整代码 Full code
+### 完整代码
 
 [account_balance.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/account_balance.go)
 
