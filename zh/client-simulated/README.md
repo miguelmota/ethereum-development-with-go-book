@@ -1,10 +1,10 @@
 ---
-概述: Tutorial on how to set up a simulated backend as your client to test your Ethereum application with Go.
+概述：用Go搭建模拟客户端作为测试以太坊应用程序的客户端的教程。
 ---
 
-# Using a Simulated Client
+# 使用模拟客户端
 
-You can use a simulated client for testing your transactions locally quickly and easily, ideal for unit tests. In order to get started we're going to need an account with some initial ETH in it. To do that first generate an account private key.
+您可以使用模拟客户端来快速轻松地在本地测试您的交易，非常适合单元测试。为了开始，我们需要一个带有初始ETH的账户。为此，首先生成一个账户私钥。
 
 ```go
 privateKey, err := crypto.GenerateKey()
@@ -13,13 +13,13 @@ if err != nil {
 }
 ```
 
-Then create a `NewKeyedTransactor` from the `accounts/abi/bind` package passing the private key.
+接着从`accounts/abi/bind`包创建一个`NewKeyedTransactor`，并为其传递私钥。
 
 ```go
 auth := bind.NewKeyedTransactor(privateKey)
 ```
 
-The next step is to create a genesis account and assign it an initial balance. We'll be using the `GenesisAccount` type from the `core` package.
+下一步是创建一个创世账户并为其分配初始余额。我们将使用`core`包的`GenesisAccount`类型。
 
 ```go
 balance := new(big.Int)
@@ -33,14 +33,14 @@ genesisAlloc := map[common.Address]core.GenesisAccount{
 }
 ```
 
-Now we pass the genesis allocation struct and a configured block gas limit to the `NewSimulatedBackend` method from the `accounts/abi/bind/backends` package which will return a new simulated ethereum client.
+现在我们将创世分配结构体和配置好的汽油上限传给`account/abi/bind/backends`包的`NewSimulatedBackend`方法，该方法将返回一个新的模拟以太坊客户端。
 
 ```go
 blockGasLimit := uint64(4712388)
 client := backends.NewSimulatedBackend(genesisAlloc, blockGasLimit)
 ```
 
-You can use this client as you'd normally would. As an example, we'll construct a new transaction and broadcast it.
+您可以像往常一样使用此客户端。作为一个示例，我们将构造一个新的交易并进行广播。
 
 ```go
 fromAddress := auth.From
@@ -73,13 +73,13 @@ if err != nil {
 fmt.Printf("tx sent: %s\n", signedTx.Hash().Hex()) // tx sent: 0xec3ceb05642c61d33fa6c951b54080d1953ac8227be81e7b5e4e2cfed69eeb51
 ```
 
-By now you're probably wondering when will the transaction actually get mined. Well in order to "mine" it, there's one additional important thing you must do; call `Commit` on the client to commit a new mined block.
+到现在为止，您可能想知道交易何时才会被开采。为了“开采”它，您还必须做一件额外的事情，在客户端调用`Commit`提交新开采的区块。
 
 ```go
 client.Commit()
 ```
 
-Now you can fetch the transaction receipt and see that it was processed.
+现在您可以获取交易收据并看见其已被处理。
 
 ```go
 receipt, err := client.TransactionReceipt(context.Background(), signedTx.Hash())
@@ -93,9 +93,7 @@ if receipt == nil {
 fmt.Printf("status: %v\n", receipt.Status) // status: 1
 ```
 
-So remember that the simulated client allows you to manually mine blocks at your command using the simulated client's `Commit` method.
-
-----
+因此，请记住：模拟客户端允许您使用模拟客户端的`Commit`方法手动开采区块。
 
 ### 完整代码
 
