@@ -1,12 +1,14 @@
 ---
-概述: Tutorial on how to check if an address is a smart contract or an account with Go.
+概述:用Go检查地址是智能合约或账户的教程。
 ---
 
-# Address Check
+# 地址检查
 
-This section will describe how to validate an address and determine if it's a smart contract address.
+本节将介绍如何确认一个地址并确定其是否为智能合约地址。
 
-## Check if Address is Valid
+## 检查地址是否有效
+
+我们可以使用简单的正则表达式来检查以太坊地址是否有效：
 
 We can use a simple regular expression to check if the ethereum address is valid:
 
@@ -17,9 +19,9 @@ fmt.Printf("is valid: %v\n", re.MatchString("0x323b5d4c32345ced77393b3530b1eed0f
 fmt.Printf("is valid: %v\n", re.MatchString("0xZYXb5d4c32345ced77393b3530b1eed0f346429d")) // is valid: false
 ```
 
-## Check if Address in an Account or a Smart Contract
+## 检查地址是否为账户或智能合约
 
-We can determine if an address is a smart contract if there's bytecode stored at that address. Here's an example where we fetch the code for a token smart contract and check the length to verify that it's a smart contract:
+我们可以确定，若在该地址存储了字节码，该地址是智能合约。这是一个示例，在例子中，我们获取一个代币智能合约的字节码并检查其长度以验证它是一个智能合约：
 
 ```go
 // 0x Protocol Token (ZRX) smart contract address
@@ -34,7 +36,7 @@ isContract := len(bytecode) > 0
 fmt.Printf("is contract: %v\n", isContract) // is contract: true
 ```
 
-When there's no bytecode at the address then we know that it's not a smart contract and it's a standard ethereum account:
+当地址上没有字节码时，我们知道它不是一个智能合约，它是一个标准的以太坊账户。
 
 ```go
 // a random user account address
