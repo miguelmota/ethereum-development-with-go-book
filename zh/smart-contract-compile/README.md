@@ -35,7 +35,7 @@ make
 make devtools
 ```
 
-We'll create a simple smart contract to test with. More complex smart contracts, and smart contract development in general is out of scope for this book. I highly recommend checking out [truffle framework](http://truffleframework.com/) for developing and testing smart contracts.
+We'll create a simple smart contract to test with. More complex 智能合约, and smart contract development in general is out of scope for this book. I highly recommend checking out [truffle framework](http://truffleframework.com/) for developing and testing 智能合约.
 
 This simple contract will be a key/value store with only 1 external method to set a key/value pair by anyone. We also added an event to emit after the value is set.
 
