@@ -4,7 +4,7 @@
 
 # Verifying a Signature
 
-In the previous section we learned how to sign a piece of data with a private key in order to generate a signature. Now we'll learn how to verify the authenticiy of the signature.
+In the 上个章节 we learned how to sign a piece of data with a private key in order to generate a signature. Now we'll learn how to verify the authenticiy of the signature.
 
 We need to have 3 things to verify the signature: the signature, the hash of the original data, and the public key of the signer. With this information we can determine if the private key holder of the public key pair did indeed sign the message.
 

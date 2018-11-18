@@ -16,7 +16,7 @@ auth.GasLimit = uint64(300000) // in units
 auth.GasPrice = gasPrice
 ```
 
-If you recall in the previous section, we created a very simpile `Store` contract that sets and stores key/value pairs. The generated Go contract file provides a deploy method. The deploy method name always starts with the word *Deploy* followed by the contract name, in this case it's *Store*.
+If you recall in the 上个章节, we created a very simpile `Store` contract that sets and stores key/value pairs. The generated Go contract file provides a deploy method. The deploy method name always starts with the word *Deploy* followed by the contract name, in this case it's *Store*.
 
 The deploy function takes in the keyed transactor, the ethclient, and any input arguments that the smart contract constructor might takes in. We've set our smart contract to take in a string argument for the version. This function will return the Ethereum address of the newly deployed contract, the transaction object, the contract instance so that we can start interacting with, and the error if any.
 

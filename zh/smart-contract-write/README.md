@@ -52,7 +52,7 @@ auth.GasLimit = uint64(300000) // in units
 auth.GasPrice = gasPrice
 ```
 
-Now we load an instance of the smart contract. If you recall in the [previous sections](../smart-contract-compile) we create a contract called *Store* and generated a Go package file using the `abigen` tool. To initialize it we just invoke the *New* method of the contract package and give the smart contract address and the ethclient, which returns a contract instance that we can use.
+Now we load an instance of the smart contract. If you recall in the [上个章节s](../smart-contract-compile) we create a contract called *Store* and generated a Go package file using the `abigen` tool. To initialize it we just invoke the *New* method of the contract package and give the smart contract address and the ethclient, which returns a contract instance that we can use.
 
 
 ```go

@@ -4,7 +4,7 @@
 
 # Uploading Files to Swarm
 
-In the [previous section](../swarm-setup) we setup a swarm node running as a daemon on port `8500`. Now import the swarm package go-ethereum `swarm/api/client`. I'll be aliasing the package to `bzzclient`.
+In the [上个章节](../swarm-setup) we setup a swarm node running as a daemon on port `8500`. Now import the swarm package go-ethereum `swarm/api/client`. I'll be aliasing the package to `bzzclient`.
 
 ```go
 import (

@@ -4,7 +4,7 @@
 
 # Downloading Files from Swarm
 
-In the [previous section](../swarm-upload) we uploaded a hello.txt file to swarm and in return we got a manifest hash.
+In the [上个章节](../swarm-upload) we uploaded a hello.txt file to swarm and in return we got a manifest hash.
 
 ```go
 manifestHash := "f9192507e2e8e118bfedac428c3aa1dec4ae156e954128ec5fb27f63ee67bcac"

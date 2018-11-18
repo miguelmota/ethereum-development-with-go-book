@@ -81,7 +81,7 @@ hash := crypto.Keccak256Hash(eventSignature)
 fmt.Println(hash.Hex()) // 0xe79e73da417710ae99aa2088575580a60415d359acfad9cdd3382d59c80281d4
 ```
 
-That's all there is to reading and parsing logs. To learn how to subscribe to logs, read the [previous section](../event-subscribe).
+That's all there is to reading and parsing logs. To learn how to subscribe to logs, read the [上个章节](../event-subscribe).
 
 ---
 
