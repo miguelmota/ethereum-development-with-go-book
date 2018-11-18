@@ -1,10 +1,10 @@
 ---
-概述: Tutorial on how to subscribe to latest blocks in Ethereum with Go.
+概述: 用Go订阅以太坊中最新区块的教程。
 ---
 
-# Subscribing to New Blocks
+# 订阅新区块 
 
-In this section we'll go over how to set up a subscription to get events when their is a new block mined. First thing is we need an Ethereum provider that supports RPC over websockets. In this example we'll use the infura websocket endpoint.
+在本节中，我们将讨论如何设置订阅以便在新区块被开采时获取事件。首先，我们需要一个支持websocket RPC的以太坊服务提供者。在示例中，我们将使用infura 的websocket端点。
 
 ```go
 client, err := ethclient.Dial("wss://ropsten.infura.io/ws")
@@ -13,13 +13,13 @@ if err != nil {
 }
 ```
 
-Next we'll create a new channel that will be receiving the latest block headers.
+接下来，我们将创建一个新的通道，用于接收最新的区块头。
 
 ```go
 headers := make(chan *types.Header)
 ```
 
-Now we call the client's `SubscribeNewHead` method which takes in the headers channel we just created, which will return a subscription object.
+现在我们调用客户端的`SubscribeNewHead`方法，它接收我们刚创建的区块头通道，该方法将返回一个订阅对象。
 
 ```go
 sub, err := client.SubscribeNewHead(context.Background(), headers)
@@ -28,7 +28,7 @@ if err != nil {
 }
 ```
 
-The subscription will push new block headers to our channel so we'll use a select statement to listen for new messages. The subscription object also contains an error channel that will send a message in case of a failure with the subscription.
+订阅将推送新的区块头事件到我们的通道，因此我们可以使用一个select语句来监听新消息。订阅对象还包括一个error通道，该通道将在订阅失败时发送消息。
 
 ```go
 for {
@@ -41,7 +41,7 @@ for {
 }
 ```
 
-To get the full contents of the block, we can pass the block header hash to the client's `BlockByHash` function.
+要获得该区块的完整内容，我们可以将区块头的摘要传递给客户端的`BlockByHash`函数。
 
 ```go
 block, err := client.BlockByHash(context.Background(), header.Hash())
@@ -56,7 +56,7 @@ fmt.Println(block.Nonce())             // 130524141876765836
 fmt.Println(len(block.Transactions())) // 7
 ```
 
-As you can see, you can read the entire block's metadata fields, list of transactions, and much more.
+正如您所见，您可以读取整个区块的元数据字段，交易列表等等。
 
 ### 完整代码
 
