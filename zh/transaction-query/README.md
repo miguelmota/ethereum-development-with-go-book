@@ -4,7 +4,7 @@
 
 # 查询交易
 
-In the [上个章节](../block-query) we learned how to read a block and all its data given the block number. We can read the transactions in a block by calling the `Transactions` method which returns a list of `Transaction` type. It's then trivial to iterate over the collection and retrieve any information regarding the transaction.
+在[上个章节](../block-query) 我们学习了如何在给定区块编号的情况下读取块及其所有数据。 我们可以通过调用`Transactions`方法来读取块中的事务，该方法返回一个`Transaction`类型的列表。 然后，重复遍历集合并获取有关事务的任何信息就变得简单了。
 
 ```go
 for _, tx := range block.Transactions() {
@@ -18,7 +18,8 @@ for _, tx := range block.Transactions() {
 }
 ```
 
-In order to read the sender address, we need to call `AsMessage` on the transaction which returns a `Message` type containing a function to return the sender (from) address. The `AsMessage` method requires the EIP155 signer, which we derive the chain ID from the client.
+为了读取发送方的地址，我们需要在事务上调用`AsMessage`，它返回一个`Message`类型，其中包含一个返回sender（from）地址的函数。 `AsMessage`方法需要EIP155签名者，这个我们从客户端拿到链ID。
+
 
 ```go
 chainID, err := client.NetworkID(context.Background())
@@ -31,7 +32,7 @@ if msg, err := tx.AsMessage(types.NewEIP155Signer(chainID)); err != nil {
 }
 ```
 
-Each transaction has a receipt which contains the result of the execution of the transaction, such as any return values and logs, as well as the status which will be `1` (success) or `0` (fail).
+每个事务都有一个收据，其中包含执行事务的结果，例如任何返回值和日志，以及为“1”（成功）或“0”（失败）的事件结果状态。
 
 ```go
 receipt, err := client.TransactionReceipt(context.Background(), tx.Hash())
@@ -43,7 +44,7 @@ fmt.Println(receipt.Status) // 1
 fmt.Println(receipt.Logs) // ...
 ```
 
-Another way to iterate over transaction without fetching the block is to call the client's `TransactionInBlock` method. This method accepts only the block hash and the index of the transaction within the block. You can call `TransactionCount` to know how many transactions there are in the block.
+在不获取块的情况下遍历事务的另一种方法是调用客户端的`TransactionInBlock`方法。 此方法仅接受块哈希和块内事务的索引值。 您可以调用`TransactionCount`来了解块中有多少个事务。
 
 ```go
 blockHash := common.HexToHash("0x9e8751ebb5069389b855bba72d94902cc385042661498a415979b7b6ee9ba4b9")
@@ -62,7 +63,7 @@ for idx := uint(0); idx < count; idx++ {
 }
 ```
 
-You can also query for a single transaction directly given the transaction hash by using `TransactionByHash`.
+您还可以使用`TransactionByHash`在给定具体事务哈希值的情况下直接查询单个事务。
 
 ```go
 txHash := common.HexToHash("0x5d49fcaa394c97ec8a9c3e7bd9e8388d420fb050a52083ca52ff24b3b65bc9c2")
