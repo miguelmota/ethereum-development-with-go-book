@@ -1,10 +1,10 @@
 ---
-概述: Tutorial on how to generate Ethereum wallets with Go.
+概述: 用Go生成以太坊钱包的教程。
 ---
 
-# Generating New Wallets
+# 生成新钱包
 
-To generate a new wallet first we need to import the go-ethereum `crypto` package that provides the `GenerateKey` method for generating a random private key.
+要首先生成一个新的钱包，我们需要导入go-ethereum`crypto`包，该包提供用于生成随机私钥的`GenerateKey`方法。
 
 ```go
 privateKey, err := crypto.GenerateKey()
@@ -13,27 +13,27 @@ if err != nil {
 }
 ```
 
-Then we can convert it to bytes by importing the golang `crypto/ecdsa` package and using the `FromECDSA` method.
+然后我们可以通过导入golang`crypto/ecdsa`包并使用`FromECDSA`方法将其转换为字节。
 
 ```go
 privateKeyBytes := crypto.FromECDSA(privateKey)
 ```
 
-We can now convert it to a hexadecimal string by using the go-ethereum `hexutil` package which provides the `Encode` method which takes a byte slice. Then we strip of the `0x` after it's hex encoded.
+我们现在可以使用go-ethereum`hexutil`包将它转换为十六进制字符串，该包提供了一个带有字节切片的`Encode`方法。 然后我们在十六进制编码之后删除“0x”。
 
 ```go
 fmt.Println(hexutil.Encode(privateKeyBytes)[2:]) // fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19
 ```
 
-This is the private key which is used for signing transactions and is to be treated like a password and never be shared, since who ever is in possesion of it will have access to all your funds.
+这就是用于签署交易的私钥，将被视为密码，永远不应该被共享给别人，因为谁拥有它可以访问你的所有资产。
 
-Since the public key is derived from the private key, go-ethereum's crypto private key has a `Public` method that will return the public key.
+由于公钥是从私钥派生的，因此go-ethereum的加密私钥具有一个返回公钥的`Public`方法。
 
 ```go
 publicKey := privateKey.Public()
 ```
 
-Converting it to hex is a similar process that we went through with the private key. We strip off the `0x` and the first 2 characters `04` which is always the EC prefix and is not required.
+将其转换为十六进制的过程与我们使用转化私钥的过程类似。 我们剥离了`0x`和前2个字符`04`，它始终是EC前缀，不是必需的。
 
 ```go
 publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
@@ -45,14 +45,14 @@ publicKeyBytes := crypto.FromECDSAPub(publicKeyECDSA)
 fmt.Println(hexutil.Encode(publicKeyBytes)[4:]) // 9a7df67f79246283fdc93af76d4f8cdd62c4886e8cd870944e817dd0b97934fdd7719d0810951e03418205868a5c1b40b192451367f28e0088dd75e15de40c05
 ```
 
-Now that we have the public key we can easily generate the public address which is what you're used to seeing. In order to do that, the go-ethereum crypto package has a `PubkeyToAddress` method which accepts an ECDSA public key, and returns the public address.
+现在我们拥有公钥，就可以轻松生成你经常看到的公共地址。 为了做到这一点，go-ethereum加密包有一个`PubkeyToAddress`方法，它接受一个ECDSA公钥，并返回公共地址。
 
 ```go
 address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
 fmt.Println(address) // 0x96216849c49358B10257cb55b28eA603c874b05E
 ```
 
-The public address is simply the Keccak-256 hash of the public key, and then we take the last 40 characters (20 bytes) and prefix it with `0x`. Here's how you can do it manually using the go-ethereum's `crypto/sha3` Keccak256 functions.
+公共地址其实就是公钥的Keccak-256哈希，然后我们取最后40个字符（20个字节）并用“0x”作为前缀。 以下是使用go-ethereum的`crypto/sha3` Keccak256函数手动完成的方法。
 
 ```go
 hash := sha3.NewKeccak256()
