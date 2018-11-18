@@ -15,14 +15,14 @@ contract ERC20 {
 }
 ```
 
-Then use `abigen` to create the Go `exchange` package given the abi:
+然后在给定abi使用`abigen`创建Go包
 
 ```bash
 solc --abi erc20.sol
 abigen --abi=erc20_sol_ERC20.abi --pkg=token --out=erc20.go
 ```
 
-Now in our Go application let's create the struct types matching the types of the ERC-20 event log signature:
+现在在我们的Go应用程序中，让我们创建与ERC-20事件日志签名类型相匹配的结构类型：
 
 ```go
 type LogTransfer struct {
@@ -38,7 +38,7 @@ type LogApproval struct {
 }
 ```
 
-Initialize the ethereum client:
+初始化以太坊客户端
 
 ```go
 client, err := ethclient.Dial("https://mainnet.infura.io")
@@ -47,7 +47,7 @@ if err != nil {
 }
 ```
 
-Create a `FilterQuery` passing the ERC-20 smart contract address and the desired block range. We'll be using the [ZRX](https://etherscan.io/token/0xe41d2489571d322189246dafa5ebde1f4699f498) token for this example:
+按照ERC-20智能合约地址和所需的块范围创建一个“FilterQuery”。这个例子我们会用[ZRX](https://etherscan.io/token/0xe41d2489571d322189246dafa5ebde1f4699f498) 代币:
 
 ```go
 // 0x Protocol (ZRX) token address
@@ -61,7 +61,7 @@ query := ethereum.FilterQuery{
 }
 ```
 
-Query the logs with `FilterLogs`:
+用`FilterLogs`来过滤日志：
 
 ```go
 logs, err := client.FilterLogs(context.Background(), query)
@@ -70,7 +70,7 @@ if err != nil {
 }
 ```
 
-Next we'll parse the JSON abi which we'll use unpack the raw log data later:
+接下来我们将解析JSON abi，稍后我们将使用解压缩原始日志数据：
 
 ```go
 contractAbi, err := abi.JSON(strings.NewReader(string(token.TokenABI)))
@@ -79,7 +79,8 @@ if err != nil {
 }
 ```
 
-In order to filter by certain log type, we need to figure out the keccak256 hash of each event log function signature. The event log function signature hash is always `topic[0]` as we'll see soon. Here's how to calculate the keccak256 hash using the go-ethereum `crypto` package:
+为了按某种日志类型进行过滤，我们需要弄清楚每个事件日志函数签名的keccak256哈希值。 事件日志函数签名哈希始终是`topic [0]`，我们很快就会看到。 以下是使用go-ethereum`crypto`包计算keccak256哈希的方法：
+
 
 ```go
 logTransferSig := []byte("Transfer(address,address,uint256)")
@@ -88,7 +89,7 @@ logTransferSigHash := crypto.Keccak256Hash(logTransferSig)
 logApprovalSigHash := crypto.Keccak256Hash(LogApprovalSig)
 ```
 
-Now we'll iterate through all the logs and set up a switch statement to filter by event log type:
+现在我们将遍历所有日志并设置switch语句以按事件日志类型进行过滤：
 
 ```go
 for _, vLog := range logs {
@@ -104,7 +105,7 @@ for _, vLog := range logs {
 }
 ```
 
-Now to parse the `Transfer` event log we'll use `abi.Unpack` to parse the raw log data into our log type struct. Unpack will not parse `indexed` event types because those are stored under `topics`, so for those we'll have to parse separately as seen in the example below:
+现在要解析`Transfer`事件日志，我们将使用`abi.Unpack`将原始日志数据解析为我们的日志类型结构。 解包不会解析`indexed`事件类型，因为它们存储在`topics`下，所以对于那些我们必须单独解析，如下例所示：
 
 ```go
 fmt.Printf("Log Name: Transfer\n")
@@ -124,7 +125,7 @@ fmt.Printf("To: %s\n", transferEvent.To.Hex())
 fmt.Printf("Tokens: %s\n", transferEvent.Tokens.String())
 ```
 
-Similarly for the `Approval` event log:
+`Approval` 日志也是类似的方法：
 
 ```go
 fmt.Printf("Log Name: Approval\n")
@@ -144,7 +145,7 @@ fmt.Printf("Spender: %s\n", approvalEvent.Spender.Hex())
 fmt.Printf("Tokens: %s\n", approvalEvent.Tokens.String())
 ```
 
-Putting it all together and running it we'll see the following output:
+最后，把所有的步骤放一起：
 
 ```bash
 Log Block Number: 6383829
@@ -171,7 +172,7 @@ To: 0x4aEE792A88eDDA29932254099b9d1e06D537883f
 Tokens: 2863452144424379687066
 ```
 
-Compare the parsed log output to what's on etherscan: [https://etherscan.io/tx/0x0c3b6cf604275c7e44dc7db400428c1a39f33f0c6cbc19ff625f6057a5cb32c0#eventlog](https://etherscan.io/tx/0x0c3b6cf604275c7e44dc7db400428c1a39f33f0c6cbc19ff625f6057a5cb32c0#eventlog)
+我们可以把解析的日志与etherscan的数据对比: [https://etherscan.io/tx/0x0c3b6cf604275c7e44dc7db400428c1a39f33f0c6cbc19ff625f6057a5cb32c0#eventlog](https://etherscan.io/tx/0x0c3b6cf604275c7e44dc7db400428c1a39f33f0c6cbc19ff625f6057a5cb32c0#eventlog)
 
 ---
 
