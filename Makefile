@@ -19,7 +19,11 @@ deploy:
 	@./deploy.sh
 
 .PHONY: deploy/all
-deploy/all: build ebooks deploy
+deploy/all: build ebooks ebooks/cp deploy
+
+.PHONY: ebooks/cp
+ebooks/cp:
+	@cp ethereum-development-with-go* _book
 
 .PHONY: ebooks
 ebooks: pdf ebook mobi

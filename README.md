@@ -19,6 +19,11 @@ The e-book is avaiable in different formats.
 - [EPUB](https://goethereumbook.org/ethereum-development-with-go.epub)
 - [MOBI](https://goethereumbook.org/ethereum-development-with-go.mobi)
 
+## Languages
+
+* [English](en/)
+* [Chinese中文](zh/)
+
 ## Contents
 
 * [Introduction](en/README.md)
@@ -92,7 +97,7 @@ Run gitbook server:
 make serve
 ```
 
-Generating e-books
+Generating e-books:
 
 ```bash
 make pdf ebook mobi
@@ -113,6 +118,10 @@ Instructions for adding a new translation:
 4. Translate content
 
 5. Set `"root"` to `"./"` in `book.json`
+
+## Thanks
+
+Thanks to [qbig](https://github.com/qbig) and [gzuhlwang](https://github.com/gzuhlwang) for Chinese translation.
 
 ## License
 
