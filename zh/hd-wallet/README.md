@@ -1,7 +1,7 @@
 ---
-概述: Tutorial on how to create or use an HD wallet in Go.
+概述: 用Go创建或使用分层确定性(HD)钱包。
 ---
 
-# HD Wallet
+# 分层确定性(HD)Wallet
 
-For creating or using an HD wallet, please refer to the Go package: [https://github.com/miguelmota/go-ethereum-hdwallet](https://github.com/miguelmota/go-ethereum-hdwallet)
+关于创建或使用一个分层确定性(HD)钱包，请参考Go包: [https://github.com/miguelmota/go-ethereum-hdwallet](https://github.com/miguelmota/go-ethereum-hdwallet)
