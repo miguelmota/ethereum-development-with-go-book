@@ -1,12 +1,12 @@
 ---
-概述: Tutorial on using faucets on Ethereum.
+概述: 使用以太坊测试网发币水龙头的教程。
 ---
 
-# Faucets
+# 水龙头
 
-A faucet is where you can acquire free [testnet] ETH to use while testing.
+水龙头是免费在[测试网]获得ETH的方式。
 
-Below are faucet links to each respective testnet.
+这里罗列了各个测试网的龙头。
 
 - Ropsten testnet - [https://faucet.ropsten.be](https://faucet.ropsten.be)
 - Rinkeby testnet - [https://faucet.rinkeby.io](https://faucet.rinkeby.io)
