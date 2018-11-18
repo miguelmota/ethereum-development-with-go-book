@@ -1,7 +1,7 @@
 ---
-概述: Tutorial on how to setup the Ethereum client with Go.
+概述: 用Go初始化以太坊客户端的教程。
 ---
 
-# Client
+# 客户端
 
-The client is the entry point to the Ethereum network. The client is required to broadcast transactions and read blockchain data. In the [next section](../client-setup) will learn how to set up a client in a Go application.
+客户端是以太坊网络的入口。客户端需要广播交易和读取区块链数据。在[下一节](../client-setup)中将学习如何在Go应用程序中初始化客户端。

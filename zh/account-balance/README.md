@@ -1,10 +1,10 @@
 ---
-概述: Tutorial on how to read account balances from the blockchain with Go.
+概述: 用Go从区块链读取账户余额教程。
 ---
 
-# Account Balances
+# 账户余额 
 
-Reading the balance of an account is pretty simple; call the `BalanceAt` method of the client passing it the account address and optional block number. Setting `nil` as the block number will return the latest balance.
+读取一个账户的余额相当简单。调用客户端的`BalanceAt`方法，给它传递账户地址和可选的区块号。将区块号设置为`nil`将返回最新的余额。
 
 ```go
 account := common.HexToAddress("0x71c7656ec7ab88b098defb751b7401b5f6d8976f")
@@ -16,7 +16,7 @@ if err != nil {
 fmt.Println(balance) // 25893180161173005034
 ```
 
-Passing the block number let's you read the account balance at the time of that block. The block number must be a `big.Int`.
+传区块号能让您读取该区块时的账户余额。区块号必须是`big.Int`类型。
 
 ```go
 blockNumber := big.NewInt(5532993)
@@ -28,7 +28,7 @@ if err != nil {
 fmt.Println(balance) // 25729324269165216042
 ```
 
-Numbers in ethereum are dealt using the smallest possible unit because they're fixed-point precision, which in the case of ETH it's *wei*. To read the ETH value you must do the calculation `wei / 10^18`. Because we're dealing with big numbers we'll have to import the native Go `math` and `math/big` packages. Here's how'd you do the conversion.
+以太坊中的数字是使用尽可能小的单位来处理的，因为它们是定点精度，在ETH中它是*wei*。要读取ETH值，您必须做计算`wei/10^18`。因为我们正在处理大数，我们得导入原生的Go`math`和`math/big`包。这是您做的转换。
 
 ```go
 fbalance := new(big.Float)
@@ -38,9 +38,9 @@ ethValue := new(big.Float).Quo(fbalance, big.NewFloat(math.Pow10(18)))
 fmt.Println(ethValue) // 25.729324269165216041
 ```
 
-#### Pending balance
+#### 待处理的余额
 
-Sometimes you'll want to know what the pending account balance is, for example after submitting or waiting for a transaction to be confirmed. The client provides a similar method to `BalanceAt` called `PendingBalanceAt` which accepts the account address as a parameter.
+有时您想知道待处理的账户余额是多少，例如，在提交或等待交易确认后。客户端提供了类似`BalanceAt`的方法，名为`PendingBalanceAt`，它接收账户地址作为参数。
 
 ```go
 pendingBalance, err := client.PendingBalanceAt(context.Background(), account)
@@ -49,7 +49,7 @@ fmt.Println(pendingBalance) // 25729324269165216042
 
 ---
 
-### Full code
+### 完整代码
 
 [account_balance.go](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/account_balance.go)
 
