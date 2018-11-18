@@ -76,7 +76,7 @@ The e-book is avaiable in different formats.
 
 - Join the [#ethereum](https://gophers.slack.com/messages/C9HP1S9V2/) channel on the [gophers slack](https://invite.slack.golangbridge.org/) for Go (golang) help
 
-- You can also reach out to me on Twitter [@miguelmota](https://twitter.com/miguelmotah)
+- You can also reach out to me on Twitter [@miguelmotah](https://twitter.com/miguelmotah)
 
 ## Development
 
@@ -90,6 +90,12 @@ Run gitbook server:
 
 ```bash
 make serve
+```
+
+Generating e-books
+
+```bash
+make pdf ebook mobi
 ```
 
 Visit [http://localhost:4000](http://localhost:4000)

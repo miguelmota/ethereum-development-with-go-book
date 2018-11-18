@@ -1,17 +1,16 @@
 {
-  "root": "./en",
+  "root": "./",
   "title": "Ethereum Development with Go",
   "description": "A little book on getting started with Ethereum development using Go (Golang). Learn how to interact with smart contract contract, subscribe to blockchain events, verify signatures, and much more.",
   "author": "Miguel Mota",
   "isbn": "",
-  "language": "en",
+  "language": "zh",
   "direction": "ltr",
   "gitbook": ">= 3.0.0",
   "styles": {
     "website": "styles/website.css"
   },
   "plugins": [
-    "analytics",
     "meta"
   ],
   "pluginsConfig": {

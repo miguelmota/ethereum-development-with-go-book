@@ -19,19 +19,40 @@ deploy:
 	@./deploy.sh
 
 .PHONY: deploy/all
-deploy/all: build pdf ebook mobi deploy
+deploy/all: build ebooks deploy
 
-.PHONY: pdf
-pdf:
-	@gitbook pdf ./ ethereum-development-with-go.pdf
+.PHONY: ebooks
+ebooks: pdf ebook mobi
 
-.PHONY: ebook
-ebook:
-	@gitbook epub ./ ethereum-development-with-go.epub
+pdf: pdf/en pdf/zh
 
-.PHONY: mobi
-mobi:
-	@gitbook mobi ./ ethereum-development-with-go.mobi
+.PHONY: pdf/en
+pdf/en:
+	@gitbook pdf ./en ethereum-development-with-go.pdf
+
+.PHONY: pdf/zh
+pdf/zh:
+	@gitbook pdf ./zh ethereum-development-with-go-zh.pdf
+
+ebook: ebook/en ebook/zh
+
+.PHONY: ebook/en
+ebook/en:
+	@gitbook epub ./en ethereum-development-with-go.epub
+
+.PHONY: ebook/zh
+ebook/zh:
+	@gitbook epub ./zh ethereum-development-with-go-zh.epub
+
+mobi: mobi/en mobi/zh
+
+.PHONY: mobi/en
+mobi/en:
+	@gitbook mobi ./en ethereum-development-with-go.mobi
+
+.PHONY: mobi/zh
+mobi/zh:
+	@gitbook mobi ./zh ethereum-development-with-go-zh.mobi
 
 .PHONY: plugins/install
 plugins/install:

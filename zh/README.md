@@ -1,7 +1,5 @@
 ---
-概述: 
-这本迷你书可以帮助你学习如何用Go语言部署，编译，与智能合约交互，发交易，使用Swarm和Whisper协议。就这么简单：）
-
+概述: 这本迷你书可以帮助你学习如何用Go语言部署，编译，与智能合约交互，发交易，使用Swarm和Whisper协议。就这么简单：）
 ---
 
 # 用Go来做以太坊开发
@@ -20,9 +18,9 @@
 
 电子书有三种格式。
 
-- [PDF](https://goethereumbook.org/ethereum-development-with-go.pdf)
-- [EPUB](https://goethereumbook.org/ethereum-development-with-go.epub)
-- [MOBI](https://goethereumbook.org/ethereum-development-with-go.mobi)
+- [PDF](https://goethereumbook.org/ethereum-development-with-go-zh.pdf)
+- [EPUB](https://goethereumbook.org/ethereum-development-with-go-zh.epub)
+- [MOBI](https://goethereumbook.org/ethereum-development-with-go-zh.mobi)
 
 ## 介绍
 
@@ -57,10 +55,6 @@ Solidity是一种用于编写智能合约的图灵完备编程语言。Solidity�
 ## 寻求帮助
 
 寻求Go(Golang)帮助可以加入[gophers slack]((https://invite.slack.golangbridge.org/))上的[#ethereum]((https://gophers.slack.com/messages/C9HP1S9V2/))频道。
-
-#### 关于作者
-
-本书是[Miguel Moto]((https://github.com/miguelmota))编写，一名来自阳光明媚的南加州，从事区块链领域的软件工程师。您可以在推特上找到他[@miguelmota](https://twitter.com/miguelmotah)。
 
 ---
 
