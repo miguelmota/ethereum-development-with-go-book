@@ -78,7 +78,7 @@ The gas limit will depend on the size of the transaction data and computational 
 
 ```go
 gasLimit, err := client.EstimateGas(context.Background(), ethereum.CallMsg{
-  To:   &toAddress,
+  To:   &tokenAddress,
   Data: data,
 })
 if err != nil {
