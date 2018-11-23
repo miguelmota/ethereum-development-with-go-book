@@ -68,7 +68,7 @@ func main() {
 	data = append(data, paddedAmount...)
 
 	gasLimit, err := client.EstimateGas(context.Background(), ethereum.CallMsg{
-		To:   &toAddress,
+		To:   &tokenAddress,
 		Data: data,
 	})
 	if err != nil {
