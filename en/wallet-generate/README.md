@@ -19,7 +19,7 @@ Then we can convert it to bytes by importing the golang `crypto/ecdsa` package a
 privateKeyBytes := crypto.FromECDSA(privateKey)
 ```
 
-We can now convert it to a hexadecimal string by using the go-ethereum `hexutil` package which provides the `Encode` method which takes a byte slice. Then we strip of the `0x` after it's hex encoded.
+We can now convert it to a hexadecimal string by using the go-ethereum `hexutil` package which provides the `Encode` method which takes a byte slice. Then we strip off the `0x` after it's hex encoded.
 
 ```go
 fmt.Println(hexutil.Encode(privateKeyBytes)[2:]) // fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19
