@@ -119,8 +119,7 @@ cd $GOPATH/src/github.com/ethereum/go-ethereum/
 make
 make devtools
 
-solc --abi Store.sol -o build
-solc --bin Store.sol -o build
+solc --abi --bin Store.sol -o build
 abigen --bin=./build/Store.bin --abi=./build/Store.abi --pkg=store --out=Store.go
 ```
 
