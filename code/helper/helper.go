@@ -210,7 +210,7 @@ func (s *Service) GetPublicAddressFromPrivateKey(priv *ecdsa.PrivateKey) (common
 	pub := priv.Public()
 	pubECDSA, ok := pub.(*ecdsa.PublicKey)
 	if !ok {
-		return address, errors.New("casting to *ecdsa.publicKey failed")
+		return address, errors.New("cannot assert type: publicKey is not of type *ecdsa.PublicKey")
 	}
 	address = crypto.PubkeyToAddress(*pubECDSA)
 	return address, nil
