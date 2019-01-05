@@ -23,11 +23,13 @@ The function requires the public address of the account we're sending from -- wh
 publicKey := privateKey.Public()
 publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
 if !ok {
-  log.Fatal("error casting public key to ECDSA")
+  log.Fatal("cannot assert type: publicKey is not of type *ecdsa.PublicKey")
 }
 
 fromAddress := crypto.PubkeyToAddress(*publicKeyECDSA)
 ```
+
+Here, `privateKey.Public()` returns an interface that contains our public key. We perform a type assertion with `publicKey.(<expectedType>)` to explictly set the type of our `publicKey` variable, and assign it to `publicKeyECDSA`. This allows us to use it where our program expects an input of type `*ecdsa.PublicKey`.
 
 Now we can read the nonce that we should use for the account's transaction.
 
@@ -140,7 +142,7 @@ func main() {
 	publicKey := privateKey.Public()
 	publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
 	if !ok {
-		log.Fatal("error casting public key to ECDSA")
+		log.Fatal("cannot assert type: publicKey is not of type *ecdsa.PublicKey")
 	}
 
 	fromAddress := crypto.PubkeyToAddress(*publicKeyECDSA)
