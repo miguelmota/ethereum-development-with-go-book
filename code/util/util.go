@@ -1,6 +1,7 @@
 package util
 
 import (
+	"encoding/hex"
 	"math/big"
 	"reflect"
 	"regexp"
@@ -8,8 +9,21 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/ethereum/go-ethereum/crypto/sha3"
 	"github.com/shopspring/decimal"
 )
+
+// PublicKeyBytesToAddress ...
+func PublicKeyBytesToAddress(publicKey []byte) common.Address {
+	var buf []byte
+
+	hash := sha3.NewKeccak256()
+	hash.Write(publicKey[1:]) // remove EC prefix 04
+	buf = hash.Sum(nil)
+	address := buf[12:]
+
+	return common.HexToAddress(hex.EncodeToString(address))
+}
 
 // IsValidAddress validate hex address
 func IsValidAddress(iaddress interface{}) bool {
