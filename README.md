@@ -77,9 +77,11 @@ The e-book is avaiable in different formats.
 * [Glossary](en/GLOSSARY.md)
 * [Resources](en/resources/README.md)
 
-## Chat
+## Help & Support
 
 - Join the [#ethereum](https://gophers.slack.com/messages/C9HP1S9V2/) channel on the [gophers slack](https://invite.slack.golangbridge.org/) for Go (golang) help
+
+- The [Ethereum StackExchange](https://ethereum.stackexchange.com/) is a great place to ask general Ethereum question and Go specific questions
 
 - You can also reach out to me on Twitter [@miguelmotah](https://twitter.com/miguelmotah)
 

@@ -2,7 +2,7 @@
 description: Tutorial on how to transfer ERC-20 tokens to another wallet or smart contract with Go.
 ---
 
-# Transferring Tokens
+# Transferring Tokens (ERC-20)
 
 This section will walk you through on how to transfer ERC-20 tokens. To learn how to transfer other types of tokens that are non-ERC-20 compliant check out the [section on smart contracts](../smart-contracts) to learn how to interact with smart contracts.
 
@@ -25,9 +25,9 @@ When you create your ERC-20 Token, be sure to note down the **address of the tok
 
 For demonstration purposes, I've created a token (HelloToken HTN) using the Token Factory and deployed it to the Rinkeby testnet at the token contract address `0x28b149020d2152179873ec60bed6bf7cd705775d`.
 
-You can check it out with a Web3-enabled browser here: [https://tokenfactory.surge.sh/#/token/0x28b149020d2152179873ec60bed6bf7cd705775d](https://tokenfactory.surge.sh/#/token/0x28b149020d2152179873ec60bed6bf7cd705775d)
+You can check it out with a Web3-enabled browser here (make sure to be connected to the Rinkeby testnet in MetaMask): [https://tokenfactory.surge.sh/#/token/0x28b149020d2152179873ec60bed6bf7cd705775d](https://tokenfactory.surge.sh/#/token/0x28b149020d2152179873ec60bed6bf7cd705775d)
 
-## Set `0` ETH value and destination address
+## ETH value and destination address
 
 First, we'll set a few variables.
 
@@ -45,7 +45,7 @@ Then, store the address you'll be sending tokens to in a variable.
 toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
 ```
 
-## Forming the `data` field
+## Forming the data field
 
 Now the fun part. We'll need to figure out what goes into the `data` field of the transaction. This is the message that we broadcast to the blockchain as part of the transaction.
 
@@ -92,7 +92,7 @@ Next we'll set the value tokens to send as a `*big.Int` number. Note that the de
 
 For example, if we were working with TokenA where 1 token is set as the smallest unit of TokenA (i.e. the `decimal()` value of the token contract is `0`; for more information, see the [ERC-20 Token Standard specification](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)), then `amount := big.NewInt(1000)` would set `amount` to `1000` units of TokenA.
 
-The example token we're using, HelloToken, uses 18 decimals which is standard practice for ERC-20 tokens. This means that in order to represent 1 token we have to do the calculation _amount * 10^18_. In this example we'll use 1,000 tokens so we'll need to calculate _1000 * 10^18_ which is 1e+21 or *1000000000000000000000*. This is the value the smart contract understands as 1,000 tokens from a user representation.
+The example token we're using, HelloToken, uses 18 decimals which is standard practice for ERC-20 tokens. This means that in order to represent 1 token we have to do the calculation _amount * 10^18_. In this example we'll use 1,000 tokens so we'll need to calculate _1000 * 10^18_ which is *1e+21* or *1000000000000000000000*. This is the value the smart contract understands as 1,000 tokens from a user representation.
 
 ```go
 amount := new(big.Int)
@@ -117,7 +117,7 @@ data = append(data, paddedAddress...)
 data = append(data, paddedAmount...)
 ```
 
-## Set Gas Limit using `EstimateGas()`
+## Set gas limit
 
 The gas limit will depend on the size of the transaction data and computational steps that the smart contract has to perform. Fortunately the client provides the `EstimateGas` method which is able to esimate the gas for us based on the most recent state of the blockchain. This function takes a `CallMsg` struct from the `ethereum` package where we specify the data and the address of the token contract to which we're sending the function call message. It'll return the estimated gas limit units we'll use to generate the complete transaction.
 

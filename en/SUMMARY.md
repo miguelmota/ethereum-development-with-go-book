@@ -13,7 +13,7 @@
   * [Querying Blocks](block-query/README.md)
   * [Querying Transactions](transaction-query/README.md)
   * [Transferring ETH](transfer-eth/README.md)
-  * [Transferring Tokens](transfer-tokens/README.md)
+  * [Transferring Tokens (ERC-20)](transfer-tokens/README.md)
   * [Subscribing to New Blocks](block-subscribe/README.md)
   * [Create Raw Transaction](transaction-raw-create/README.md)
   * [Send Raw Transaction](transaction-raw-send/README.md)

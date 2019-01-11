@@ -56,13 +56,11 @@ We'll also be diving a little bit into Swarm and Whisper, a file storage protoco
 
 Join the [#ethereum](https://gophers.slack.com/messages/C9HP1S9V2/) channel on the [gophers slack](https://invite.slack.golangbridge.org/) for Go (golang) help.
 
-<sup>
-  <sub>
+The [Ethereum StackExchange](https://ethereum.stackexchange.com/) is also a great place to ask general Ethereum question and Go specific questions.
+
 #### About the Author
 
-  This book was written by [Miguel Mota](https://github.com/miguelmota), a software developer working in the blockchain space from the always sunny Southern California. You can find him on Twitter [@miguelmotah](https://twitter.com/miguelmotah)
-  </sub>
-</sup>
+This book was written by [Miguel Mota](https://github.com/miguelmota), a software developer from Los Angeles working in the blockchain space. You can find him on Twitter [@miguelmotah](https://twitter.com/miguelmotah)
 
 ---
 
