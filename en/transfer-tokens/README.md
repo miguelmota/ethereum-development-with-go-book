@@ -8,7 +8,7 @@ This section will walk you through on how to transfer ERC-20 tokens. To learn ho
 
 To transfer ERC-20 tokens, we'll need to broadcast a transaction to the blockchain just like before, but with a few changed parameters:
 
-- Instead of setting a `_value` for the broadcasted transaction, we'll need to embed the value of tokens to transfer in the `data` send in the transaction.
+- Instead of setting a `value` for the broadcasted transaction, we'll need to embed the value of tokens to transfer in the `data` send in the transaction.
 - Construct a contract function call and embed it in the `data` field of the transaction we're broadcasting to the blockchain.
 
 We'll assume that you've already completed the previous [section on transferring ETH](../transfer-eth), and have a Go application that has:
@@ -19,19 +19,19 @@ We'll assume that you've already completed the previous [section on transferring
 
 ## Creating a Token for testing
 
-You can create a Token using the Token Factory [https://tokenfactory.surge.sh](https://tokenfactory.surge.sh/) to follow the examples in this guide.
+You can create a token using the Token Factory [https://tokenfactory.surge.sh](https://tokenfactory.surge.sh/), a website for conveniently deploying ERC-20 token contracts, to follow the examples in this guide.
 
 When you create your ERC-20 Token, be sure to note down the **address of the token contract**.
 
-For demonstration purposes, I've created a token (HelloToken HTN) using the Token Factory and deployed it to the Rinkeby testnet at the token contract address `0x28b149020d2152179873ec60bed6bf7cd705775d`. 
+For demonstration purposes, I've created a token (HelloToken HTN) using the Token Factory and deployed it to the Rinkeby testnet at the token contract address `0x28b149020d2152179873ec60bed6bf7cd705775d`.
 
-You can check it out with a Web3-enabled browser here: https://tokenfactory.surge.sh/#/token/0x28b149020d2152179873ec60bed6bf7cd705775d
+You can check it out with a Web3-enabled browser here: [https://tokenfactory.surge.sh/#/token/0x28b149020d2152179873ec60bed6bf7cd705775d](https://tokenfactory.surge.sh/#/token/0x28b149020d2152179873ec60bed6bf7cd705775d)
 
 ## Set `0` ETH value and destination address
 
 First, we'll set a few variables.
 
-Set the `value` of the transaction to 0. 
+Set the `value` of the transaction to 0.
 
 ```go
 value := big.NewInt(0)
@@ -39,7 +39,7 @@ value := big.NewInt(0)
 
 This `value` is the amount of ETH to be transferred for this transaction, which should be `0` since we're transferring ERC-20 Tokens and not ETH. We'll set the value of Tokens to be transferred in the `data` field later.
 
-Then, Store the address you'll be sending tokens to in a variable.
+Then, store the address you'll be sending tokens to in a variable.
 
 ```go
 toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
@@ -47,7 +47,7 @@ toAddress := common.HexToAddress("0x4592d8f8d7b001e72cb26a73e4fa1806a51ac79d")
 
 ## Forming the `data` field
 
-Now the fun part. We'll need to figure out what goes into the *data* field of the transaction. This is the message that we broadcast to the blockchain as part of the transaction.
+Now the fun part. We'll need to figure out what goes into the `data` field of the transaction. This is the message that we broadcast to the blockchain as part of the transaction.
 
 To make a token transfer, we need to use this data field to invoke a function on the smart contract. For more information on the functions available on an ERC-20 token contract, see the [ERC-20 Token Standard specification](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md).
 
@@ -64,12 +64,12 @@ First, let's assign the token contract address to a variable.
 tokenAddress := common.HexToAddress("0x28b149020d2152179873ec60bed6bf7cd705775d")
 ```
 
-Next, we need to form the smart contract function call. The signature of the function we'll be calling is the `transfer()` function in the ERC-20 specification, and the types of the argument we'll be passing to it. The first argument type is `address` (the address to which we're sending tokens), and the second argument's type is `uint256` (the amount of tokens to send). The result is the string `transfer(address,uint256)` (no spaces!). 
+Next, we need to form the smart contract function call. The signature of the function we'll be calling is the `transfer()` function in the ERC-20 specification, and the types of the argument we'll be passing to it. The first argument type is `address` (the address to which we're sending tokens), and the second argument's type is `uint256` (the amount of tokens to send). The result is the string `transfer(address,uint256)` (no spaces!).
 
 We need this function signature as a byte slice, which we assign to `transferFnSignature`:
 
 ```go
-transferFnSignature := []byte("transfer(address,uint256)") # Do not include spaces in the byte slice!
+transferFnSignature := []byte("transfer(address,uint256)") // do not include spaces in the string
 ```
 
 We then need to get the `methodID` of our function. To do this, we'll import the `crypto/sha3` package from go-ethereum to generate the Keccak256 hash of the function signature. The first 4 bytes of the resulting hash is the `methodID`:
@@ -88,19 +88,24 @@ paddedAddress := common.LeftPadBytes(toAddress.Bytes(), 32)
 fmt.Println(hexutil.Encode(paddedAddress)) // 0x0000000000000000000000004592d8f8d7b001e72cb26a73e4fa1806a51ac79d
 ```
 
-Next we'll set the value tokens to send as a `*bit.Int` number. Note that the denomination used here is determined by the token contract that you're interacting with, and **not** in ETH or wei. 
+Next we'll set the value tokens to send as a `*big.Int` number. Note that the denomination used here is determined by the token contract that you're interacting with, and **not** in ETH or wei.
 
 For example, if we were working with TokenA where 1 token is set as the smallest unit of TokenA (i.e. the `decimal()` value of the token contract is `0`; for more information, see the [ERC-20 Token Standard specification](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)), then `amount := big.NewInt(1000)` would set `amount` to `1000` units of TokenA.
 
+The example token we're using, HelloToken, uses 18 decimals which is standard practice for ERC-20 tokens. This means that in order to represent 1 token we have to do the calculation _amount * 10^18_. In this example we'll use 1,000 tokens so we'll need to calculate _1000 * 10^18_ which is 1e+21 or *1000000000000000000000*. This is the value the smart contract understands as 1,000 tokens from a user representation.
+
 ```go
-amount := big.NewInt(1000) // Sets the value to 1000 tokens, in the token denomination.
+amount := new(big.Int)
+amount.SetString("1000000000000000000000", 10) // sets the value to 1000 tokens, in the token denomination
 ```
 
-Left padding to 32 bytes will also be required for the amount.
+There are utility functions available in the [utils](../util-go) section to easily do these conversions.
+
+Left padding to 32 bytes will also be required for the amount since the EVM use 32 byte wide data structures.
 
 ```go
 paddedAmount := common.LeftPadBytes(amount.Bytes(), 32)
-fmt.Println(hexutil.Encode(paddedAmount))  // 0x00000000000000000000000000000000000000000000000000000000000003e8
+fmt.Println(hexutil.Encode(paddedAmount))  // 0x00000000000000000000000000000000000000000000003635c9adc5dea00000
 ```
 
 Now we concanate the method ID, padded address, and padded amount into a byte slice that will be our data field.
@@ -128,7 +133,7 @@ if err != nil {
 fmt.Println(gasLimit) // 23256
 ```
 
-**NOTE**: The gas limit set by the `EstimateGas()` method is based on the current state of the blockchain, and is just an _estimate_. If your transactions are constantly failing, or if you prefer to have full control over the amount of gas your application spends, you may want to set this value manually.
+**NOTE**: The gas limit set by the `EstimateGas()` method is based on the current state of the blockchain, and is just an *estimate*. If your transactions are constantly failing, or if you prefer to have full control over the amount of gas your application spends, you may want to set this value manually.
 
 ## Create transaction
 
@@ -235,9 +240,11 @@ func main() {
 	paddedAddress := common.LeftPadBytes(toAddress.Bytes(), 32)
 	fmt.Println(hexutil.Encode(paddedAddress)) // 0x0000000000000000000000004592d8f8d7b001e72cb26a73e4fa1806a51ac79d
 
-	amount := big.NewInt(1000) // 1000 tokens
+	amount := new(big.Int)
+	amount.SetString("1000000000000000000000", 10) // sets the value to 1000 tokens, in the token denomination
+
 	paddedAmount := common.LeftPadBytes(amount.Bytes(), 32)
-	fmt.Println(hexutil.Encode(paddedAmount)) // 0x00000000000000000000000000000000000000000000000000000000000003e8
+	fmt.Println(hexutil.Encode(paddedAmount)) // 0x00000000000000000000000000000000000000000000003635c9adc5dea00000
 
 	var data []byte
 	data = append(data, methodID...)

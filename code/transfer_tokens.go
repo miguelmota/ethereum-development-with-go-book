@@ -58,7 +58,8 @@ func main() {
 	fmt.Println(hexutil.Encode(paddedAddress)) // 0x0000000000000000000000004592d8f8d7b001e72cb26a73e4fa1806a51ac79d
 
 	amount := new(big.Int)
-	amount.SetString("1000000000000000000000", 10) // 1000 tokens
+	amount.SetString("1000000000000000000000", 10) // sets the value to 1000 tokens, in the token denomination
+
 	paddedAmount := common.LeftPadBytes(amount.Bytes(), 32)
 	fmt.Println(hexutil.Encode(paddedAmount)) // 0x00000000000000000000000000000000000000000000003635c9adc5dea00000
 
