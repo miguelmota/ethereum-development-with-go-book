@@ -12,8 +12,8 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
 	"github.com/ethereum/go-ethereum/ethclient"
+	"golang.org/x/crypto/sha3"
 )
 
 func main() {
@@ -49,7 +49,7 @@ func main() {
 	tokenAddress := common.HexToAddress("0x28b149020d2152179873ec60bed6bf7cd705775d")
 
 	transferFnSignature := []byte("transfer(address,uint256)")
-	hash := sha3.NewKeccak256()
+	hash := sha3.NewLegacyKeccak256()
 	hash.Write(transferFnSignature)
 	methodID := hash.Sum(nil)[:4]
 	fmt.Println(hexutil.Encode(methodID)) // 0xa9059cbb

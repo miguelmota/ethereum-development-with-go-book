@@ -9,7 +9,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
+	"golang.org/x/crypto/sha3"
 	"github.com/shopspring/decimal"
 )
 
@@ -17,7 +17,7 @@ import (
 func PublicKeyBytesToAddress(publicKey []byte) common.Address {
 	var buf []byte
 
-	hash := sha3.NewKeccak256()
+	hash := sha3.NewLegacyKeccak256()
 	hash.Write(publicKey[1:]) // remove EC prefix 04
 	buf = hash.Sum(nil)
 	address := buf[12:]
