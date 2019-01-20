@@ -72,10 +72,10 @@ We need this function signature as a byte slice, which we assign to `transferFnS
 transferFnSignature := []byte("transfer(address,uint256)") // do not include spaces in the string
 ```
 
-We then need to get the `methodID` of our function. To do this, we'll import the `crypto/sha3` package from go-ethereum to generate the Keccak256 hash of the function signature. The first 4 bytes of the resulting hash is the `methodID`:
+We then need to get the `methodID` of our function. To do this, we'll import the `crypto/sha3` to generate the Keccak256 hash of the function signature. The first 4 bytes of the resulting hash is the `methodID`:
 
 ```go
-hash := sha3.NewKeccak256()
+hash := sha3.NewLegacyKeccak256()
 hash.Write(transferFnSignature)
 methodID := hash.Sum(nil)[:4]
 fmt.Println(hexutil.Encode(methodID)) // 0xa9059cbb
@@ -190,12 +190,12 @@ import (
 	"log"
 	"math/big"
 
+	"golang.org/x/crypto/sha3"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
 	"github.com/ethereum/go-ethereum/ethclient"
 )
 
@@ -232,7 +232,7 @@ func main() {
 	tokenAddress := common.HexToAddress("0x28b149020d2152179873ec60bed6bf7cd705775d")
 
 	transferFnSignature := []byte("transfer(address,uint256)")
-	hash := sha3.NewKeccak256()
+	hash := sha3.NewLegacyKeccak256()
 	hash.Write(transferFnSignature)
 	methodID := hash.Sum(nil)[:4]
 	fmt.Println(hexutil.Encode(methodID)) // 0xa9059cbb
