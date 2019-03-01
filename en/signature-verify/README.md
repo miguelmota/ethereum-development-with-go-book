@@ -4,7 +4,7 @@ description: Tutorial on how to verify signatures with Go.
 
 # Verifying a Signature
 
-In the previous section we learned how to sign a piece of data with a private key in order to generate a signature. Now we'll learn how to verify the authenticiy of the signature.
+In the previous section we learned how to sign a piece of data with a private key in order to generate a signature. Now we'll learn how to verify the authenticity of the signature.
 
 We need to have 3 things to verify the signature: the signature, the hash of the original data, and the public key of the signer. With this information we can determine if the private key holder of the public key pair did indeed sign the message.
 
@@ -38,7 +38,7 @@ matches := bytes.Equal(sigPublicKey, publicKeyBytes)
 fmt.Println(matches) // true
 ```
 
-There's also the `SigToPub` method which does the same thing expect it'll return the signature's public key in the ECDSA type.
+There's also the `SigToPub` method which does the same thing except it'll return the signature's public key in the ECDSA type.
 
 ```go
 sigPublicKeyECDSA, err := crypto.SigToPub(hash.Bytes(), signature)
