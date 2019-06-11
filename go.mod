@@ -5,7 +5,7 @@ require (
 	github.com/aristanetworks/goarista v0.0.0-20190115004922-b7a59f2ffb23 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/deckarep/golang-set v1.7.1 // indirect
-	github.com/ethereum/go-ethereum v1.8.21 // indirect
+	github.com/ethereum/go-ethereum v1.8.27 // indirect
 	github.com/go-stack/stack v1.8.0 // indirect
 	github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db // indirect
 	github.com/kr/pretty v0.1.0 // indirect
