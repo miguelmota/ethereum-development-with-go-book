@@ -4,7 +4,7 @@ description: Tutorial on how to deploy a smart contract with Go.
 
 # Deploying a Smart Contract
 
-If you haven't already, check out the [section on smart contract compiation](../smart-contract-compile) since this lesson requires knowledge on compiling a solidity smart contract to a Go contract file.
+If you haven't already, check out the [section on smart contract compilation](../smart-contract-compile) since this lesson requires knowledge on compiling a solidity smart contract to a Go contract file.
 
 Assuming you've imported the newly created Go package file generated from `abigen`, and set the ethclient, loaded your private key, the next step is to create a keyed transactor. First import the `accounts/abi/bind` package from go-ethereum and then invoke `NewKeyedTransactor` passing in the private key. Afterwards set the usual properties such as the nonce, gas price, gas limit, and ETH value.
 
