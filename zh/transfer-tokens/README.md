@@ -81,8 +81,10 @@ data = append(data, paddedAmount...)
 
 ```go
 gasLimit, err := client.EstimateGas(context.Background(), ethereum.CallMsg{
-  To:   &toAddress,
-  Data: data,
+  From:     fromAddress,
+  To:       &tokenAddress,
+  GasPrice: gasPrice,
+  Data:     data
 })
 if err != nil {
   log.Fatal(err)
