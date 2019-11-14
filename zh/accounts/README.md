@@ -6,7 +6,7 @@
 
 以太坊上的账户要么是钱包地址要么是智能合约地址。它们看起来像是`0x71c7656ec7ab88b098defb751b7401b5f6d8976f`，它们用于将ETH发送到另一个用户，并且还用于在需要和区块链交互时指一个智能合约。它们是唯一的，且是从私钥导出的。我们将在后面的章节更深入地介绍公私钥对。
 
-要使用go-ethereun的账户地址，您必须先将它们转化为go-ethereum中的`common.Address`类型。
+要使用go-ethereum的账户地址，您必须先将它们转化为go-ethereum中的`common.Address`类型。
 
 ```go
 address := common.HexToAddress("0x71c7656ec7ab88b098defb751b7401b5f6d8976f")
