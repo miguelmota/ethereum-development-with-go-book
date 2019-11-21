@@ -10,8 +10,6 @@
 
 我们可以使用简单的正则表达式来检查以太坊地址是否有效：
 
-We can use a simple regular expression to check if the ethereum address is valid:
-
 ```go
 re := regexp.MustCompile("^0x[0-9a-fA-F]{40}$")
 
