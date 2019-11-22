@@ -7,7 +7,7 @@
   * [账户代币余额](account-balance-token/README.md)
   * [生成新钱包](wallet-generate/README.md)
   * [密匙库](keystore/README.md)
-  * [硬件钱包](hd-wallet/README.md)
+  * [分层确定性钱包](hd-wallet/README.md)
   * [地址验证](address-check/README.md)
 * [交易](transactions/README.md)
   * [查询区块](block-query/README.md)
