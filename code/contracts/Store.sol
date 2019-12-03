@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.5.0;
 
 contract Store {
   event ItemSet(bytes32 key, bytes32 value);
@@ -6,7 +6,7 @@ contract Store {
   string public version;
   mapping (bytes32 => bytes32) public items;
 
-  constructor(string _version) public {
+  constructor(string memory _version) public {
     version = _version;
   }
 
