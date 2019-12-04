@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	bzzclient "github.com/ethereum/go-ethereum/swarm/api/client"
+	bzzclient "github.com/ethersphere/swarm/api/client"
 )
 
 func main() {
@@ -15,7 +15,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	manifestHash, err := client.Upload(file, "", false)
+	manifestHash, err := client.Upload(file, "", false, false, false)
 	if err != nil {
 		log.Fatal(err)
 	}
