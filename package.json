@@ -9,7 +9,7 @@
     "gitbook-plugin-autocover": "^2.0.1",
     "gitbook-plugin-ga": "^2.0.0",
     "install": "^0.11.0",
-    "npm": "^6.1.0"
+    "npm": "^6.13.4"
   },
   "devDependencies": {},
   "scripts": {
