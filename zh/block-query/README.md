@@ -8,7 +8,7 @@
 
 #### 区块头 
 
-您可以调用客户端的`HeadByNumber`来返回有关一个区块的头信息。若您传入`nil`，它将返回最新的区块头。
+您可以调用客户端的`HeaderByNumber`来返回有关一个区块的头信息。若您传入`nil`，它将返回最新的区块头。
 
 ```go
 header, err := client.HeaderByNumber(context.Background(), nil)
