@@ -143,4 +143,4 @@ And thanks to all the [contributors](https://github.com/miguelmota/ethereum-deve
 
 ## License
 
-[CC0-1.0](./LICENSE.md)
+[CC0-1.0](./LICENSE)

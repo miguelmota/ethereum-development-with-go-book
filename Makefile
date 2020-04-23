@@ -5,6 +5,8 @@ install:
 	@npm install gitbook-cli@latest -g
 	@npm install || (cd node_modules/canvas && node-gyp rebuild)
 	@gitbook install
+	@# install ebook-convert
+	@# 		on arch: sudo pacman -S calibre
 
 .PHONY: serve
 serve:
