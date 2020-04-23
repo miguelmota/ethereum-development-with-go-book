@@ -10,5 +10,6 @@ code/sandbox/
 sandbox.go
 sandbox*.go
 tmp/
+build/
 
 .ecrecover.go
