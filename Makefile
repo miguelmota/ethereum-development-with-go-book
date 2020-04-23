@@ -3,7 +3,7 @@ all: build
 .PHONY: install
 install:
 	@npm install gitbook-cli@latest -g
-	@npm install
+	@npm install || (cd node_modules/canvas && node-gyp rebuild)
 	@gitbook install
 
 .PHONY: serve

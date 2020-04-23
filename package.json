@@ -7,9 +7,7 @@
     "canvas": "^1.6.11",
     "gitbook-plugin-analytics": "^0.2.1",
     "gitbook-plugin-autocover": "^2.0.1",
-    "gitbook-plugin-ga": "^2.0.0",
-    "install": "^0.11.0",
-    "npm": "^6.1.0"
+    "gitbook-plugin-ga": "^2.0.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -17,12 +15,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miguelmota/ethereum-development-with-go.git"
+    "url": "git+https://github.com/miguelmota/ethereum-development-with-go-book.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Miguel Mota",
+    "email": "hello@miguelmota.com",
+    "url": "https://miguelmota.com/"
+  },
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/LICENSE"
+  },
   "bugs": {
-    "url": "https://github.com/miguelmota/ethereum-development-with-go/issues"
+    "url": "https://github.com/miguelmota/ethereum-development-with-go-bok/issues"
   },
-  "homepage": "https://github.com/miguelmota/ethereum-development-with-go#readme"
+  "homepage": "https://github.com/miguelmota/ethereum-development-with-go-book#readme"
 }
