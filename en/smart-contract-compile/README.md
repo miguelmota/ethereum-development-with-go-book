@@ -32,7 +32,7 @@ docker pull ethereum/solc:0.4.24
 
 ## Usage: docker run --rm -v $(pwd):/root ethereum/solc:0.4.24 <command_here>
 # To generate ABI file from .sol file and send output to ./build folder
-docker run --rm $(pwd):/root ethereum/solc:0.4.24 --abi /root/Store.solc -o /root/build
+docker run --rm -v $(pwd):/root ethereum/solc:0.4.24 --abi /root/Store.solc -o /root/build
 ```
 
 For other platforms or for installing from source, check out the official solidity [install guide](https://solidity.readthedocs.io/en/latest/installing-solidity.html#building-from-source).
