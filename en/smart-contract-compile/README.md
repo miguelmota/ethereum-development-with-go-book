@@ -75,7 +75,7 @@ contract Store {
 }
 ```
 
-Although this smart contract is simple it'll will work for this example.
+Although this smart contract is simple, it will work for this example.
 
 ### Create Go contract file
 
