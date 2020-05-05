@@ -4,11 +4,11 @@ description: Tutorial on uploading files to swarm with go.
 
 # Uploading Files to Swarm
 
-In the [previous section](../swarm-setup) we setup a swarm node running as a daemon on port `8500`. Now import the swarm package go-ethereum `swarm/api/client`. I'll be aliasing the package to `bzzclient`.
+In the [previous section](../swarm-setup) we setup a swarm node running as a daemon on port `8500`. Now import the swarm package ethersphere `swarm/api/client`. I'll be aliasing the package to `bzzclient`.
 
 ```go
 import (
-  bzzclient "github.com/ethereum/go-ethereum/swarm/api/client"
+  bzzclient "github.com/ethersphere/swarm/api/client"
 )
 ```
 
@@ -75,7 +75,7 @@ import (
 	"fmt"
 	"log"
 
-	bzzclient "github.com/ethereum/go-ethereum/swarm/api/client"
+	bzzclient "github.com/ethersphere/swarm/api/client"
 )
 
 func main() {
@@ -86,7 +86,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	manifestHash, err := client.Upload(file, "", false)
+	manifestHash, err := client.Upload(file, "", false, false, false)
 	if err != nil {
 		log.Fatal(err)
 	}
