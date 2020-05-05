@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 
-	bzzclient "github.com/ethereum/go-ethereum/swarm/api/client"
+	bzzclient "github.com/ethersphere/swarm/api/client"
 )
 
 func main() {

@@ -7,9 +7,8 @@ description: Tutorial on setting up swarm node.
 To run swarm you first need to install `geth` and `bzzd` which is the swarm daemon.
 
 ```go
-go get -d github.com/ethereum/go-ethereum
 go install github.com/ethereum/go-ethereum/cmd/geth
-go install github.com/ethereum/go-ethereum/cmd/swarm
+go install github.com/ethersphere/swarm/cmd/swarm
 ```
 
 Now we'll generate a new geth account.
@@ -47,9 +46,8 @@ Now that we have the swarm daemon set up and running, let's learn how to upload 
 Commands
 
 ```bash
-go get -d github.com/ethereum/go-ethereum
 go install github.com/ethereum/go-ethereum/cmd/geth
-go install github.com/ethereum/go-ethereum/cmd/swarm
+go install github.com/ethersphere/swarm/cmd/swarm
 geth account new
 export BZZKEY=970ef9790b54425bea2c02e25cab01e48cf92573
 swarm --bzzaccount $BZZKEY
