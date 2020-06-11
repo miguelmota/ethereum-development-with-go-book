@@ -52,10 +52,10 @@ address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
 fmt.Println(address) // 0x96216849c49358B10257cb55b28eA603c874b05E
 ```
 
-公共地址其实就是公钥的Keccak-256哈希，然后我们取最后40个字符（20个字节）并用“0x”作为前缀。 以下是使用go-ethereum的`crypto/sha3` Keccak256函数手动完成的方法。
+公共地址其实就是公钥的Keccak-256哈希，然后我们取最后40个字符（20个字节）并用“0x”作为前缀。 以下是使用 `golang.org/x/crypto/sha3` 的 Keccak256函数手动完成的方法。
 
 ```go
-hash := sha3.NewKeccak256()
+hash := sha3.NewLegacyKeccak256()
 hash.Write(publicKeyBytes[1:])
 fmt.Println(hexutil.Encode(hash.Sum(nil)[12:])) // 0x96216849c49358b10257cb55b28ea603c874b05e
 ```
@@ -76,7 +76,7 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/ethereum/go-ethereum/crypto/sha3"
+	"golang.org/x/crypto/sha3"
 )
 
 func main() {
@@ -100,7 +100,7 @@ func main() {
 	address := crypto.PubkeyToAddress(*publicKeyECDSA).Hex()
 	fmt.Println(address) // 0x96216849c49358B10257cb55b28eA603c874b05E
 
-	hash := sha3.NewKeccak256()
+	hash := sha3.NewLegacyKeccak256()
 	hash.Write(publicKeyBytes[1:])
 	fmt.Println(hexutil.Encode(hash.Sum(nil)[12:])) // 0x96216849c49358b10257cb55b28ea603c874b05e
 }
