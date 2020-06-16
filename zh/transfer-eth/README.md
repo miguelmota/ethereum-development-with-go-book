@@ -39,7 +39,7 @@ if err != nil {
 }
 ```
 
-下一步是设置我们将要转移的ETH数量。 但是我们必须将ETH以太转换为wei，因为这是以太坊区块链所使用的。 以太网支持最多18个小数位，因此1个ETH为1加18个零。 这里有一个小工具可以帮助您在ETH和wei之间进行转换: [https://etherconverter.online](https://etherconverter.online])
+下一步是设置我们将要转移的ETH数量。 但是我们必须将ETH以太转换为wei，因为这是以太坊区块链所使用的。 以太网支持最多18个小数位，因此1个ETH为1加18个零。 这里有一个小工具可以帮助您在ETH和wei之间进行转换: [https://etherconverter.netlify.com](https://etherconverter.netlify.com)
 
 ```go
 value := big.NewInt(1000000000000000000) // in wei (1 eth)

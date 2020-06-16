@@ -40,7 +40,7 @@ if err != nil {
 }
 ```
 
-The next step is to set the amount of ETH that we'll be transferring. However we must convert ether to wei since that's what the Ethereum blockchain uses. Ether supports up to 18 decimal places so 1 ETH is 1 plus 18 zeros. Here's a little tool to help you convert between ETH and wei: [https://etherconverter.online](https://etherconverter.online])
+The next step is to set the amount of ETH that we'll be transferring. However we must convert ether to wei since that's what the Ethereum blockchain uses. Ether supports up to 18 decimal places so 1 ETH is 1 plus 18 zeros. Here's a little tool to help you convert between ETH and wei: [https://etherconverter.netlify.com](https://etherconverter.netlify.com)
 
 ```go
 value := big.NewInt(1000000000000000000) // in wei (1 eth)
