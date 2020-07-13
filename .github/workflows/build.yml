@@ -1,0 +1,57 @@
+name: Build
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+jobs:
+  run-linter:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install node v10
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10
+      env:
+        RUNNER_TEMP: /tmp
+
+    - name: Checkout git repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        apt-get update -y
+        apt-get install -y \
+        build-essential \
+        python \
+        pkg-config \
+        libcairo2-dev \
+        libjpeg-dev \
+        libgif-dev \
+        libglib2.0-0 \
+        libgl-dev \
+        libnss3-dev \
+        libx11-6 \
+        libx11-xcb1 \
+        libxcb1 \
+        libxcursor1 \
+        libxdamage1 \
+        libxext6 \
+        libxfixes3 \
+        libxi6 \
+        libxrandr2 \
+        libxrender1 \
+        libxss1 \
+        libxtst6 \
+        libxcb1-dev \
+        libxcomposite-dev
+        wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | bash
+        make install
+
+    - name: Build
+      run: |
+        make build
+        make ebooks
