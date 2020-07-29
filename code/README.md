@@ -4,10 +4,12 @@
 
 ## Running
 
-```go
+Example:
+
+```bash
 go run account_balance.go
 ```
 
 ## License
 
-MIT
+[MIT](../LICENSE)
