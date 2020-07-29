@@ -2,9 +2,9 @@
 
 > The code samples used in the book.
 
-## Running
+## Getting started
 
-Example:
+Running an example:
 
 ```bash
 go run account_balance.go
@@ -12,4 +12,4 @@ go run account_balance.go
 
 ## License
 
-[MIT](../LICENSE)
+[MIT](./LICENSE)
