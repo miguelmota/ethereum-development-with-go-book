@@ -120,7 +120,7 @@ if err != nil {
 }
 ```
 
-Next we'll parse the JSON abi which we'll use unpack the raw log data later:
+Next we'll parse the JSON abi, which we'll use to unpack the raw log data later:
 
 ```go
 contractAbi, err := abi.JSON(strings.NewReader(string(exchange.ExchangeABI)))
