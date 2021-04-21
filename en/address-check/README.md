@@ -17,7 +17,7 @@ fmt.Printf("is valid: %v\n", re.MatchString("0x323b5d4c32345ced77393b3530b1eed0f
 fmt.Printf("is valid: %v\n", re.MatchString("0xZYXb5d4c32345ced77393b3530b1eed0f346429d")) // is valid: false
 ```
 
-## Check if Address in an Account or a Smart Contract
+## Check if Address is an Account or a Smart Contract
 
 We can determine if an address is a smart contract if there's bytecode stored at that address. Here's an example where we fetch the code for a token smart contract and check the length to verify that it's a smart contract:
 
