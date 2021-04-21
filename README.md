@@ -87,8 +87,6 @@ The e-book is avaiable in different formats.
 
 - The [Ethereum StackExchange](https://ethereum.stackexchange.com/) is a great place to ask general Ethereum question and Go specific questions
 
-- You can also reach out to me on Twitter [@miguelmotah](https://twitter.com/miguelmotah)
-
 ## Development
 
 Install dependencies:

@@ -58,10 +58,6 @@ Join the [#ethereum](https://gophers.slack.com/messages/C9HP1S9V2/) channel on t
 
 The [Ethereum StackExchange](https://ethereum.stackexchange.com/) is also a great place to ask general Ethereum question and Go specific questions.
 
-#### About the Author
-
-This book was written by [Miguel Mota](https://github.com/miguelmota), a software developer from Los Angeles working in the blockchain space. You can find him on Twitter [@miguelmotah](https://twitter.com/miguelmotah)
-
 ---
 
 Enough with the introduction, let's get [started](../en/client)!
