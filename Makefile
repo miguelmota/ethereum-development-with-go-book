@@ -28,7 +28,7 @@ ebooks-cp:
 	cp ethereum-development-with-go* _book
 
 .PHONY: ebooks
-ebooks: pdf ebook mobi
+ebooks: pdf epub mobi
 
 .PHONY: pdf
 pdf: pdf-en pdf-zh
@@ -41,15 +41,15 @@ pdf-en:
 pdf-zh:
 	gitbook pdf ./zh ethereum-development-with-go-zh.pdf
 
-.PHONY: ebook
-ebook: ebook-en ebook-zh
+.PHONY: epub
+epub: epub-en epub-zh
 
-.PHONY: ebook-en
-ebook-en:
+.PHONY: epub-en
+epub-en:
 	gitbook epub ./en ethereum-development-with-go.epub
 
-.PHONY: ebook-zh
-ebook-zh:
+.PHONY: epub-zh
+epub-zh:
 	gitbook epub ./zh ethereum-development-with-go-zh.epub
 
 .PHONY: mobi

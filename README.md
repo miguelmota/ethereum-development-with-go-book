@@ -5,7 +5,7 @@
 
 # Ethereum Development with Go
 
-> A little book on [Ethereum](https://www.ethereum.org/) Development with [Go](https://golang.org/) (golang)
+> A little guide book on [Ethereum](https://www.ethereum.org/) Development with [Go](https://golang.org/) (golang)
 
 [![License](http://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/miguelmota/merkletreejs/master/LICENSE)
 [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
@@ -101,10 +101,10 @@ Run gitbook server:
 make serve
 ```
 
-Generating e-books:
+Generating e-book in pdf, mobi, and epub format:
 
 ```bash
-make pdf ebook mobi
+make ebooks
 ```
 
 Visit [http://localhost:4000](http://localhost:4000)
