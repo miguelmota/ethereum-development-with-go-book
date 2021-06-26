@@ -26,7 +26,7 @@ if err != nil {
   log.Fatal(err)
 }
 
-if msg, err := tx.AsMessage(types.NewEIP155Signer(chainID)); err != nil {
+if msg, err := tx.AsMessage(types.NewEIP155Signer(chainID)); err == nil {
   fmt.Println(msg.From().Hex()) // 0x0fD081e3Bb178dc45c0cb23202069ddA57064258
 }
 ```
