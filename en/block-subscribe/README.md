@@ -4,7 +4,7 @@ description: Tutorial on how to subscribe to latest blocks in Ethereum with Go.
 
 # Subscribing to New Blocks
 
-In this section we'll go over how to set up a subscription to get events when their is a new block mined. First thing is we need an Ethereum provider that supports RPC over websockets. In this example we'll use the infura websocket endpoint.
+In this section we'll go over how to set up a subscription to get events when there is a new block mined. First thing is we need an Ethereum provider that supports RPC over websockets. In this example we'll use the infura websocket endpoint.
 
 ```go
 client, err := ethclient.Dial("wss://ropsten.infura.io/ws")
