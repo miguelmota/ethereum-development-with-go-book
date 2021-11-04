@@ -27,7 +27,7 @@
   * [查询ERC20代币智能合约](smart-contract-read-erc20/README.md)
 * [事件日志](events/README.md)
   * [监听事件日志](event-subscribe/README.md)
-  * [读取时间日志](event-read/README.md)
+  * [读取事件日志](event-read/README.md)
   * [读取ERC20代币的事件日志](event-read-erc20/README.md)
   * [读取0x Protocol事件日志](event-read-0xprotocol/README.md)
 * [签名](signatures/README.md)
