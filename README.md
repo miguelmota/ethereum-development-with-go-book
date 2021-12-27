@@ -39,7 +39,7 @@ The e-book is avaiable in different formats.
   * [Generating New Wallets](en/wallet-generate/README.md)
   * [Keystores](en/keystore/README.md)
   * [HD Wallets](en/hd-wallet/README.md)
-  * [Address Check](address-check/README.md)
+  * [Address Check](en/address-check/README.md)
 * [Transactions](en/transactions/README.md)
   * [Querying Blocks](en/block-query/README.md)
   * [Querying Transactions](en/transaction-query/README.md)
