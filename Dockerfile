@@ -31,11 +31,30 @@ RUN apt-get install -y \
 RUN wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | bash
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN useradd -rm -d /home/ubuntu -s /bin/bash -g root -G sudo -u 1001 ubuntu
+
+RUN mkdir -p /usr/local/nvm
+ENV NVM_DIR /usr/local/nvm
+ENV NODE_VERSION 11.15.0
+
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.39.1/install.sh | bash \
+    && source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default
+
+ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
+ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+
+COPY Makefile .
+RUN make install-gitbook
+
 USER ubuntu
-COPY . /app
-WORKDIR /app
-RUN wget -nv -O- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-RUN source ~/.nvm/nvm.sh && nvm install 11 && nvm use 11
-RUN source ~/.nvm/nvm.sh && make install && make ebooks
+RUN mkdir -p /home/ubuntu/app
+COPY . /home/ubuntu/app
+WORKDIR /home/ubuntu/app
+
+RUN make install-modules
+RUN make build
+RUN make ebooks
 
 CMD ["echo", "complete"]

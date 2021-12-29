@@ -1,12 +1,18 @@
 all: build
 
-.PHONY: install
-install:
-	npm install gitbook-cli@latest node-gyp -g
+.PHONY: install-modules
+install-modules:
 	(rm -rf node_modules && npm install) || rm -f package-lock.json && rm -rf ~/.node-gyp && (npm install || (cd node_modules/canvas && node-gyp rebuild))
 	gitbook install
+
+.PHONY: install-gitbook
+install-gitbook:
+	npm install gitbook-cli@latest node-gyp -g
 	# install ebook-convert
 	# 		on arch: sudo pacman -S calibre
+
+.PHONY: install
+install: install-gitbook install-modules
 
 .PHONY: serve
 serve:
