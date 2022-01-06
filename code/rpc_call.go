@@ -11,7 +11,7 @@ import (
 // https://stackoverflow.com/questions/53237759/how-to-correctly-send-rpc-call-using-golang-to-get-smart-contract-owner/53260846#53260846
 
 func main() {
-	client, err := rpc.DialHTTP("https://mainnet.infura.io")
+	client, err := rpc.DialHTTP("https://cloudflare-eth.com")
 	if err != nil {
 		log.Fatal(err)
 	}

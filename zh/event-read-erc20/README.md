@@ -41,7 +41,7 @@ type LogApproval struct {
 初始化以太坊客户端
 
 ```go
-client, err := ethclient.Dial("https://mainnet.infura.io")
+client, err := ethclient.Dial("https://cloudflare-eth.com")
 if err != nil {
   log.Fatal(err)
 }
@@ -231,7 +231,7 @@ type LogApproval struct {
 }
 
 func main() {
-	client, err := ethclient.Dial("https://mainnet.infura.io")
+	client, err := ethclient.Dial("https://cloudflare-eth.com")
 	if err != nil {
 		log.Fatal(err)
 	}

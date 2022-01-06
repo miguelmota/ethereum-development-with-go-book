@@ -9,7 +9,7 @@
 若您没有现有以太坊客户端，您可以连接到infura网关。Infura管理着一批安全，可靠，可扩展的以太坊[geth和parity]节点，并且在接入以太坊网络时降低了新人的入门门槛。
 
 ```go
-client, err := ethclient.Dial("https://mainnet.infura.io")
+client, err := ethclient.Dial("https://cloudflare-eth.com")
 ```
 
 若您运行了本地geth实例，您还可以将路径传递给IPC端点文件。
@@ -70,7 +70,7 @@ import (
 )
 
 func main() {
-	client, err := ethclient.Dial("https://mainnet.infura.io")
+	client, err := ethclient.Dial("https://cloudflare-eth.com")
 	if err != nil {
 		log.Fatal(err)
 	}

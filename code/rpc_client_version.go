@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	client, err := rpc.DialHTTP("https://mainnet.infura.io")
+	client, err := rpc.DialHTTP("https://cloudflare-eth.com")
 	if err != nil {
 		panic(err)
 	}
