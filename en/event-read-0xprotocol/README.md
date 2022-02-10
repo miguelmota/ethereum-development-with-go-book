@@ -91,7 +91,7 @@ type LogError struct {
 Initialize the ethereum client:
 
 ```go
-client, err := ethclient.Dial("https://mainnet.infura.io")
+client, err := ethclient.Dial("https://cloudflare-eth.com")
 if err != nil {
   log.Fatal(err)
 }
@@ -385,7 +385,7 @@ type LogError struct {
 }
 
 func main() {
-	client, err := ethclient.Dial("https://mainnet.infura.io")
+	client, err := ethclient.Dial("https://cloudflare-eth.com")
 	if err != nil {
 		log.Fatal(err)
 	}

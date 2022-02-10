@@ -15,7 +15,7 @@ var s *Service
 
 func init() {
 	service, err := New(&Options{
-		ProviderURI: "wss://mainnet.infura.io/ws",
+		ProviderURI: "wss://cloudflare-eth.com/ws",
 	})
 	if err != nil {
 		panic(err)
