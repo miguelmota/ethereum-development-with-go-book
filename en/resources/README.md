@@ -17,7 +17,7 @@ List of resources on Ethereum, Solidity, and Go.
 - StackExchange
   - [Ethereum](https://ethereum.stackexchange.com/)
 - Reddit
-  - [ethdev](https://www.reddit.com/r/ethtrader/)
+  - [ethdev](https://www.reddit.com/r/ethdev/)
   - [golang](https://www.reddit.com/r/golang/)
 - Gitter
   - [List of Gitter channels](https://github.com/ethereum/wiki/wiki/Gitter-Channels)
