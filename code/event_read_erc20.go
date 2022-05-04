@@ -7,12 +7,12 @@ import (
 	"math/big"
 	"strings"
 
-	token "./contracts_erc20" // for demo
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
+	token "github.com/miguelmota/ethereum-development-with-go-book/code/contracts_erc20" // for demo
 )
 
 // LogTransfer ..
@@ -70,7 +70,7 @@ func main() {
 
 			var transferEvent LogTransfer
 
-			err := contractAbi.Unpack(&transferEvent, "Transfer", vLog.Data)
+			err := contractAbi.UnpackIntoInterface(&transferEvent, "Transfer", vLog.Data)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -87,7 +87,7 @@ func main() {
 
 			var approvalEvent LogApproval
 
-			err := contractAbi.Unpack(&approvalEvent, "Approval", vLog.Data)
+			err := contractAbi.UnpackIntoInterface(&approvalEvent, "Approval", vLog.Data)
 			if err != nil {
 				log.Fatal(err)
 			}
