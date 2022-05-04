@@ -7,15 +7,15 @@ description: Tutorial on how to read ERC-20 Token smart contract events with Go.
 First create the ERC-20 smart contract interface for event logs as `erc20.sol`:
 
 ```solidity
-pragma solidity >=0.6.0 <0.9.0;
+pragma solidity ^0.4.24;
 
-abstract contract ERC20 {
+contract ERC20 {
     event Transfer(address indexed from, address indexed to, uint tokens);
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 }
 ```
 
-Then use `abigen` to create the Go `token` package given the abi:
+Then use `abigen` to create the Go `exchange` package given the abi:
 
 ```bash
 solc --abi erc20.sol
@@ -104,14 +104,14 @@ for _, vLog := range logs {
 }
 ```
 
-Now to parse the `Transfer` event log we'll use `abi.UnpackIntoInterface` to parse the raw log data into our log type struct. UnpackIntoInterface will not parse `indexed` event types because those are stored under `topics`, so for those we'll have to parse separately as seen in the example below:
+Now to parse the `Transfer` event log we'll use `abi.Unpack` to parse the raw log data into our log type struct. Unpack will not parse `indexed` event types because those are stored under `topics`, so for those we'll have to parse separately as seen in the example below:
 
 ```go
 fmt.Printf("Log Name: Transfer\n")
 
 var transferEvent LogTransfer
 
-err := contractAbi.UnpackIntoInterface(&transferEvent, "Transfer", vLog.Data)
+err := contractAbi.Unpack(&transferEvent, "Transfer", vLog.Data)
 if err != nil {
   log.Fatal(err)
 }
@@ -131,7 +131,7 @@ fmt.Printf("Log Name: Approval\n")
 
 var approvalEvent LogApproval
 
-err := contractAbi.UnpackIntoInterface(&approvalEvent, "Approval", vLog.Data)
+err := contractAbi.Unpack(&approvalEvent, "Approval", vLog.Data)
 if err != nil {
   log.Fatal(err)
 }
@@ -187,22 +187,9 @@ abigen --abi=erc20_sol_ERC20.abi --pkg=token --out=erc20.go
 [erc20.sol](https://github.com/miguelmota/ethereum-development-with-go-book/blob/master/code/contracts_erc20/erc20.sol)
 
 ```solidity
-//SPDX-License-Identifier: MIT
+pragma solidity ^0.4.24;
 
-pragma solidity >=0.6.0 <0.9.0;
-
-abstract contract ERC20 {
-    string public constant name = "";
-    string public constant symbol = "";
-    uint8 public constant decimals = 0;
-
-    function totalSupply() public virtual returns (uint);
-    function balanceOf(address tokenOwner) public virtual returns (uint balance);
-    function allowance(address tokenOwner, address spender) public virtual returns (uint remaining);
-    function transfer(address to, uint tokens) public virtual returns (bool success);
-    function approve(address spender, uint tokens) public virtual returns (bool success);
-    function transferFrom(address from, address to, uint tokens) public virtual returns (bool success);
-
+contract ERC20 {
     event Transfer(address indexed from, address indexed to, uint tokens);
     event Approval(address indexed tokenOwner, address indexed spender, uint tokens);
 }
@@ -220,12 +207,12 @@ import (
 	"math/big"
 	"strings"
 
+	token "./contracts_erc20" // for demo
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
-	token "github.com/miguelmota/ethereum-development-with-go-book/code/contracts_erc20" // for demo
 )
 
 // LogTransfer ..
@@ -283,7 +270,7 @@ func main() {
 
 			var transferEvent LogTransfer
 
-			err := contractAbi.UnpackIntoInterface(&transferEvent, "Transfer", vLog.Data)
+			err := contractAbi.Unpack(&transferEvent, "Transfer", vLog.Data)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -300,7 +287,7 @@ func main() {
 
 			var approvalEvent LogApproval
 
-			err := contractAbi.UnpackIntoInterface(&approvalEvent, "Approval", vLog.Data)
+			err := contractAbi.Unpack(&approvalEvent, "Approval", vLog.Data)
 			if err != nil {
 				log.Fatal(err)
 			}
@@ -322,6 +309,5 @@ solc version used for these examples
 
 ```bash
 $ solc --version
-solc, the solidity compiler commandline interface
-Version: 0.8.13+commit.abaa5c0e.Linux.g++
+0.4.24+commit.e67f0147.Emscripten.clang
 ```
