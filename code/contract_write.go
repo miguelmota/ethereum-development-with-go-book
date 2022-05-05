@@ -9,10 +9,11 @@ import (
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	store "./contracts" // for demo
+	store "github.com/miguelmota/ethereum-development-with-go-book/code/contracts" // for demo
 )
 
 func main() {
@@ -62,6 +63,11 @@ func main() {
 
 	tx, err := instance.SetItem(auth, key, value)
 	if err != nil {
+		log.Fatal(err)
+	}
+
+	receipt, err := bind.WaitMined(context.Background(), client, tx)
+	if receipt.Status != types.ReceiptStatusSuccessful || err != nil {
 		log.Fatal(err)
 	}
 
