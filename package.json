@@ -9,9 +9,13 @@
     "gitbook-plugin-autocover": "^2.0.1",
     "gitbook-plugin-ga": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "netlify-cli": "^10.3.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-deploy": "make build && make ebooks-cp && npm run deploy",
+    "deploy": "netlify deploy --prod"
   },
   "repository": {
     "type": "git",

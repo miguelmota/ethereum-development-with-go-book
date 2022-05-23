@@ -13,3 +13,6 @@ tmp/
 build/
 
 .ecrecover.go
+
+# Local Netlify folder
+.netlify
