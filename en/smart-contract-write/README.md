@@ -6,7 +6,7 @@ description: Tutorial on how to write to a smart contract with Go.
 
 These section requires knowledge of how to compile a smart contract's ABI to a Go contract file. If you haven't already gone through it, please [read the section](../smart-contract-compile) first.
 
-Writing to a smart contract requires us to sign the sign transaction with our private key.
+Writing to a smart contract requires us to sign the transaction with our private key.
 
 ```go
 privateKey, err := crypto.HexToECDSA("fad9c8855b740a0b7ed4c221dbad0f33a83a49cad6b3fe8d5817ac83d38b6a19")
