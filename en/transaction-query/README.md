@@ -21,12 +21,7 @@ for _, tx := range block.Transactions() {
 In order to read the sender address, we need to call `AsMessage` on the transaction which returns a `Message` type containing a function to return the sender (from) address. The `AsMessage` method requires the EIP155 signer, which we derive the chain ID from the client.
 
 ```go
-chainID, err := client.NetworkID(context.Background())
-if err != nil {
-  log.Fatal(err)
-}
-
-if msg, err := tx.AsMessage(types.NewEIP155Signer(chainID)); err == nil {
+if msg, err := tx.AsMessage(types.LatestSignerForChainID(tx.ChainId()), nil); err == nil {
   fmt.Println(msg.From().Hex()) // 0x0fD081e3Bb178dc45c0cb23202069ddA57064258
 }
 ```
@@ -116,12 +111,7 @@ func main() {
 		fmt.Println(tx.Data())              // []
 		fmt.Println(tx.To().Hex())          // 0x55fE59D8Ad77035154dDd0AD0388D09Dd4047A8e
 
-		chainID, err := client.NetworkID(context.Background())
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		if msg, err := tx.AsMessage(types.NewEIP155Signer(chainID)); err == nil {
+		if msg, err := tx.AsMessage(types.LatestSignerForChainID(tx.ChainId()), nil); err == nil {
 			fmt.Println(msg.From().Hex()) // 0x0fD081e3Bb178dc45c0cb23202069ddA57064258
 		}
 
