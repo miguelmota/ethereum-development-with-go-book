@@ -81,9 +81,14 @@ fmt.Printf("tx sent: %s\n", tx.Hash().Hex()) // tx sent: 0x8d490e535678e9a24360e
 
 We can see now that the transaction has been successfully sent on the network: [https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870](https://rinkeby.etherscan.io/tx/0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870)
 
-To verify that the key/value was set, we read the smart contract mapping value.
+To verify that the key/value was set, we wait for tx to be mined on the blockchain and then read the smart contract mapping value.
 
 ```go
+receipt, err := bind.WaitMined(context.Background(), client, tx)
+if receipt.Status != types.ReceiptStatusSuccessful || err != nil {
+    log.Fatal(err)
+}
+
 result, err := instance.Items(nil, key)
 if err != nil {
   log.Fatal(err)
@@ -134,14 +139,19 @@ contract Store {
 package main
 
 import (
+	"context"
+	"crypto/ecdsa"
 	"fmt"
 	"log"
+	"math/big"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/core/types"
+	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	store "./contracts" // for demo
+	store "github.com/miguelmota/ethereum-development-with-go-book/code/contracts" // for demo
 )
 
 func main() {
@@ -194,7 +204,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("tx sent: %s", tx.Hash().Hex()) // tx sent: 0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870
+	receipt, err := bind.WaitMined(context.Background(), client, tx)
+	if receipt.Status != types.ReceiptStatusSuccessful || err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("tx sent: %s\n", tx.Hash().Hex()) // tx sent: 0x8d490e535678e9a24360e955d75b27ad307bdfb97a1dca51d0f3035dcee3e870
 
 	result, err := instance.Items(nil, key)
 	if err != nil {
